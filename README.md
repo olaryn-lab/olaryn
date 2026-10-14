@@ -16,3 +16,17 @@ The product brands Beseam, LemonCrow and Trevra retain their own accents.
 
 Review locally with `python3 -m http.server 43181 --bind 127.0.0.1`.
 No live deployment occurs by changing this source branch.
+
+## Logo assets
+
+The Olaryn master mark is an abstract compounding loop (not a security
+shield). The approved parent palette is burgundy `#6B3F4B` on parchment
+`#F5EFE3`, with a corresponding light-burgundy mark for dark mode. The
+existing Fraunces wordmark typography is unchanged.
+
+`logo-mark.svg` and `favicon.svg` are the source assets. Regenerate
+PNG favicons, Apple/PWA icons and the Open Graph social image with
+`python3 scripts/build-brand-assets.py --brand olaryn` (requires Pillow,
+Node.js and Playwright/Chromium). Do not edit generated raster assets by hand.
+Authward uses a related O-ring symbol with a *shield inside*; its logo
+and near-white application canvas live in the Authward repository.
