@@ -192,11 +192,35 @@
     width:28px;
     height:28px;
   }
+  .platform-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:29px;
+  }
+  .platform-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--accent);
+    border:1px solid var(--accent-soft);
+    background:var(--accent-soft);
+    border-radius:6px;
+    padding:10px 13px;
+    font-size:12px;
+    font-weight:500;
+    transition:background-color .15s ease,transform .15s ease;
+  }
+  .platform-link:hover,.platform-link:focus-visible{
+    background:transparent;
+    transform:translateY(-1px);
+  }
+  .platform-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   @media (max-width:560px){
     main{ padding:44px 22px 32px; }
     footer{ padding-bottom:22px; }
   }
-
   @media (prefers-reduced-motion:reduce){
     .company-link{ transition:none; }
     .company-link:hover{ transform:none; }
@@ -211,6 +235,10 @@
       <h1 id="olaryn-title">Olaryn</h1>
       <p class="thesis">Learning compounds.</p>
       <p class="lede">What we learn, improve, and create should strengthen everything around it.</p>
+      <nav class="platform-links" aria-label="Shared Olaryn infrastructure">
+        <a class="platform-link" href="/authward/">Authward <span aria-hidden="true">↗</span></a>
+        <a class="platform-link" href="/billing/">Billing <span aria-hidden="true">↗</span></a>
+      </nav>
     </section>
   </main>
 

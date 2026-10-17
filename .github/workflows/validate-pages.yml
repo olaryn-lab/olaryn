@@ -1,0 +1,21 @@
+name: Validate Olaryn pages
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate page content, links, SEO and sitemap
+        run: python3 scripts/check-pages.py
+      - name: Check whitespace
+        run: git diff --check HEAD^ HEAD
