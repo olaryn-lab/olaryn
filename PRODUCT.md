@@ -24,7 +24,7 @@ Tallyward: credits that are reserved before work and settled after; competing ho
 ## Capabilities and Constraints
 - Light and dark themes with a user toggle (persisted in localStorage key `olaryn-theme`, no flash).
 - No pink anywhere (explicit user constraint).
-- No invented contact address, customer, testimonial, benchmark, pricing or status claim. A "Request access" link on Authward is pending a contact address from the owner.
+- No invented contact address, customer, testimonial, benchmark, pricing or status claim. Authward's "Request access" link points at the live form at `https://auth.olaryn.com/developer/request-access`; do not invent a contact address.
 - Tallyward must not claim public availability. Authward must not claim self-serve signup.
 - Existing marks in `assets/marks.svg` (olaryn, authward, billing/tallyward ledger-in-O), company logos in `assets/companies/`, favicons and social cards in `assets/og/`.
 - Max horizontal fit at 320px; no horizontal scroll; AA contrast in both themes.
