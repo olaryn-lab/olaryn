@@ -5,11 +5,11 @@
   Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; form-action 'none'; img-src 'self' data:
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
 
-/assets/*
-  Cache-Control: public, max-age=86400
-
 /assets/*.css
   Cache-Control: public, max-age=0, must-revalidate
+
+/assets/fonts/*
+  Cache-Control: public, max-age=86400
 
 /*.png
   Cache-Control: public, max-age=86400
