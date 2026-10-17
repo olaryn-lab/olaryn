@@ -6,7 +6,7 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Olaryn company homepage; links to its products and shared infrastructure |
+| `/` | Olaryn company homepage; introduces Zikela (identity), Bilyra (billing), and Yeleva (analytics), with permanent service hostnames |
 | `/authward/` | Public Authward developer-focused marketing page |
 | `/billing/` | Public Tallyward (Olaryn Billing service) architecture and capabilities page; the URL and `billing.olaryn.com` keep the `billing` name |
 
@@ -15,8 +15,10 @@ The marketing pages use ordinary directory `index.html` files. All pages share `
 No framework, JavaScript, backend routes, or dependency installation is needed. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
 
 Marketing and platform runtime stay separate:
+- Olaryn's product names are **Zikela** (identity), **Bilyra** (billing), and **Yeleva** (analytics). The initial rename updates the homepage only; the existing Authward and Tallyward marketing pages remain at their current routes until their own copy/assets are migrated.
 - `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts the protected developer portal (`/developer`) and docs (`/docs`). Never proxy, redirect, or rewrite identity protocol endpoints through the marketing pages.
 - `https://billing.olaryn.com` remains the service API. There is no public developer signup or pricing page for Billing. The public description must not advertise the private API as open self-service.
+- `https://analytics.olaryn.com` remains the analytics service hostname, not a public product marketing page. The homepage identifies it without linking visitors into its application.
 - Feature copy must match the Authward and Billing repository contracts. Avoid displaying invented commercial prices or live account balances.
 
 ## Brand identity
