@@ -30,7 +30,7 @@
     analytics: { mark: "yeleva", name: "Yeleva", l1: "Meet Yeleva", l2: "Analytics for Olaryn products", under: "Visits · Actions · Usage" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.home;
-  document.getElementById("mark").setAttribute("href", "/assets/marks.svg#" + c.mark);
+  document.getElementById("mark").setAttribute("href", "/assets/marks.svg?v=2#" + c.mark);
   document.getElementById("name").textContent = c.name;
   document.getElementById("line1").textContent = c.l1;
   document.getElementById("line2").textContent = c.l2;

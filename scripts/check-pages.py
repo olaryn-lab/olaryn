@@ -129,7 +129,7 @@ def main() -> None:
                          ("/analytics/", "Yeleva: analytics")):
         if f'href="{route}"' not in home or label not in home:
             errors.append(f"home: missing product link {label} at {route}")
-    if '<svg class="mark"' not in home or '/assets/marks.svg#olaryn' not in home:
+    if '<svg class="mark"' not in home or '#olaryn"' not in home or '/assets/marks.svg' not in home:
         errors.append("home: the Olaryn mark must render from /assets/marks.svg#olaryn (follows the theme)")
     for route, html in PAGES.items():
         content = html.read_text(encoding="utf-8")

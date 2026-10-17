@@ -26,7 +26,7 @@ Marketing and platform runtime stay separate:
 
 The site uses one monochrome theme: black, white and greys, with a single green (`--ok`) used only for small status dots. Light pages are `#F9FAFB` with white cards on `#F3F4F6` panels; dark pages are `#090909` with `#111111`/`#181818` panels and cards. Text is Inter (weight 450 body, 400 headings) with Geist Mono for numbers and code. Headings come in two tones: an ink line followed by a grey line at the same size. Buttons are pills: black primary (white in dark mode) and grey secondary. The Olaryn mark is monochrome: black in light mode, white in dark mode (`logo-mark.svg` matches).
 
-Zikela uses a shield-in-O symbol, Bilyra a ledger-in-O and Yeleva an analytics-in-O (`assets/marks.svg`); they follow the page theme. The product brands Beseam, LemonCrow, and Trevra retain their own logos.
+The Olaryn mark is an open O with a seed in the gap. Zikela adds a keyhole inside it, Bilyra ledger lines and Yeleva rising bars (`assets/marks.svg`, bump its `?v=` when it changes); they follow the page theme. The product brands Beseam, LemonCrow, and Trevra retain their own logos.
 
 Copy rule: product names are only names. Everything else is written in plain, non-technical words, and every claim must match the Zikela and Bilyra repository contracts.
 
