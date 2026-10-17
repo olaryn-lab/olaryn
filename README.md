@@ -47,8 +47,8 @@ Visit `http://127.0.0.1:43181/`, `/auth/`, `/billing/`, and `/analytics/`. Confi
 
 ## Social cards
 
-`assets/og/zikela.png`, `assets/og/bilyra.png`, and `assets/og/yeleva.png` are rendered from `scripts/og-card.html` with `p=auth`, `p=billing`, or `p=analytics` respectively. Render them in a local headless browser at 1200×630 and bump the social-image version when changed.
+`og-image.png` and `assets/og/{zikela,bilyra,yeleva}.png` are rendered from `scripts/og-card.html` by `node scripts/render-og-cards.mjs` (needs Playwright; set `BRAND_PLAYWRIGHT_PATH` if it lives in another checkout). Bump the `?v=` on the `og:image` URLs when they change.
 
 ## Logo assets
 
-`logo-mark.svg` and `favicon.svg` are the Olaryn source assets. Regenerate the Olaryn PNG favicons, Apple/PWA icons, and Open Graph social image with `python3 scripts/build-brand-assets.py --brand olaryn` (requires Pillow, Node.js, and Playwright/Chromium). Do not edit generated raster assets by hand.
+`logo-mark.svg` and `favicon.svg` are the Olaryn source assets. Regenerate the Olaryn PNG favicons, Apple/PWA icons and all social cards with `python3 scripts/build-brand-assets.py --brand olaryn` (requires Pillow, Node.js, and Playwright/Chromium). Do not edit generated raster assets by hand.

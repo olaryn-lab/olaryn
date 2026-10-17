@@ -3,39 +3,38 @@
 <head>
 <meta charset="utf-8">
 <title>OG card template</title>
-<!-- Renders the 1200x630 social cards in assets/og/. Usage: see README ("Social cards"). -->
+<!-- Renders the 1200x630 social cards (og-image.png and assets/og/*.png). Run: node scripts/render-og-cards.mjs -->
 <style>
-  @font-face { font-family: "Fraunces"; font-weight: 340 500; src: url("/assets/fonts/fraunces-latin.woff2") format("woff2"); }
-  @font-face { font-family: "Work Sans"; font-weight: 400 600; src: url("/assets/fonts/worksans-latin.woff2") format("woff2"); }
-  html, body { margin: 0; width: 1200px; height: 630px; background: #251a1a; color: #211e1b; overflow: hidden; }
-  .card { box-sizing: border-box; width: 1200px; height: 470px; padding: 64px 84px 0; display: flex; flex-direction: column; justify-content: space-between; background: #f5efe3; border-radius: 0 0 28px 28px; }
-  .under { height: 160px; padding: 0 84px; display: flex; align-items: center; justify-content: space-between; font: 500 22px "Work Sans", sans-serif; color: #cbbcb0; letter-spacing: .01em; }
-  .under b { color: #e2bf80; font-weight: 600; }
-  .brand { display: flex; align-items: center; gap: 18px; font: 600 30px "Work Sans", sans-serif; letter-spacing: -.03em; }
-  .brand img { width: 56px; height: 56px; }
-  .brand small { display: block; font: 500 16px "Work Sans", sans-serif; color: #645e58; letter-spacing: .02em; margin-top: 4px; }
-  h1 { margin: 0 0 56px; font: 440 82px/1.05 "Fraunces", serif; letter-spacing: -.04em; max-width: 960px; }
-  h1 em { font-style: normal; color: #6b3f4b; }
-  </style>
+  @font-face { font-family: "Inter"; font-weight: 400 600; src: url("/assets/fonts/inter-latin.woff2") format("woff2"); }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #F9FAFB; color: #000000;
+    font-family: "Inter", sans-serif; letter-spacing: .015em; font-feature-settings: "ss07" 1, "ss08" 1, "liga" 0; }
+  .card { box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; width: 1200px; height: 630px; padding: 72px 88px; }
+  .brand { display: flex; align-items: center; gap: 16px; font: 450 34px/1 "Inter", sans-serif; letter-spacing: 0; }
+  .brand svg { width: 52px; height: 52px; color: #000000; --paper: #F9FAFB; }
+  h1 { margin: 0; font: 400 76px/1.15 "Inter", sans-serif; letter-spacing: 0; }
+  h1 span { display: block; color: #6A7282; }
+  .foot { display: flex; justify-content: space-between; padding-top: 28px; border-top: 2px solid #E5E7EB; font: 450 24px/1 "Inter", sans-serif; color: #5F6877; }
+</style>
 </head>
 <body>
 <div class="card">
-  <div class="brand"><img id="mark" alt=""><div><span id="name"></span><small id="sub"></small></div></div>
-  <h1 id="headline"></h1>
+  <div class="brand"><svg aria-hidden="true"><use id="mark"></use></svg><span id="name"></span></div>
+  <h1><span id="line1"></span><span id="line2"></span></h1>
+  <div class="foot"><span id="under"></span><span>olaryn.com</span></div>
 </div>
-<div class="under"><span id="under"></span><span>olaryn.com</span></div>
 <script>
   const cards = {
-    auth: { mark: "/assets/zikela-mark.svg", name: "zikela", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
-    analytics: { mark: "/assets/yeleva-mark.svg", name: "yeleva", sub: "by Olaryn", html: "Signals into <em>insight.</em>", under: "<b>Events</b> · journeys · product analytics" },
-    billing: { mark: "/assets/billing-mark.svg", name: "bilyra", sub: "by Olaryn", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
+    home: { mark: "olaryn", name: "Olaryn", l1: "Learning compounds.", l2: "", under: "What we learn, improve, and create should strengthen everything around it." },
+    auth: { mark: "zikela", name: "Zikela", l1: "Meet Zikela", l2: "Sign-in for your app", under: "Passkeys · Email links · Google · GitHub" },
+    billing: { mark: "bilyra", name: "Bilyra", l1: "Meet Bilyra", l2: "Fair billing for usage and credits", under: "Subscriptions · Credits · Usage · Refunds" },
+    analytics: { mark: "yeleva", name: "Yeleva", l1: "Meet Yeleva", l2: "Analytics for Olaryn products", under: "Visits · Actions · Usage" }
   };
-  const c = cards[new URLSearchParams(location.search).get("p")] || cards.auth;
-  document.getElementById("mark").src = c.mark;
+  const c = cards[new URLSearchParams(location.search).get("p")] || cards.home;
+  document.getElementById("mark").setAttribute("href", "/assets/marks.svg#" + c.mark);
   document.getElementById("name").textContent = c.name;
-  document.getElementById("sub").textContent = c.sub;
-  document.getElementById("headline").innerHTML = c.html;
-  document.getElementById("under").innerHTML = c.under;
+  document.getElementById("line1").textContent = c.l1;
+  document.getElementById("line2").textContent = c.l2;
+  document.getElementById("under").textContent = c.under;
 </script>
 </body>
 </html>
