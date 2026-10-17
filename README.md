@@ -6,7 +6,7 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Olaryn company homepage; introduces Zikela (identity), Bilyra (billing), and Yeleva (analytics), with permanent service hostnames |
+| `/` | Original Olaryn company homepage; preserves the established “Learning compounds.” copy, layout and two infrastructure links |
 | `/auth/` | Public Zikela identity developer-focused marketing page |
 | `/billing/` | Public Bilyra billing, credits, and usage marketing page |
 | `/analytics/` | Public Yeleva analytics overview (the internal analytics application remains separate) |
@@ -16,7 +16,7 @@ The marketing pages use ordinary directory `index.html` files. All pages share `
 No framework, JavaScript, backend routes, or dependency installation is needed. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
 
 Marketing and platform runtime stay separate:
-- Olaryn's product names are **Zikela** (identity), **Bilyra** (billing), and **Yeleva** (analytics). The public marketing pages use the descriptive routes `/auth/`, `/billing/` and `/analytics/`; legacy `/authward/` redirects to `/auth/`. The backend repositories and service URLs are not renamed as part of this change.
+- Product marketing pages use **Zikela** (identity), **Bilyra** (billing) and **Yeleva** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The original Olaryn homepage copy and visual design intentionally remain unchanged, including its original infrastructure link labels. The legacy `/authward/` URL redirects to `/auth/`, so the original link continues to work. Backend repositories and service URLs are not renamed as part of this change.
 - `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts the protected developer portal (`/developer`) and docs (`/docs`). Never proxy, redirect, or rewrite identity protocol endpoints through the marketing pages.
 - `https://billing.olaryn.com` remains the service API. There is no public developer signup or pricing page for Billing. The public description must not advertise the private API as open self-service.
 - `https://analytics.olaryn.com` remains the analytics service hostname, not a public product marketing page. The public `/analytics/` overview is separate from the application and does not expose a public signup.

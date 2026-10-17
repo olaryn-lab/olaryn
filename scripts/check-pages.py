@@ -58,6 +58,16 @@ def local_target(path: str) -> Path:
     return path / "index.html" if path.is_dir() else path
 
 
+def redirect_target(path: str) -> Path | None:
+    """Resolve a Cloudflare Pages redirect to an existing local marketing page."""
+    for line in (ROOT / "_redirects").read_text(encoding="utf-8").splitlines():
+        fields = line.split()
+        if len(fields) == 3 and fields[0] == path and fields[2] == "301":
+            target = local_target(fields[1])
+            return target if target.is_file() else None
+    return None
+
+
 def check_page(route: str, html: Path) -> list[str]:
     errors = []
     page = Page()
@@ -94,7 +104,7 @@ def check_page(route: str, html: Path) -> list[str]:
             file = local_target(route + target.path)
         else:
             file = html
-        if not file.is_file():
+        if not file.is_file() and not (kind == "anchor" and redirect_target(target.path)):
             errors.append(f"{route}: missing {kind}: {ref}")
         if target.fragment and target.path in ("", route):
             if target.fragment not in page.ids:
@@ -111,11 +121,12 @@ def main() -> None:
     wanted = {f"https://olaryn.com{route}" for route in PAGES}
     if urls != wanted:
         errors.append(f"sitemap: expected {sorted(wanted)}, got {sorted(urls)}")
-    # Every live homepage product link has a current destination, not a legacy page.
+    # Preserve the original Olaryn homepage copy and design. Its legacy identity
+    # marketing link remains functional through the permanent Cloudflare redirect.
     home = (ROOT / "index.html").read_text(encoding="utf-8")
-    for route, name in (("/auth/", "Zikela"), ("/billing/", "Bilyra"), ("/analytics/", "Yeleva")):
-        if f'href="{route}"' not in home or name not in home:
-            errors.append(f"home: missing brand or destination {name} at {route}")
+    for route in ("/authward/", "/billing/"):
+        if f'href="{route}"' not in home:
+            errors.append(f"home: missing original infrastructure link: {route}")
     for route, html in PAGES.items():
         content = html.read_text(encoding="utf-8")
         if route != "/" and any(old in content for old in ("Authward", "Tallyward", "/authward/")):
