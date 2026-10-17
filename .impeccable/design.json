@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T16:17:56Z",
+  "title": "Design System: Olaryn",
+  "extensions": {
+    "colorMeta": {
+      "azure-light": {
+        "role": "primary",
+        "displayName": "Signal Azure",
+        "canonical": "#0A59C0 / #62B2FF",
+        "tonalRamp": [
+          "#00274C",
+          "#004587",
+          "#0062C1",
+          "#0080FB",
+          "#379DFF",
+          "#71B9FF",
+          "#ABD6FF",
+          "#E5F2FF"
+        ]
+      },
+      "pane-light": {
+        "role": "neutral",
+        "displayName": "Pane",
+        "canonical": "#FAFBFC / #12161A",
+        "tonalRamp": [
+          "#1F262D",
+          "#374350",
+          "#4F6172",
+          "#677E95",
+          "#899BAD",
+          "#ABB8C5",
+          "#CDD5DD",
+          "#F0F2F5"
+        ]
+      },
+      "ground-light": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#E3E7EA / #0B0E10",
+        "tonalRamp": [
+          "#1F282D",
+          "#374650",
+          "#4F6472",
+          "#668295",
+          "#889FAD",
+          "#ABBBC5",
+          "#CDD7DD",
+          "#F0F3F5"
+        ]
+      },
+      "seam-light": {
+        "role": "neutral",
+        "displayName": "Seam",
+        "canonical": "#C2CAD0 / #262D33",
+        "tonalRamp": [
+          "#21272C",
+          "#3A444D",
+          "#52626F",
+          "#6B7F90",
+          "#8C9CA9",
+          "#AEB9C2",
+          "#CFD6DB",
+          "#F0F2F4"
+        ]
+      },
+      "ok-light": {
+        "role": "state",
+        "displayName": "OK",
+        "canonical": "#0B7240 / #5CD18C",
+        "tonalRamp": [
+          "#113C22",
+          "#1E693D",
+          "#2A9757",
+          "#37C471",
+          "#63D391",
+          "#90E0B1",
+          "#BEEDD1",
+          "#EBF9F1"
+        ]
+      },
+      "hold-light": {
+        "role": "state",
+        "displayName": "Hold",
+        "canonical": "#8A5100 / #F2B94B",
+        "tonalRamp": [
+          "#473105",
+          "#7E5609",
+          "#B47B0D",
+          "#EAA011",
+          "#F2B644",
+          "#F5CB7A",
+          "#F9E1B1",
+          "#FDF6E7"
+        ]
+      },
+      "err-light": {
+        "role": "state",
+        "displayName": "Error",
+        "canonical": "#B3261E / #FF8272",
+        "tonalRamp": [
+          "#4C0900",
+          "#870F00",
+          "#C11600",
+          "#FB1D00",
+          "#FF4D37",
+          "#FF8171",
+          "#FFB5AB",
+          "#FFE8E5"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page H1 only, condensed Archivo."
+      },
+      "label": {
+        "displayName": "Pane label",
+        "purpose": "Artifact title bars and table column heads, uppercase."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Requests, documents, identifiers."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The sentence under a page H1."
+      },
+      "table": {
+        "displayName": "Table",
+        "purpose": "Table cells."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "fresh",
+        "value": "0.9s ease-out, ink tint fading to transparent",
+        "purpose": "A pane row or log line that just changed."
+      },
+      {
+        "name": "state",
+        "value": "0.15s ease",
+        "purpose": "Button, link and card colour changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "860px (bar), 960px (pane spans)"
+      },
+      {
+        "name": "small",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single call to action in a view.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Developer console</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid #4F5B65;border-radius:2px;font:600 14px/1 Archivo,system-ui,sans-serif;text-decoration:none;color:#10151A;background:transparent}.ds-btn-primary{background:#0A59C0;border-color:#0A59C0;color:#fff}.ds-btn-primary:hover{background:#084A9F;border-color:#084A9F}.ds-btn:focus-visible{outline:2px solid #0A59C0;outline-offset:2px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action beside the primary.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Read the docs</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid #4F5B65;border-radius:2px;font:600 14px/1 Archivo,system-ui,sans-serif;text-decoration:none;color:#10151A}.ds-btn:hover{background:#10151A;color:#FAFBFC}.ds-btn:focus-visible{outline:2px solid #0A59C0;outline-offset:2px}"
+    },
+    {
+      "name": "Pane",
+      "kind": "card",
+      "refersTo": "pane",
+      "description": "A bordered surface with a raised title bar.",
+      "html": "<section class=\"ds-pane\"><div class=\"ds-pane-head\"><span>Discovery document</span><span class=\"ds-chip\">excerpt</span></div><div class=\"ds-pane-body\">Content</div></section>",
+      "css": ".ds-pane{border:1px solid #C2CAD0;background:#FAFBFC;font:400 16px/1.55 Archivo,system-ui,sans-serif;color:#10151A}.ds-pane-head{display:flex;justify-content:space-between;align-items:center;min-height:40px;padding:6px 16px;background:#EEF1F3;border-bottom:1px solid #C2CAD0;color:#4F5B65;font:600 12px/1.2 Archivo,system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase}.ds-chip{font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:0;text-transform:none;color:#4F5B65}.ds-pane-body{padding:20px}"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "pane-head",
+      "description": "State marker: a square plus text in the state colour.",
+      "html": "<span class=\"ds-chip\">settled 19, 6 returned</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:7px;font:500 12px/1 'JetBrains Mono',monospace;color:#0B7240}.ds-chip::before{content:'';width:7px;height:7px;background:currentColor}"
+    },
+    {
+      "name": "Code Pane",
+      "kind": "custom",
+      "refersTo": "pane",
+      "description": "Requests and documents; keys azure, constants amber, verbs green.",
+      "html": "<pre class=\"ds-code\"><span class=\"v\">GET</span> /token\n<span class=\"k\">grant_type</span>=authorization_code</pre>",
+      "css": ".ds-code{margin:0;padding:18px 20px;background:#FAFBFC;border:1px solid #C2CAD0;font:400 13.5px/1.7 'JetBrains Mono',monospace;color:#10151A}.ds-code .k{color:#0A59C0}.ds-code .v{color:#0B7240;font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Working Surface",
+    "overview": "A sheet of panes divided by single hairline seams. Real material in every pane, one azure accent, three state colours, no decoration.",
+    "keyCharacteristics": [
+      "12-column sheet whose 1px gap is the divider",
+      "Square corners, 2px on buttons",
+      "Condensed Archivo headings, JetBrains Mono only for code and data",
+      "One accent plus state colours",
+      "Each product page has its own structure"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Azure is for the primary action and for keys, plus the Olaryn mark's dot.",
+        "section": "colors"
+      },
+      {
+        "name": "The State Colour Rule",
+        "body": "Green, amber and red report a hold's state; they never label a category or decorate code.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Warm-Ground Rule",
+        "body": "No cream paper ground and no pink or magenta hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plain Heading Rule",
+        "body": "Headings name the thing or state the fact; no slogans, no italic accent word.",
+        "section": "typography"
+      },
+      {
+        "name": "The Artifact Title Rule",
+        "body": "A pane title bar names an artifact; a section's heading is a real heading at headline size.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do let the 1px grid gap draw every divider",
+      "Do show real data and label snapshots and simulations",
+      "Do keep claims traceable to the Authward and Billing source"
+    ],
+    "donts": [
+      "Don't add shadows, gradients, glows or rounded cards",
+      "Don't put a kicker above a heading",
+      "Don't use azure for anything but the primary action and keys",
+      "Don't show a big number over a small label as a metric tile"
+    ]
+  }
+}

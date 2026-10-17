@@ -3,8 +3,9 @@
 (function () {
   var KEY = "olaryn-theme";
   var root = document.documentElement;
+  root.classList.add("js"); // pages style script-dependent states under .js
   var query = window.matchMedia("(prefers-color-scheme: dark)");
-  var COLORS = { light: "#F5EFE3", dark: "#181511" };
+  var COLORS = { light: "#FAFBFC", dark: "#12161A" };
 
   function saved() {
     try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : null; } catch (e) { return null; }

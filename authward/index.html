@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5EFE3">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181511">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFBFC">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12161A">
   <title>Authward — Identity your customers never see | Olaryn</title>
   <meta name="description" content="Authward is hosted identity infrastructure: OAuth and OIDC, passkeys, magic links and social sign-in, behind your own login screen.">
   <link rel="canonical" href="https://olaryn.com/authward/">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=9">
-  <link rel="icon" href="/favicon.ico?v=8">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png?v=8" sizes="32x32">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=8" sizes="180x180">
-  <link rel="manifest" href="/site.webmanifest?v=8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=10">
+  <link rel="icon" href="/favicon.ico?v=9">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png?v=9" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=9" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest?v=9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
   <meta property="og:title" content="Authward — Identity your customers never see">
   <meta property="og:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
   <meta property="og:url" content="https://olaryn.com/authward/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/authward.png?v=3">
+  <meta property="og:image" content="https://olaryn.com/assets/og/authward.png?v=4">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Authward — Identity your customers never see">
   <meta name="twitter:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/authward.png?v=3">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/authward.png?v=4">
   <meta name="twitter:image:alt" content="Authward — Identity your customers never see.">
   <script type="application/ld+json">
   {
@@ -40,138 +40,177 @@
     "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
   }
   </script>
-  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="/assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="/assets/base.css?v=4">
-  <link rel="stylesheet" href="/assets/platform.css?v=4">
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jetbrainsmono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/theme.js?v=2"></script>
+  <link rel="stylesheet" href="/assets/base.css?v=5">
+  <link rel="stylesheet" href="/assets/platform.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="identity" href="/authward/" aria-label="Authward home">
-        <svg class="identity-mark" width="37" height="37" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#authward"></use></svg>
-        <span class="identity-text"><span class="identity-name">authward</span><span class="identity-parent">by Olaryn</span></span>
+  <header class="bar">
+    <div class="shell bar-inner">
+      <a class="id" href="/authward/" aria-label="Authward home">
+        <svg class="id-mark" width="28" height="28" aria-hidden="true" focusable="false"><use href="/assets/marks.svg?v=2#authward"></use></svg>
+        <span class="id-name">authward</span><span class="id-by">by Olaryn</span>
       </a>
-      <nav class="site-nav" aria-label="Authward sections">
+      <nav class="bar-nav" aria-label="Authward sections">
         <a href="/">Olaryn</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#setup">Setup</a>
-        <a href="#standards">Standards</a>
+        <a class="nav-more" href="#flow">Flow</a>
+        <a class="nav-more" href="#ownership">Ownership</a>
+        <a class="nav-more" href="#setup">Setup</a>
+        <a class="nav-more" href="#protocol">Protocol</a>
         <a href="https://auth.olaryn.com/docs">Docs <span class="ico ico-ne" aria-hidden="true"></span></a>
       </nav>
-      <a class="button button-primary top-action" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
+      <a class="btn btn-primary btn-small bar-cta" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
       <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico ico-moon" aria-hidden="true"></span></button>
     </div>
   </header>
 
   <main id="main">
-    <section class="shell hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title">Identity your customers <em>never see.</em></h1>
-          <p class="hero-copy">Passkeys, magic links and social sign-in, behind your own login screen.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
-            <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
+    <div class="shell">
+      <section class="sheet hero" aria-labelledby="hero-title">
+        <div class="pane hero-copy span-5">
+          <h1 id="hero-title">Identity your customers never see.</h1>
+          <div class="hero-lower">
+            <p class="hero-sub">Passkeys, magic links and social sign-in behind your own login screen. Standard OAuth and OIDC. No proprietary SDK.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
+              <a class="btn" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
+            </div>
+            <p class="hero-note">Developer access is by invitation.</p>
           </div>
-          <p class="hero-footnote">Developer access is by invitation.</p>
         </div>
-        <figure class="hero-art">
-          <div class="login-card" role="img" aria-label="Example product login screen offering passkey, email link, Google and GitHub sign-in.">
-            <div class="login-brand" aria-hidden="true"><span class="login-dot"></span>Northwind</div>
-            <div class="login-title" aria-hidden="true">Sign in to Northwind</div>
-            <div class="login-btn is-primary" aria-hidden="true"><span class="ico ico-key"></span>Continue with passkey</div>
-            <div class="login-btn" aria-hidden="true"><span class="ico ico-mail"></span>Email me a link</div>
-            <div class="login-or" aria-hidden="true">or</div>
-            <div class="login-pair" aria-hidden="true"><div class="login-btn">Google</div><div class="login-btn">GitHub</div></div>
-          </div>
-          <figcaption>Your screen, your brand. Authward runs everything behind it.</figcaption>
+        <figure class="pane hero-doc span-7">
+          <div class="pane-head"><span>Discovery document</span><span class="chip">snapshot 17 Oct 2026</span></div>
+          <pre class="code" tabindex="0" role="region" aria-label="Excerpt of the Authward OpenID discovery document"><code><span class="v">GET</span> https://auth.olaryn.com/.well-known/openid-configuration
+<span class="c">200 OK</span>
+
+<span class="p">{</span>
+  <span class="k">"issuer"</span><span class="p">:</span> "https://auth.olaryn.com"<span class="p">,</span>
+  <span class="k">"authorization_endpoint"</span><span class="p">:</span> "https://auth.olaryn.com/api/auth/oauth2/authorize"<span class="p">,</span>
+  <span class="k">"token_endpoint"</span><span class="p">:</span> "https://auth.olaryn.com/api/auth/oauth2/token"<span class="p">,</span>
+  <span class="k">"jwks_uri"</span><span class="p">:</span> "https://auth.olaryn.com/api/auth/.well-known/jwks.json"<span class="p">,</span>
+  <span class="k">"response_types_supported"</span><span class="p">:</span> <span class="p">[</span>"code"<span class="p">]</span><span class="p">,</span>
+  <span class="k">"grant_types_supported"</span><span class="p">:</span> <span class="p">[</span>
+    "authorization_code"<span class="p">,</span>
+    "client_credentials"<span class="p">,</span>
+    "refresh_token"<span class="p">,</span>
+    "urn:ietf:params:oauth:grant-type:device_code"
+  <span class="p">],</span>
+  <span class="k">"code_challenge_methods_supported"</span><span class="p">:</span> <span class="p">[</span>"S256"<span class="p">]</span><span class="p">,</span>
+  <span class="k">"id_token_signing_alg_values_supported"</span><span class="p">:</span> <span class="p">[</span>"EdDSA"<span class="p">]</span><span class="p">,</span>
+  <span class="k">"device_authorization_endpoint"</span><span class="p">:</span> "https://auth.olaryn.com/api/auth/device/code"
+  <span class="c">// 24 more members omitted</span>
+<span class="p">}</span></code></pre>
+          <figcaption class="pane-foot">Excerpt from the running service, in its own order. <a href="https://auth.olaryn.com/.well-known/openid-configuration">Open the live document <span class="ico ico-ne" aria-hidden="true"></span></a></figcaption>
         </figure>
-      </div>
-    </section>
+      </section>
 
-    <section id="how-it-works" class="band band-lift" aria-labelledby="layers-title">
-      <div class="shell">
-        <h2 id="layers-title">You build the screen. Authward does the rest.</h2>
-        <div class="layers">
-          <div class="layer layer-yours">
-            <h3>Your application</h3>
-            <ul><li>Login and signup</li><li>Consent and device approval</li><li>Account page</li><li>Roles and permissions</li></ul>
-          </div>
-          <div class="layer layer-core">
-            <h3>Authward</h3>
-            <ul><li>Credentials and sessions</li><li>Passkeys, magic links, social</li><li>OAuth and OIDC tokens</li><li>Signing keys and revocation</li></ul>
-          </div>
+      <section id="flow" class="sheet" aria-labelledby="flow-title">
+        <header class="pane section-head"><h2 id="flow-title">How a login runs</h2><p>One authorization-code exchange with PKCE. Five steps, real endpoints.</p></header>
+        <div class="pane step">
+          <div class="step-index num" aria-hidden="true">1</div>
+          <div class="step-text"><h3>Your app sends the user to authorize.</h3><p>A redirect with a PKCE challenge and a random state.</p></div>
+          <pre class="code step-code" tabindex="0" role="region" aria-label="Authorization request"><code><span class="v">GET</span> /api/auth/oauth2/authorize
+  <span class="k">response_type</span>=code
+  <span class="k">scope</span>=openid
+  <span class="k">client_id</span>=&lt;your client&gt;
+  <span class="k">redirect_uri</span>=&lt;exact registered URI&gt;
+  <span class="k">code_challenge</span>=&lt;S256 challenge&gt;
+  <span class="k">code_challenge_method</span>=S256
+  <span class="k">state</span>=&lt;random&gt;</code></pre>
         </div>
-      </div>
-    </section>
-
-    <section id="setup" class="shell section" aria-labelledby="setup-title">
-      <h2 id="setup-title">Paste one prompt into your coding agent.</h2>
-      <ol class="steps">
-        <li><strong>Copy the prompt</strong><span>From your workspace. It holds a workspace ID and no secrets.</span></li>
-        <li><strong>Approve in your browser</strong><span>Access is scoped to one workspace, lasts 24 hours and can be revoked.</span></li>
-        <li><strong>Your agent sets it up</strong><span>It registers the app, environments and OAuth client, then checks a real login.</span></li>
-      </ol>
-      <p class="section-note">Also available as a CLI and an MCP server.</p>
-    </section>
-
-    <section id="standards" class="band" aria-labelledby="standards-title">
-      <div class="shell band-split">
-        <div>
-          <h2 id="standards-title">Standard OAuth. Any OIDC library.</h2>
-          <p class="band-lede">No proprietary SDK to adopt. Discover the endpoints, redirect, exchange the code.</p>
-          <ul class="facts">
-            <li><strong>Authorization Code + PKCE</strong><span>S256 required</span></li>
-            <li><strong>Device authorization</strong><span>RFC 8628, for CLIs</span></li>
-            <li><strong>Discovery and JWKS</strong><span>Keys rotate every 30 days</span></li>
-            <li><strong>Tokens</strong><span>15-minute JWTs, revocable</span></li>
-            <li><strong>Passkeys</strong><span>User-verification policy per client</span></li>
-            <li><strong>Redirects</strong><span>Exact URIs only</span></li>
-          </ul>
+        <div class="pane step">
+          <div class="step-index num" aria-hidden="true">2</div>
+          <div class="step-text"><h3>The user signs in on your screen.</h3><p>Your login screen, your brand. Authward checks the credential.</p></div>
+          <pre class="code step-code" tabindex="0" role="region" aria-label="Who handles sign-in"><code><span class="k">screen</span>       yours
+<span class="k">credential</span>   passkey, email link or social
+<span class="k">checked by</span>   Authward</code></pre>
         </div>
-        <figure class="code-card">
-          <figcaption class="code-card-title"><span>Authorization Code + PKCE</span><span>Sequence</span></figcaption>
-          <pre tabindex="0" aria-label="Integration sequence"><code><span class="c"># 1. Discover the endpoints</span>
-curl https://auth.olaryn.com/.well-known/openid-configuration
+        <div class="pane step">
+          <div class="step-index num" aria-hidden="true">3</div>
+          <div class="step-text"><h3>Authward returns a code.</h3><p>To the exact redirect URI you registered, with the issuer attached.</p></div>
+          <pre class="code step-code" tabindex="0" role="region" aria-label="Authorization response"><code><span class="v">302</span> &lt;redirect_uri&gt;
+  <span class="k">code</span>=&lt;authorization code&gt;
+  <span class="k">state</span>=&lt;same random value&gt;
+  <span class="k">iss</span>=https://auth.olaryn.com</code></pre>
+        </div>
+        <div class="pane step">
+          <div class="step-index num" aria-hidden="true">4</div>
+          <div class="step-text"><h3>Your backend trades the code for tokens.</h3><p>The PKCE verifier proves it is the same client.</p></div>
+          <pre class="code step-code" tabindex="0" role="region" aria-label="Token request and response"><code><span class="v">POST</span> /api/auth/oauth2/token
+  <span class="k">grant_type</span>=authorization_code
+  <span class="k">code</span>=&lt;authorization code&gt;
+  <span class="k">code_verifier</span>=&lt;PKCE verifier&gt;
+  <span class="k">client_id</span>=&lt;your client&gt;
+  <span class="k">redirect_uri</span>=&lt;same URI&gt;
 
-<span class="c"># 2. Send the user to authorization_endpoint</span>
-<span class="k">response_type</span>=code
-<span class="k">scope</span>=openid
-<span class="k">client_id</span>=&lt;your client&gt;
-<span class="k">redirect_uri</span>=&lt;exact registered URI&gt;
-<span class="k">code_challenge</span>=&lt;S256 challenge&gt;
-<span class="k">code_challenge_method</span>=S256
-<span class="k">state</span>=&lt;random&gt;
+<span class="c">200 OK</span>
+  <span class="k">access_token</span>   JWT, valid 15 minutes
+  <span class="k">id_token</span>       signed with EdDSA</code></pre>
+        </div>
+        <div class="pane step">
+          <div class="step-index num" aria-hidden="true">5</div>
+          <div class="step-text"><h3>You verify the token and start your session.</h3><p>Standard JWT checks against the published keys.</p></div>
+          <pre class="code step-code" tabindex="0" role="region" aria-label="Token verification"><code><span class="k">iss</span>   = https://auth.olaryn.com
+<span class="k">aud</span>   = &lt;your client or API&gt;
+<span class="k">sig</span>   = key from jwks_uri
+<span class="c">keys rotate every 30 days</span></code></pre>
+        </div>
+      </section>
 
-<span class="c"># 3. On your callback, exchange the code at</span>
-<span class="c">#    token_endpoint with your code_verifier</span>
-
-<span class="c"># 4. Verify issuer, audience and signature</span>
-<span class="c">#    (jwks_uri), then start your own session</span></code></pre>
-        </figure>
+      <div class="sheet pair">
+        <section id="ownership" class="pane span-7" aria-labelledby="own-title">
+          <header class="section-head"><h2 id="own-title">Who builds what</h2><p>By default you build the screens and Authward runs the rest.</p></header>
+          <table class="table owner">
+            <thead><tr><th scope="col">Capability</th><th scope="col" class="own">Yours</th><th scope="col" class="own">Authward</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Login and signup screen</th><td class="own"><span class="dot"></span><span class="visually-hidden">Yours</span></td><td class="own"></td></tr>
+              <tr><th scope="row">Consent and device approval</th><td class="own"><span class="dot"></span><span class="visually-hidden">Yours</span></td><td class="own"></td></tr>
+              <tr><th scope="row">Account page</th><td class="own"><span class="dot"></span><span class="visually-hidden">Yours</span></td><td class="own"></td></tr>
+              <tr><th scope="row">Roles and permissions</th><td class="own"><span class="dot"></span><span class="visually-hidden">Yours</span></td><td class="own"></td></tr>
+              <tr><th scope="row">Credentials and sessions</th><td class="own"></td><td class="own"><span class="dot"></span><span class="visually-hidden">Authward</span></td></tr>
+              <tr><th scope="row">Passkeys, email links, social</th><td class="own"></td><td class="own"><span class="dot"></span><span class="visually-hidden">Authward</span></td></tr>
+              <tr><th scope="row">OAuth and OIDC tokens</th><td class="own"></td><td class="own"><span class="dot"></span><span class="visually-hidden">Authward</span></td></tr>
+              <tr><th scope="row">Signing keys and revocation</th><td class="own"></td><td class="own"><span class="dot"></span><span class="visually-hidden">Authward</span></td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section id="setup" class="pane span-5" aria-labelledby="setup-title">
+          <header class="section-head"><h2 id="setup-title">Setup</h2><p>Paste one prompt into your coding agent.</p></header>
+          <ol class="log">
+            <li><span class="num" aria-hidden="true">1</span><p><strong>Copy the prompt</strong> from your workspace. It holds a workspace ID and no secrets.</p></li>
+            <li><span class="num" aria-hidden="true">2</span><p><strong>Approve in your browser.</strong> Access covers one workspace for 24 hours and can be revoked.</p></li>
+            <li><span class="num" aria-hidden="true">3</span><p><strong>Your coding agent does the rest.</strong> It registers the app, environments and OAuth client, then verifies discovery and the signing keys.</p></li>
+          </ol>
+          <p class="pane-foot">Also available as a CLI and an MCP server. Agents can read the <a href="https://auth.olaryn.com/agent/product-integration-guide.md">integration guide</a>.</p>
+        </section>
       </div>
-    </section>
 
-    <section id="get-started" class="shell final-cta" aria-labelledby="start-title">
-      <h2 id="start-title">Ship the screen. Skip the stack.</h2>
-      <div class="hero-actions">
-        <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
-        <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
-      </div>
-      <p class="hero-footnote">Developer access is by invitation. <a href="https://auth.olaryn.com/agent/product-integration-guide.md">Agent-readable guide</a></p>
-    </section>
+      <section id="protocol" class="sheet" aria-labelledby="protocol-title">
+        <header class="pane section-head"><h2 id="protocol-title">Protocol surface</h2><p>From the discovery document and the Authward docs.</p></header>
+        <dl class="pane spec">
+          <div><dt>Grants</dt><dd>Authorization code, refresh token, client credentials, device authorization (RFC 8628)</dd></div>
+          <div><dt>PKCE</dt><dd>S256 only</dd></div>
+          <div><dt>ID tokens</dt><dd>EdDSA</dd></div>
+          <div><dt>Access tokens</dt><dd>JWT, 15 minutes, revocable</dd></div>
+          <div><dt>Signing keys</dt><dd>Published at jwks_uri, rotated every 30 days</dd></div>
+          <div><dt>Client auth</dt><dd>none, client_secret_basic, client_secret_post, private_key_jwt</dd></div>
+          <div><dt>Sender-constrained</dt><dd>DPoP</dd></div>
+          <div><dt>Logout</dt><dd>Back-channel logout and an end-session endpoint</dd></div>
+          <div><dt>Redirect URIs</dt><dd>Exact match only</dd></div>
+          <div><dt>Passkeys</dt><dd>User-verification policy set per client</dd></div>
+        </dl>
+      </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <a class="footer-parent" href="/"><svg class="footer-mark" width="22" height="22" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg> <span>Part of Olaryn · Zürich, Switzerland</span></a>
-      <nav class="foot-links" aria-label="Related destinations">
-        <a href="/">Olaryn</a><a href="/billing/">Tallyward</a><a href="https://auth.olaryn.com/docs">Documentation <span class="ico ico-ne" aria-hidden="true"></span></a>
-      </nav>
-      <span>© 2026 Olaryn</span>
+  <footer class="status">
+    <div class="shell status-inner">
+      <a class="grow" href="/"><svg class="foot-mark" width="20" height="20" aria-hidden="true" focusable="false"><use href="/assets/marks.svg?v=2#olaryn"></use></svg> Part of Olaryn</a>
+      <a href="/billing/">Tallyward</a>
+      <span>&copy; 2026 Olaryn &middot; Z&uuml;rich, Switzerland</span>
     </div>
   </footer>
 </body>

@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="billing-mark-title">
   <title id="billing-mark-title">Tallyward — ledger in the O</title>
   <style>
-    .stroke { stroke: #6B3F4B; }
-    .bar { fill: #6B3F4B; }
+    .stroke { stroke: #10151A; }
+    .bar { fill: #10151A; }
     @media (prefers-color-scheme: dark) {
-      .stroke { stroke: #D6AD6A; }
-      .bar { fill: #D6AD6A; }
+      .stroke { stroke: #E8EBED; }
+      .bar { fill: #E8EBED; }
     }
   </style>
   <path class="stroke" d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke-width="11" stroke-linecap="round"/>

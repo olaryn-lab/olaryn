@@ -5,7 +5,7 @@
       <path d="M88 27 A44 44 0 1 0 105 71" stroke-width="11"/>
       <path d="M83 47 A27 27 0 1 1 46 81" stroke-width="9"/>
     </g>
-    <circle cx="83" cy="47" r="3" fill="currentColor"/>
+    <circle cx="83" cy="47" r="3" fill="var(--accent, currentColor)"/>
   </symbol>
   <symbol id="authward" viewBox="0 0 128 128">
     <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
