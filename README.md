@@ -16,7 +16,7 @@ The marketing pages use ordinary directory `index.html` files. All pages share `
 No framework, backend routes, or dependency installation is needed; the only script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so all styling stays in the stylesheets. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
 
 Marketing and platform runtime stay separate:
-- Product marketing pages use **Zikela** (identity), **Bilyra** (billing) and **Yeleva** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The Olaryn homepage keeps its original simple layout and copy, in the same theme as the product pages. The Olaryn mark is drawn from `assets/marks.svg#olaryn` in the theme's ink colour. The legacy `/authward/` URL redirects to `/auth/`. Backend repositories and service URLs are not renamed as part of this change.
+- Product marketing pages use **Zikela** (identity), **Bilyra** (billing) and **Yeleva** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The Olaryn homepage keeps its original simple layout and copy, in the same theme as the product pages. The Olaryn mark is an inline SVG in the theme's ink colour. The legacy `/authward/` URL redirects to `/auth/`. Backend repositories and service URLs are not renamed as part of this change.
 - `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts the protected developer portal (`/developer`) and docs (`/docs`). Never proxy, redirect, or rewrite identity protocol endpoints through the marketing pages.
 - `https://billing.olaryn.com` remains the service API. There is no public developer signup or pricing page for Billing. The public description must not advertise the private API as open self-service.
 - `https://analytics.olaryn.com` remains the analytics service hostname, not a public product marketing page. The public `/analytics/` overview is separate from the application and does not expose a public signup.
@@ -26,13 +26,13 @@ Marketing and platform runtime stay separate:
 
 The site uses one monochrome theme: black, white and greys, with a single green (`--ok`) used only for small status dots. Light pages are `#F9FAFB` with white cards on `#F3F4F6` panels; dark pages are `#090909` with `#111111`/`#181818` panels and cards. Text is Inter (weight 450 body, 400 headings) with Geist Mono for numbers and code. Headings come in two tones: an ink line followed by a grey line at the same size. Buttons are pills: black primary (white in dark mode) and grey secondary. The Olaryn mark is monochrome: black in light mode, white in dark mode (`logo-mark.svg` matches).
 
-The Olaryn mark is an open O with a seed in the gap. Zikela adds a keyhole inside it, Bilyra ledger lines and Yeleva rising bars (`assets/marks.svg`, bump its `?v=` when it changes); they follow the page theme. The product brands Beseam, LemonCrow, and Trevra retain their own logos.
+The Olaryn mark is an open O with a seed in the gap. Zikela adds a keyhole inside it, Bilyra ledger lines and Yeleva rising bars. The source drawings live in `assets/marks.svg`; pages inline them as `<svg>` so they always load and follow the page theme (copy any change into the pages too). The product brands Beseam, LemonCrow, and Trevra retain their own logos.
 
 Copy rule: product names are only names. Everything else is written in plain, non-technical words, and every claim must match the Zikela and Bilyra repository contracts.
 
 ## Light and dark themes
 
-Every page follows the visitor's OS setting and also has a toggle button (top right) that saves an explicit choice in `localStorage` under `olaryn-theme`. `assets/theme.js` is loaded in `<head>` so the saved choice applies before first paint; it sets `data-theme="light|dark"` on `<html>`. In `base.css` the dark tokens exist twice on purpose (OS preference unless light was chosen, and explicit `data-theme="dark"`); change both together. Brand marks are `<use href="/assets/marks.svg#...">` symbols so they follow the page theme rather than the OS (the standalone `*.svg` files are for favicons, social cards and other non-page uses). Without JavaScript the toggle stays hidden and the page follows the OS.
+Every page follows the visitor's OS setting and also has a toggle button (top right) that saves an explicit choice in `localStorage` under `olaryn-theme`. `assets/theme.js` is loaded in `<head>` so the saved choice applies before first paint; it sets `data-theme="light|dark"` on `<html>`. In `base.css` the dark tokens exist twice on purpose (OS preference unless light was chosen, and explicit `data-theme="dark"`); change both together. Brand marks are inline SVGs using `currentColor` so they follow the page theme rather than the OS (the standalone `*.svg` files are for favicons, social cards and other non-page uses). Without JavaScript the toggle stays hidden and the page follows the OS.
 
 ## Local preview and validation
 

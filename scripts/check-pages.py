@@ -129,8 +129,8 @@ def main() -> None:
                          ("/analytics/", "Yeleva: analytics")):
         if f'href="{route}"' not in home or label not in home:
             errors.append(f"home: missing product link {label} at {route}")
-    if '<svg class="mark"' not in home or '#olaryn"' not in home or '/assets/marks.svg' not in home:
-        errors.append("home: the Olaryn mark must render from /assets/marks.svg#olaryn (follows the theme)")
+    if '<svg class="mark"' not in home or 'A40 40 0 1 1' not in home:
+        errors.append("home: the inline Olaryn open-O mark is missing")
     for route, html in PAGES.items():
         content = html.read_text(encoding="utf-8")
         if route != "/" and any(old in content for old in ("Authward", "Tallyward", "/authward/")):
