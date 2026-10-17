@@ -24,59 +24,65 @@
   --muted: #645e58;
   --accent: #6b3f4b;
   --accent-strong: #542c38;
-  --accent-wash: #ecdae0;
+  --accent-wash: #e8dcc5;
   --accent-soft: rgba(107, 63, 75, .12);
   --line: #dcd0c1;
   --btn-bg: #6b3f4b;
   --btn-bg-hover: #54303a;
   --btn-edge: #6b3f4b;
   --btn-ink: #fff9fa;
-  --band: #231a1e;
-  --band-line: #4a3640;
-  --band-ink: #f5edea;
-  --band-muted: #c2adb5;
-  --band-accent: #e9b9c6;
-  --code-bg: #170f12;
-  --code-ink: #f5edea;
-  --code-muted: #bba8b0;
-  --code-key: #e9b9c6;
+  --band: #251a1a;
+  --band-line: #4b3836;
+  --band-ink: #f6efe6;
+  --band-muted: #cbbcb0;
+  --band-accent: #e2bf80;
+  --code-bg: #181010;
+  --code-ink: #f6efe6;
+  --code-muted: #bfaea3;
+  --code-key: #e2bf80;
 }
 /* Dark tokens: follow the OS unless the visitor chose light, or apply when they chose dark. */
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #f4eee6;
+    --ink: #f3ede2;
     --paper: #181511;
-    --surface: #231e1a;
-    --surface-quiet: #2e2723;
-    --muted: #b5a89a;
-    --accent: #dba6b6;
-    --accent-strong: #efc9d3;
-    --accent-wash: #39252e;
-    --accent-soft: rgba(219, 166, 182, .16);
-    --line: #453b34;
-    --btn-edge: #b98593;
-    --band: #2a1b22;
-    --band-line: #553d49;
-    --code-bg: #1a1015;
+    --surface: #231e19;
+    --surface-quiet: #2d2720;
+    --muted: #b5a998;
+    --accent: #d6ad6a;
+    --accent-strong: #ecd09b;
+    --accent-wash: #2e2618;
+    --accent-soft: rgba(214, 173, 106, .16);
+    --line: #453d33;
+    --btn-bg: #d6ad6a;
+    --btn-bg-hover: #e3bf82;
+    --btn-edge: #d6ad6a;
+    --btn-ink: #1d1810;
+    --band: #2b1d1b;
+    --band-line: #553f3b;
+    --code-bg: #1c1211;
   }
 }
 :root[data-theme="dark"] {
-  --ink: #f4eee6;
+  --ink: #f3ede2;
   --paper: #181511;
-  --surface: #231e1a;
-  --surface-quiet: #2e2723;
-  --muted: #b5a89a;
-  --accent: #dba6b6;
-  --accent-strong: #efc9d3;
-  --accent-wash: #39252e;
-  --accent-soft: rgba(219, 166, 182, .16);
-  --line: #453b34;
-  --btn-edge: #b98593;
-  --band: #2a1b22;
-  --band-line: #553d49;
-  --code-bg: #1a1015;
+  --surface: #231e19;
+  --surface-quiet: #2d2720;
+  --muted: #b5a998;
+  --accent: #d6ad6a;
+  --accent-strong: #ecd09b;
+  --accent-wash: #2e2618;
+  --accent-soft: rgba(214, 173, 106, .16);
+  --line: #453d33;
+  --btn-bg: #d6ad6a;
+  --btn-bg-hover: #e3bf82;
+  --btn-edge: #d6ad6a;
+  --btn-ink: #1d1810;
+  --band: #2b1d1b;
+  --band-line: #553f3b;
+  --code-bg: #1c1211;
 }
 
 /* Icons: drawn SVG masks, one stroke weight (shared by every page) */

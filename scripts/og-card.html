@@ -7,10 +7,10 @@
 <style>
   @font-face { font-family: "Fraunces"; font-weight: 340 500; src: url("/assets/fonts/fraunces-latin.woff2") format("woff2"); }
   @font-face { font-family: "Work Sans"; font-weight: 400 600; src: url("/assets/fonts/worksans-latin.woff2") format("woff2"); }
-  html, body { margin: 0; width: 1200px; height: 630px; background: #231a1e; color: #211e1b; overflow: hidden; }
+  html, body { margin: 0; width: 1200px; height: 630px; background: #251a1a; color: #211e1b; overflow: hidden; }
   .card { box-sizing: border-box; width: 1200px; height: 470px; padding: 64px 84px 0; display: flex; flex-direction: column; justify-content: space-between; background: #f5efe3; border-radius: 0 0 28px 28px; }
-  .under { height: 160px; padding: 0 84px; display: flex; align-items: center; justify-content: space-between; font: 500 22px "Work Sans", sans-serif; color: #c2adb5; letter-spacing: .01em; }
-  .under b { color: #e9b9c6; font-weight: 600; }
+  .under { height: 160px; padding: 0 84px; display: flex; align-items: center; justify-content: space-between; font: 500 22px "Work Sans", sans-serif; color: #cbbcb0; letter-spacing: .01em; }
+  .under b { color: #e2bf80; font-weight: 600; }
   .brand { display: flex; align-items: center; gap: 18px; font: 600 30px "Work Sans", sans-serif; letter-spacing: -.03em; }
   .brand img { width: 56px; height: 56px; }
   .brand small { display: block; font: 500 16px "Work Sans", sans-serif; color: #645e58; letter-spacing: .02em; margin-top: 4px; }
@@ -27,7 +27,7 @@
 <script>
   const cards = {
     authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
-    billing: { mark: "/assets/billing-mark.svg", name: "olaryn/billing", sub: "Shared commercial infrastructure", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
+    billing: { mark: "/assets/billing-mark.svg", name: "tallyward", sub: "by Olaryn", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.authward;
   document.getElementById("mark").src = c.mark;

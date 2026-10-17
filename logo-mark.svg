@@ -4,8 +4,8 @@
     .stroke { stroke: #6B3F4B; }
     .dot { fill: #6B3F4B; }
     @media (prefers-color-scheme: dark) {
-      .stroke { stroke: #DBA6B6; }
-      .dot { fill: #DBA6B6; }
+      .stroke { stroke: #D6AD6A; }
+      .dot { fill: #D6AD6A; }
     }
   </style>
   <g fill="none" class="stroke" stroke="#6B3F4B" stroke-linecap="round" stroke-linejoin="round">

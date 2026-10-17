@@ -8,7 +8,7 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 | --- | --- |
 | `/` | Olaryn company homepage; links to its products and shared infrastructure |
 | `/authward/` | Public Authward developer-focused marketing page |
-| `/billing/` | Public Olaryn Billing architecture and capabilities page |
+| `/billing/` | Public Tallyward (Olaryn Billing service) architecture and capabilities page; the URL and `billing.olaryn.com` keep the `billing` name |
 
 The marketing pages use ordinary directory `index.html` files. All pages share `/assets/base.css` (self-hosted Fraunces/Work Sans `@font-face` rules and every colour token, light and dark); the home page adds `/assets/home.css` and the product pages `/assets/platform.css`. Change a token once in `base.css`, never per page. Bump the `?v=` on the stylesheet links when a shared stylesheet changes. Fonts live in `assets/fonts/` (Latin subset, OFL) so no third-party font request is made and the CSP can stay `default-src 'self'`.
 
@@ -21,7 +21,7 @@ Marketing and platform runtime stay separate:
 
 ## Brand identity
 
-The approved light palette is deep burgundy `#6B3F4B` (accent and editorial headline), parchment `#F5EFE3` (page background), and deep ink `#211E1B` (logo/body text). The dark palette keeps charcoal `#181511` with lighter burgundy `#DBA6B6` for contrast. The product pages add a plum-black infrastructure band (`--band`, light `#231A1E` / dark `#2A1B22`) under the parchment hero, so each page shows the product's own screen on top and the service underneath. The Fraunces/Work Sans typography and original monochrome Olaryn mark remain unchanged.
+The approved light palette is deep burgundy `#6B3F4B` (accent and editorial headline), parchment `#F5EFE3` (page background), and deep ink `#211E1B` (logo/body text). The dark palette keeps charcoal `#181511` and swaps the accent for brass `#D6AD6A` (no pink anywhere); the infrastructure band is oxblood-black (`--band`, light `#251A1A` / dark `#2B1D1B`) with brass highlights. The product pages add an infrastructure band under the parchment hero, so each page shows the product's own screen on top and the service underneath. The Fraunces/Work Sans typography and original monochrome Olaryn mark remain unchanged.
 
 Authward uses its own shield-in-O symbol (`assets/authward-mark.svg`, adapted from the Authward repository for dark-mode contrast) and Billing a ledger-in-O symbol (`assets/billing-mark.svg`); both share Olaryn's palette. The product brands Beseam, LemonCrow, and Trevra retain their own accents.
 

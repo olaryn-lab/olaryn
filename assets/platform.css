@@ -1,4 +1,4 @@
-/* Olaryn product pages (Authward, Billing). Tokens and fonts: /assets/base.css
+/* Olaryn product pages (Authward, Tallyward). Tokens and fonts: /assets/base.css
    Concept: two layers. Parchment is the human layer (the product's own screen);
    the plum-black band is the infrastructure layer underneath it. */
 * { box-sizing: border-box; }
@@ -32,7 +32,6 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 440; margin: 
 .identity-mark { width: 37px; height: 37px; display: block; color: var(--accent); }
 .identity-text { display: block; }
 .identity-name { display: block; font-size: 22px; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
-.identity-slash { color: var(--accent); }
 .identity-parent { display: block; color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: .02em; margin-top: 5px; }
 .site-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; font-size: 14px; font-weight: 500; color: var(--muted); }
 .site-nav a { padding-block: 10px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
@@ -50,7 +49,7 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 440; margin: 
 .button-primary:hover { background: var(--btn-bg-hover); }
 .button-outline { border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
 .button-outline:hover { background: var(--surface-quiet); }
-.button-light { background: var(--band-ink); border: 1px solid var(--band-ink); color: #231a1e; }
+.button-light { background: var(--band-ink); border: 1px solid var(--band-ink); color: #251a1a; }
 .button-light:hover { background: #fff; }
 .button-ghost { border: 1px solid var(--band-line); color: var(--band-ink); }
 .button-ghost:hover { border-color: var(--band-muted); }

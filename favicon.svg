@@ -6,8 +6,8 @@
     .dot { fill: #6B3F4B; }
     @media (prefers-color-scheme: dark) {
       .tile { fill: #181511; }
-      .stroke { stroke: #DBA6B6; }
-      .dot { fill: #DBA6B6; }
+      .stroke { stroke: #D6AD6A; }
+      .dot { fill: #D6AD6A; }
     }
   </style>
   <rect class="tile" width="512" height="512" rx="74"/>

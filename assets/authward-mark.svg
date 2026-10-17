@@ -5,8 +5,8 @@
     .shield { fill: #6B3F4B; }
     .cutout { stroke: #FFFFFF; }
     @media (prefers-color-scheme: dark) {
-      .stroke { stroke: #DBA6B6; }
-      .shield { fill: #DBA6B6; }
+      .stroke { stroke: #D6AD6A; }
+      .shield { fill: #D6AD6A; }
       .cutout { stroke: #181511; }
     }
   </style>
