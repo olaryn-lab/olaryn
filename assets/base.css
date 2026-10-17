@@ -41,8 +41,11 @@
   --code-muted: #bba8b0;
   --code-key: #e9b9c6;
 }
+/* Dark tokens: follow the OS unless the visitor chose light, or apply when they chose dark. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --ink: #f4eee6;
     --paper: #181511;
     --surface: #231e1a;
@@ -59,3 +62,40 @@
     --code-bg: #1a1015;
   }
 }
+:root[data-theme="dark"] {
+  --ink: #f4eee6;
+  --paper: #181511;
+  --surface: #231e1a;
+  --surface-quiet: #2e2723;
+  --muted: #b5a89a;
+  --accent: #dba6b6;
+  --accent-strong: #efc9d3;
+  --accent-wash: #39252e;
+  --accent-soft: rgba(219, 166, 182, .16);
+  --line: #453b34;
+  --btn-edge: #b98593;
+  --band: #2a1b22;
+  --band-line: #553d49;
+  --code-bg: #1a1015;
+}
+
+/* Icons: drawn SVG masks, one stroke weight (shared by every page) */
+.ico { display: inline-block; width: 1.05em; height: 1.05em; flex: none; background: currentColor; vertical-align: -.15em;
+  -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; }
+.ico-ne { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11 11 5M6 5h5v5'/%3E%3C/svg%3E"); }
+.ico-right { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E"); }
+.ico-down { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v10M4 9l4 4 4-4'/%3E%3C/svg%3E"); }
+.ico-key { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5.5' cy='10.5' r='2.8'/%3E%3Cpath d='M7.6 8.4 13.5 2.5M11 5l2 2'/%3E%3C/svg%3E"); }
+.ico-mail { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='3.5' width='12' height='9' rx='1.5'/%3E%3Cpath d='m2.5 4.5 5.5 4.5 5.5-4.5'/%3E%3C/svg%3E"); }
+.ico-sun { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='2.8'/%3E%3Cpath d='M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1'/%3E%3C/svg%3E"); }
+.ico-moon { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13.4 9.7A5.7 5.7 0 0 1 6.3 2.6a5.7 5.7 0 1 0 7.1 7.1z'/%3E%3C/svg%3E"); }
+
+/* Theme toggle (revealed by /assets/theme.js; the page follows the OS until a choice is made) */
+:root { --ico-moon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13.4 9.7A5.7 5.7 0 0 1 6.3 2.6a5.7 5.7 0 1 0 7.1 7.1z'/%3E%3C/svg%3E"); --ico-sun: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='2.8'/%3E%3Cpath d='M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1'/%3E%3C/svg%3E"); }
+.theme-toggle { display: inline-grid; place-items: center; width: 44px; height: 44px; flex: none; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); cursor: pointer; font-size: 20px; transition: background-color .2s ease, border-color .2s ease; }
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { background: var(--surface-quiet); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.theme-toggle .ico { --ico: var(--ico-moon); vertical-align: 0; }
+.theme-toggle[data-mode="dark"] .ico { --ico: var(--ico-sun); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }

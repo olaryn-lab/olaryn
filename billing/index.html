@@ -42,15 +42,16 @@
   </script>
   <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/base.css?v=2">
-  <link rel="stylesheet" href="/assets/platform.css?v=2">
+  <script src="/assets/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/base.css?v=3">
+  <link rel="stylesheet" href="/assets/platform.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="identity" href="/billing/" aria-label="Olaryn Billing home">
-        <img class="identity-mark" src="/assets/billing-mark.svg" width="37" height="37" alt="">
+        <svg class="identity-mark" width="37" height="37" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#billing"></use></svg>
         <span class="identity-text"><span class="identity-name">olaryn<span class="identity-slash">/</span>billing</span><span class="identity-parent">Shared commercial infrastructure</span></span>
       </a>
       <nav class="site-nav" aria-label="Billing sections">
@@ -62,6 +63,7 @@
         <a href="/authward/">Authward <span class="ico ico-right" aria-hidden="true"></span></a>
       </nav>
       <a class="button button-primary top-action" href="#api">See the API <span class="ico ico-down" aria-hidden="true"></span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico ico-moon" aria-hidden="true"></span></button>
     </div>
   </header>
 
@@ -167,7 +169,7 @@ POST .../reservations/{id}/release
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <a class="footer-parent" href="/"><img src="/logo-mark.svg" width="22" height="22" alt=""> <span>Part of Olaryn · Zürich, Switzerland</span></a>
+      <a class="footer-parent" href="/"><svg class="footer-mark" width="22" height="22" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg> <span>Part of Olaryn · Zürich, Switzerland</span></a>
       <nav class="foot-links" aria-label="Related destinations">
         <a href="/">Olaryn</a><a href="/authward/">Authward</a><a href="#api">API</a>
       </nav>

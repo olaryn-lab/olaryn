@@ -42,15 +42,16 @@
   </script>
   <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/base.css?v=2">
-  <link rel="stylesheet" href="/assets/platform.css?v=2">
+  <script src="/assets/theme.js?v=1"></script>
+  <link rel="stylesheet" href="/assets/base.css?v=3">
+  <link rel="stylesheet" href="/assets/platform.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="identity" href="/authward/" aria-label="Authward home">
-        <img class="identity-mark" src="/assets/authward-mark.svg" width="37" height="37" alt="">
+        <svg class="identity-mark" width="37" height="37" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#authward"></use></svg>
         <span class="identity-text"><span class="identity-name">authward</span><span class="identity-parent">by Olaryn</span></span>
       </a>
       <nav class="site-nav" aria-label="Authward sections">
@@ -61,6 +62,7 @@
         <a href="https://auth.olaryn.com/docs">Docs <span class="ico ico-ne" aria-hidden="true"></span></a>
       </nav>
       <a class="button button-primary top-action" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico ico-moon" aria-hidden="true"></span></button>
     </div>
   </header>
 
@@ -165,7 +167,7 @@ curl https://auth.olaryn.com/.well-known/openid-configuration
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <a class="footer-parent" href="/"><img src="/logo-mark.svg" width="22" height="22" alt=""> <span>Part of Olaryn · Zürich, Switzerland</span></a>
+      <a class="footer-parent" href="/"><svg class="footer-mark" width="22" height="22" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg> <span>Part of Olaryn · Zürich, Switzerland</span></a>
       <nav class="foot-links" aria-label="Related destinations">
         <a href="/">Olaryn</a><a href="/billing/">Billing</a><a href="https://auth.olaryn.com/docs">Documentation <span class="ico ico-ne" aria-hidden="true"></span></a>
       </nav>

@@ -25,6 +25,10 @@ The approved light palette is deep burgundy `#6B3F4B` (accent and editorial head
 
 Authward uses its own shield-in-O symbol (`assets/authward-mark.svg`, adapted from the Authward repository for dark-mode contrast) and Billing a ledger-in-O symbol (`assets/billing-mark.svg`); both share Olaryn's palette. The product brands Beseam, LemonCrow, and Trevra retain their own accents.
 
+## Light and dark themes
+
+Every page follows the visitor's OS setting and also has a toggle button (top right) that saves an explicit choice in `localStorage` under `olaryn-theme`. `assets/theme.js` is loaded in `<head>` so the saved choice applies before first paint; it sets `data-theme="light|dark"` on `<html>`. In `base.css` the dark tokens exist twice on purpose (OS preference unless light was chosen, and explicit `data-theme="dark"`); change both together. Brand marks are `<use href="/assets/marks.svg#...">` symbols so they follow the page theme rather than the OS (the standalone `*.svg` files are for favicons, social cards and other non-page uses). Without JavaScript the toggle stays hidden and the page follows the OS.
+
 ## Local preview and validation
 
 Run at the repository root:
