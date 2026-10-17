@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5EFE3">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181511">
-  <title>Authward — Identity infrastructure for your applications | Olaryn</title>
-  <meta name="description" content="Authward brings shared identity, OAuth/OIDC, secure sessions, and developer tooling behind the authentication experience you build for your applications.">
+  <title>Authward — Identity your customers never see | Olaryn</title>
+  <meta name="description" content="Authward is hosted identity infrastructure: OAuth and OIDC, passkeys, magic links and social sign-in, behind your own login screen.">
   <link rel="canonical" href="https://olaryn.com/authward/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8">
@@ -17,24 +17,24 @@
   <link rel="manifest" href="/site.webmanifest?v=8">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Authward — Identity infrastructure for your applications">
-  <meta property="og:description" content="One identity layer. Every application stays itself.">
+  <meta property="og:title" content="Authward — Identity your customers never see">
+  <meta property="og:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
   <meta property="og:url" content="https://olaryn.com/authward/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/authward.png?v=1">
+  <meta property="og:image" content="https://olaryn.com/assets/og/authward.png?v=2">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Authward — One identity layer. Every application stays itself.">
+  <meta property="og:image:alt" content="Authward — Identity your customers never see.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Authward — Identity infrastructure for your applications">
-  <meta name="twitter:description" content="One identity layer. Every application stays itself.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/authward.png?v=1">
-  <meta name="twitter:image:alt" content="Authward — One identity layer. Every application stays itself.">
+  <meta name="twitter:title" content="Authward — Identity your customers never see">
+  <meta name="twitter:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/authward.png?v=2">
+  <meta name="twitter:image:alt" content="Authward — Identity your customers never see.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Authward — Identity infrastructure for your applications",
+    "name": "Authward — Identity your customers never see",
     "url": "https://olaryn.com/authward/",
     "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
     "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
@@ -42,8 +42,8 @@
   </script>
   <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/base.css?v=1">
-  <link rel="stylesheet" href="/assets/platform.css?v=1">
+  <link rel="stylesheet" href="/assets/base.css?v=2">
+  <link rel="stylesheet" href="/assets/platform.css?v=2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,94 +56,83 @@
       <nav class="site-nav" aria-label="Authward sections">
         <a href="/">Olaryn</a>
         <a href="#how-it-works">How it works</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#integrate">Integrate</a>
-        <a href="https://auth.olaryn.com/docs">Docs <span aria-hidden="true">↗</span></a>
+        <a href="#setup">Setup</a>
+        <a href="#standards">Standards</a>
+        <a href="https://auth.olaryn.com/docs">Docs <span class="ico ico-ne" aria-hidden="true"></span></a>
       </nav>
-      <a class="button button-primary top-action" href="https://auth.olaryn.com/developer">Developer console <span aria-hidden="true">↗</span></a>
+      <a class="button button-primary top-action" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
     </div>
   </header>
 
   <main id="main">
     <section class="shell hero" aria-labelledby="hero-title">
-      <div>
-        <span class="eyebrow">Identity infrastructure</span>
-        <h1 id="hero-title">Identity is infrastructure. <em>Your product is the experience.</em></h1>
-        <p class="hero-copy">Give your applications a shared, dependable identity layer without giving up their brand. Authward handles authentication, OAuth/OIDC, tokens, and developer workflows behind the product experience you control.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://auth.olaryn.com/developer">Open developer console <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="button button-outline" href="https://auth.olaryn.com/docs">Explore the docs <span class="arrow" aria-hidden="true">↗</span></a>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">Identity your customers <em>never see.</em></h1>
+          <p class="hero-copy">Passkeys, magic links and social sign-in, behind your own login screen.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
+            <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
+          </div>
+          <p class="hero-footnote">Developer access is by invitation.</p>
         </div>
-        <p class="hero-footnote">The shared identity foundation for Olaryn applications.</p>
+        <figure class="hero-art">
+          <div class="login-card" role="img" aria-label="Example product login screen offering passkey, email link, Google and GitHub sign-in.">
+            <div class="login-brand" aria-hidden="true"><span class="login-dot"></span>Northwind</div>
+            <div class="login-title" aria-hidden="true">Sign in to Northwind</div>
+            <div class="login-btn is-primary" aria-hidden="true"><span class="ico ico-key"></span>Continue with passkey</div>
+            <div class="login-btn" aria-hidden="true"><span class="ico ico-mail"></span>Email me a link</div>
+            <div class="login-or" aria-hidden="true">or</div>
+            <div class="login-pair" aria-hidden="true"><div class="login-btn">Google</div><div class="login-btn">GitHub</div></div>
+          </div>
+          <figcaption>Your screen, your brand. Authward runs everything behind it.</figcaption>
+        </figure>
       </div>
-      <div class="art-frame" role="img" aria-label="Architecture illustration: product-branded experiences connect to one Authward identity service, which manages credentials and authorization.">
-        <div class="art-window">
-          <div class="window-top"><span class="window-title">Identity architecture</span><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="window-content">
-            <div class="window-label">One shared identity contract</div>
-            <div class="window-headline">Your product.<br>One identity layer.</div>
-            <div class="flow-stack">
-              <div class="flow-box">
-                <div class="flow-topline"><span class="flow-name">Application experiences</span><span class="flow-tag">Product owned</span></div>
-                <div class="flow-desc">Sign-in, account, consent, and product permissions stay in the application.</div>
-                <div class="inline-products"><span class="product-chip">Beseam</span><span class="product-chip">LemonCrow</span><span class="product-chip">Trevra</span></div>
-              </div>
-              <div class="flow-connector">Secure OAuth / OIDC</div>
-              <div class="flow-box bright">
-                <div class="flow-topline"><span class="flow-name">Authward</span><span class="flow-tag">Shared service</span></div>
-                <div class="flow-desc">Identity, credentials, sessions, authorization codes, tokens, and trusted provider connections.</div>
-              </div>
-            </div>
-            <p class="window-note">Illustrative service boundary · not a live dashboard</p>
+    </section>
+
+    <section id="how-it-works" class="band band-lift" aria-labelledby="layers-title">
+      <div class="shell">
+        <h2 id="layers-title">You build the screen. Authward does the rest.</h2>
+        <div class="layers">
+          <div class="layer layer-yours">
+            <h3>Your application</h3>
+            <ul><li>Login and signup</li><li>Consent and device approval</li><li>Account page</li><li>Roles and permissions</li></ul>
+          </div>
+          <div class="layer layer-core">
+            <h3>Authward</h3>
+            <ul><li>Credentials and sessions</li><li>Passkeys, magic links, social</li><li>OAuth and OIDC tokens</li><li>Signing keys and revocation</li></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="strip">
-      <div class="shell strip-inner" aria-label="Platform pillars">
-        <span>Product-owned UX</span><span>OAuth &amp; OpenID Connect</span><span>Shared identities</span><span>Developer tooling</span>
-      </div>
-    </div>
-
-    <section id="how-it-works" class="shell section section-rule" aria-labelledby="workflow-title">
-      <div class="section-intro">
-        <div><span class="eyebrow">A clean separation</span><h2 id="workflow-title">Keep the experience. Share the hard parts.</h2></div>
-        <p>Authward is meant to be invisible to your customer. Users sign in to the application they chose, while a central identity authority takes care of the protocol work.</p>
-      </div>
-      <div class="path-grid">
-        <article class="path-step"><span class="path-number">01 / APPLICATION</span><h3>Own the customer journey</h3><p>Build your login, onboarding, account, and device approval screens in the product's visual language.</p></article>
-        <article class="path-step"><span class="path-number">02 / IDENTITY</span><h3>Delegate the mechanics</h3><p>Connect to Authward for authentication methods, OAuth authorization, signed tokens, sessions, and recovery.</p></article>
-        <article class="path-step"><span class="path-number">03 / ACCESS</span><h3>Enforce your own rules</h3><p>Validate identity at your application boundary, then apply your own workspace, store, team, or resource permissions.</p></article>
-      </div>
+    <section id="setup" class="shell section" aria-labelledby="setup-title">
+      <h2 id="setup-title">Paste one prompt into your coding agent.</h2>
+      <ol class="steps">
+        <li><strong>Copy the prompt</strong><span>From your workspace. It holds a workspace ID and no secrets.</span></li>
+        <li><strong>Approve in your browser</strong><span>Access is scoped to one workspace, lasts 24 hours and can be revoked.</span></li>
+        <li><strong>Your agent sets it up</strong><span>It registers the app, environments and OAuth client, then checks a real login.</span></li>
+      </ol>
+      <p class="section-note">Also available as a CLI and an MCP server.</p>
     </section>
 
-    <section id="capabilities" class="shell section section-rule" aria-labelledby="capabilities-title">
-      <div class="section-intro">
-        <div><span class="eyebrow">Platform capabilities</span><h2 id="capabilities-title">The essentials, without a second identity stack.</h2></div>
-        <p>A central system for authentication contracts, paired with flexible integration paths for web apps, APIs, and developer tools.</p>
-      </div>
-      <div class="card-grid card-grid-two">
-        <article class="feature-card"><span class="feature-index">01 / PROTOCOLS</span><h3>OAuth / OIDC</h3><p>Authorization code flows with PKCE, token issuance, signing keys, and verification endpoints for relying applications.</p></article>
-        <article class="feature-card"><span class="feature-index">02 / SIGN-IN</span><h3>Passkeys, magic links, social</h3><p>Sign-in methods are configured per deployment and run by Authward, while your application keeps the screens.</p></article>
-        <article class="feature-card"><span class="feature-index">03 / DEVELOPERS</span><h3>A developer control plane</h3><p>Manage applications, clients, redirect origins, and credentials with workspace-scoped access, or hand setup to a coding agent with the agent-readable guide.</p></article>
-        <article class="feature-card"><span class="feature-index">04 / CLI</span><h3>Beyond the browser</h3><p>Command-line tools sign in with device authorization, approval, and short-lived access.</p></article>
-      </div>
-    </section>
-
-    <section id="integrate" class="shell section section-rule" aria-labelledby="boundary-title">
-      <div class="architect-panel">
-        <div class="architect-copy">
-          <span class="eyebrow">Designed around boundaries</span>
-          <h2 id="boundary-title">One identity layer. Distinct products.</h2>
-          <p>Authward answers <strong>who is this actor?</strong> Each application still answers <strong>what can they do here?</strong> This keeps authentication consistent without collapsing all product roles and business logic into one service.</p>
-          <a class="text-link" href="https://auth.olaryn.com/docs">Read the integration guide <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="https://auth.olaryn.com/agent/product-integration-guide.md">Agent-readable guide <span aria-hidden="true">↗</span></a>
+    <section id="standards" class="band" aria-labelledby="standards-title">
+      <div class="shell band-split">
+        <div>
+          <h2 id="standards-title">Standard OAuth. Any OIDC library.</h2>
+          <p class="band-lede">No proprietary SDK to adopt. Discover the endpoints, redirect, exchange the code.</p>
+          <ul class="facts">
+            <li><strong>Authorization Code + PKCE</strong><span>S256 required</span></li>
+            <li><strong>Device authorization</strong><span>RFC 8628, for CLIs</span></li>
+            <li><strong>Discovery and JWKS</strong><span>Keys rotate every 30 days</span></li>
+            <li><strong>Tokens</strong><span>15-minute JWTs, revocable</span></li>
+            <li><strong>Passkeys</strong><span>User-verification policy per client</span></li>
+            <li><strong>Redirects</strong><span>Exact URIs only</span></li>
+          </ul>
         </div>
-        <div class="architect-visual">
-          <figure class="code-card">
-            <figcaption class="code-card-title"><span>Authorization Code + PKCE</span><span>Illustrative</span></figcaption>
-            <pre tabindex="0" aria-label="Integration sequence"><code><span class="c"># 1. Discover the endpoints</span>
+        <figure class="code-card">
+          <figcaption class="code-card-title"><span>Authorization Code + PKCE</span><span>Sequence</span></figcaption>
+          <pre tabindex="0" aria-label="Integration sequence"><code><span class="c"># 1. Discover the endpoints</span>
 curl https://auth.olaryn.com/.well-known/openid-configuration
 
 <span class="c"># 2. Send the user to authorization_endpoint</span>
@@ -160,20 +149,17 @@ curl https://auth.olaryn.com/.well-known/openid-configuration
 
 <span class="c"># 4. Verify issuer, audience and signature</span>
 <span class="c">#    (jwks_uri), then start your own session</span></code></pre>
-            <p class="code-card-note">The integration guide is the contract; this is the shape of it.</p>
-          </figure>
-        </div>
+        </figure>
       </div>
     </section>
 
     <section id="get-started" class="shell final-cta" aria-labelledby="start-title">
-      <span class="eyebrow">For builders</span>
-      <h2 id="start-title">Spend your time on the product, not the protocol.</h2>
-      <p>Start in the developer console, use the agent-assisted integration workflow, or follow the documentation step by step.</p>
+      <h2 id="start-title">Ship the screen. Skip the stack.</h2>
       <div class="hero-actions">
-        <a class="button button-primary" href="https://auth.olaryn.com/developer">Open developer console <span class="arrow" aria-hidden="true">↗</span></a>
-        <a class="button button-outline" href="https://auth.olaryn.com/docs">Read documentation <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
+        <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
       </div>
+      <p class="hero-footnote">Developer access is by invitation. <a href="https://auth.olaryn.com/agent/product-integration-guide.md">Agent-readable guide</a></p>
     </section>
   </main>
 
@@ -181,7 +167,7 @@ curl https://auth.olaryn.com/.well-known/openid-configuration
     <div class="shell footer-inner">
       <a class="footer-parent" href="/"><img src="/logo-mark.svg" width="22" height="22" alt=""> <span>Part of Olaryn · Zürich, Switzerland</span></a>
       <nav class="foot-links" aria-label="Related destinations">
-        <a href="/">Olaryn</a><a href="/billing/">Billing</a><a href="https://auth.olaryn.com/docs">Documentation</a><a href="https://auth.olaryn.com/developer">Developer console</a>
+        <a href="/">Olaryn</a><a href="/billing/">Billing</a><a href="https://auth.olaryn.com/docs">Documentation <span class="ico ico-ne" aria-hidden="true"></span></a>
       </nav>
       <span>© 2026 Olaryn</span>
     </div>

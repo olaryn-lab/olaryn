@@ -7,32 +7,34 @@
 <style>
   @font-face { font-family: "Fraunces"; font-weight: 340 500; src: url("/assets/fonts/fraunces-latin.woff2") format("woff2"); }
   @font-face { font-family: "Work Sans"; font-weight: 400 600; src: url("/assets/fonts/worksans-latin.woff2") format("woff2"); }
-  html, body { margin: 0; width: 1200px; height: 630px; background: #f5efe3; color: #211e1b; overflow: hidden; }
-  .card { box-sizing: border-box; width: 1200px; height: 630px; padding: 72px 84px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #dcd0c1; }
+  html, body { margin: 0; width: 1200px; height: 630px; background: #231a1e; color: #211e1b; overflow: hidden; }
+  .card { box-sizing: border-box; width: 1200px; height: 470px; padding: 64px 84px 0; display: flex; flex-direction: column; justify-content: space-between; background: #f5efe3; border-radius: 0 0 28px 28px; }
+  .under { height: 160px; padding: 0 84px; display: flex; align-items: center; justify-content: space-between; font: 500 22px "Work Sans", sans-serif; color: #c2adb5; letter-spacing: .01em; }
+  .under b { color: #e9b9c6; font-weight: 600; }
   .brand { display: flex; align-items: center; gap: 18px; font: 600 30px "Work Sans", sans-serif; letter-spacing: -.03em; }
   .brand img { width: 56px; height: 56px; }
   .brand small { display: block; font: 500 16px "Work Sans", sans-serif; color: #645e58; letter-spacing: .02em; margin-top: 4px; }
-  h1 { margin: 0; font: 440 88px/1.06 "Fraunces", serif; letter-spacing: -.04em; max-width: 960px; }
+  h1 { margin: 0 0 56px; font: 440 82px/1.05 "Fraunces", serif; letter-spacing: -.04em; max-width: 960px; }
   h1 em { font-style: normal; color: #6b3f4b; }
-  .foot { font: 500 20px "Work Sans", sans-serif; color: #645e58; letter-spacing: .02em; }
-</style>
+  </style>
 </head>
 <body>
 <div class="card">
   <div class="brand"><img id="mark" alt=""><div><span id="name"></span><small id="sub"></small></div></div>
   <h1 id="headline"></h1>
-  <div class="foot">olaryn.com</div>
 </div>
+<div class="under"><span id="under"></span><span>olaryn.com</span></div>
 <script>
   const cards = {
-    authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", html: "Identity is infrastructure. <em>Your product is the experience.</em>" },
-    billing: { mark: "/assets/billing-mark.svg", name: "olaryn/billing", sub: "Shared commercial infrastructure", html: "One place for revenue. <em>One truth for credits.</em>" }
+    authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
+    billing: { mark: "/assets/billing-mark.svg", name: "olaryn/billing", sub: "Shared commercial infrastructure", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.authward;
   document.getElementById("mark").src = c.mark;
   document.getElementById("name").textContent = c.name;
   document.getElementById("sub").textContent = c.sub;
   document.getElementById("headline").innerHTML = c.html;
+  document.getElementById("under").innerHTML = c.under;
 </script>
 </body>
 </html>

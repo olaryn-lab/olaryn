@@ -31,13 +31,12 @@
   --btn-bg-hover: #54303a;
   --btn-edge: #6b3f4b;
   --btn-ink: #fff9fa;
-  --window: #241d21;
-  --window-line: #4d3c45;
-  --window-text: #f5edea;
-  --window-muted: #c5b2b9;
-  --arch-panel: #e4d5ca;
-  --arch-arrow: #674951;
-  --code-bg: #241d21;
+  --band: #231a1e;
+  --band-line: #4a3640;
+  --band-ink: #f5edea;
+  --band-muted: #c2adb5;
+  --band-accent: #e9b9c6;
+  --code-bg: #170f12;
   --code-ink: #f5edea;
   --code-muted: #bba8b0;
   --code-key: #e9b9c6;
@@ -55,10 +54,8 @@
     --accent-soft: rgba(219, 166, 182, .16);
     --line: #453b34;
     --btn-edge: #b98593;
-    --window: #100e0d;
-    --window-line: #47353b;
-    --arch-panel: #362d2b;
-    --arch-arrow: #d9b4bf;
-    --code-bg: #100e0d;
+    --band: #2a1b22;
+    --band-line: #553d49;
+    --code-bg: #1a1015;
   }
 }

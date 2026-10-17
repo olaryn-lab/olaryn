@@ -21,7 +21,7 @@ Marketing and platform runtime stay separate:
 
 ## Brand identity
 
-The approved light palette is deep burgundy `#6B3F4B` (accent and editorial headline), parchment `#F5EFE3` (page background), and deep ink `#211E1B` (logo/body text). The dark palette keeps charcoal `#181511` with lighter burgundy `#DBA6B6` for contrast. The Fraunces/Work Sans typography and original monochrome Olaryn mark remain unchanged.
+The approved light palette is deep burgundy `#6B3F4B` (accent and editorial headline), parchment `#F5EFE3` (page background), and deep ink `#211E1B` (logo/body text). The dark palette keeps charcoal `#181511` with lighter burgundy `#DBA6B6` for contrast. The product pages add a plum-black infrastructure band (`--band`, light `#231A1E` / dark `#2A1B22`) under the parchment hero, so each page shows the product's own screen on top and the service underneath. The Fraunces/Work Sans typography and original monochrome Olaryn mark remain unchanged.
 
 Authward uses its own shield-in-O symbol (`assets/authward-mark.svg`, adapted from the Authward repository for dark-mode contrast) and Billing a ledger-in-O symbol (`assets/billing-mark.svg`); both share Olaryn's palette. The product brands Beseam, LemonCrow, and Trevra retain their own accents.
 

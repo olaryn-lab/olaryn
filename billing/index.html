@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5EFE3">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181511">
-  <title>Olaryn Billing — Shared subscriptions, credits &amp; usage infrastructure</title>
-  <meta name="description" content="Olaryn Billing connects subscriptions, payments, credits, entitlements, and metered usage across Olaryn products. Built on Stripe, OpenMeter, and Authward.">
+  <title>Olaryn Billing — Reserve before work. Settle after.</title>
+  <meta name="description" content="Olaryn Billing is the shared service behind subscriptions, credits and metered usage across Olaryn products. Built on Stripe, OpenMeter and Authward.">
   <link rel="canonical" href="https://olaryn.com/billing/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=8">
@@ -17,24 +17,24 @@
   <link rel="manifest" href="/site.webmanifest?v=8">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Olaryn Billing — One commercial foundation">
-  <meta property="og:description" content="One service for subscriptions, credits, entitlements, and usage. Your products stay focused on their customers.">
+  <meta property="og:title" content="Olaryn Billing — Reserve before work. Settle after.">
+  <meta property="og:description" content="Subscriptions, credits and usage for every Olaryn product, in one service.">
   <meta property="og:url" content="https://olaryn.com/billing/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/billing.png?v=1">
+  <meta property="og:image" content="https://olaryn.com/assets/og/billing.png?v=2">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Olaryn Billing — One place for revenue. One truth for credits.">
+  <meta property="og:image:alt" content="Olaryn Billing — Reserve before work. Settle after.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Olaryn Billing — One commercial foundation">
-  <meta name="twitter:description" content="One service for subscriptions, credits, entitlements, and usage. Your products stay focused on their customers.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/billing.png?v=1">
-  <meta name="twitter:image:alt" content="Olaryn Billing — One place for revenue. One truth for credits.">
+  <meta name="twitter:title" content="Olaryn Billing — Reserve before work. Settle after.">
+  <meta name="twitter:description" content="Subscriptions, credits and usage for every Olaryn product, in one service.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/billing.png?v=2">
+  <meta name="twitter:image:alt" content="Olaryn Billing — Reserve before work. Settle after.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Olaryn Billing — Shared subscriptions, credits & usage infrastructure",
+    "name": "Olaryn Billing — Reserve before work. Settle after.",
     "url": "https://olaryn.com/billing/",
     "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
     "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
@@ -42,8 +42,8 @@
   </script>
   <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/base.css?v=1">
-  <link rel="stylesheet" href="/assets/platform.css?v=1">
+  <link rel="stylesheet" href="/assets/base.css?v=2">
+  <link rel="stylesheet" href="/assets/platform.css?v=2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -55,101 +55,86 @@
       </a>
       <nav class="site-nav" aria-label="Billing sections">
         <a href="/">Olaryn</a>
-        <a href="#how-it-works">Architecture</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#usage-flow">API flow</a>
-        <a href="#integrations">Integrations</a>
-        <a href="/authward/">Authward <span aria-hidden="true">→</span></a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#guarantees">Guarantees</a>
+        <a href="#credits">Credits</a>
+        <a href="#api">API</a>
+        <a href="/authward/">Authward <span class="ico ico-right" aria-hidden="true"></span></a>
       </nav>
-      <a class="button button-primary top-action" href="#usage-flow">See the API flow <span aria-hidden="true">↓</span></a>
+      <a class="button button-primary top-action" href="#api">See the API <span class="ico ico-down" aria-hidden="true"></span></a>
     </div>
   </header>
 
   <main id="main">
     <section class="shell hero" aria-labelledby="hero-title">
-      <div>
-        <span class="eyebrow">Shared commercial infrastructure</span>
-        <h1 id="hero-title">One place for revenue. <em>One truth for credits.</em></h1>
-        <p class="hero-copy">Subscriptions, purchases, entitlements, credit balances, and usage should work together. Olaryn Billing gives every product a consistent commercial backend while letting each product decide what its work costs.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#usage-flow">See the reserve and settle flow <span class="arrow" aria-hidden="true">↓</span></a>
-          <a class="button button-outline" href="#how-it-works">How it works <span class="arrow" aria-hidden="true">↘</span></a>
-        </div>
-        <p class="hero-footnote">An internal service for Olaryn products. There is no public signup or pricing; access uses Authward-issued machine credentials.</p>
-      </div>
-      <div class="art-frame" role="img" aria-label="Conceptual Billing workflow: product submits a metered operation, Billing reserves credits, then settles or releases that reservation.">
-        <div class="art-window">
-          <div class="window-top"><span class="window-title">Commercial lifecycle</span><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="window-content">
-            <div class="window-label">From feature use to accounted usage</div>
-            <div class="window-headline">Every operation.<br>Accounted for.</div>
-            <div class="flow-stack">
-              <div class="flow-box">
-                <div class="flow-topline"><span class="flow-name">01 &nbsp; Product requests work</span><span class="flow-tag">Product cost</span></div>
-                <div class="flow-desc">Product-specific logic determines the amount of credits required.</div>
-              </div>
-              <div class="flow-connector">Reserve before execution</div>
-              <div class="flow-box bright">
-                <div class="flow-topline"><span class="flow-name">02 &nbsp; Billing reserves credits</span><span class="flow-tag">Atomic</span></div>
-                <div class="flow-desc">An authenticated, idempotent reservation against the available balance.</div>
-              </div>
-              <div class="flow-connector">Settle or release</div>
-              <div class="flow-box">
-                <div class="flow-topline"><span class="flow-name">03 &nbsp; Usage is recorded</span><span class="flow-tag">Metered</span></div>
-                <div class="flow-desc">Completed work settles usage; cancelled work releases its reservation.</div>
-              </div>
-            </div>
-            <p class="window-note">Illustrative lifecycle · not a customer balance or live dashboard</p>
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title">Reserve before work. <em>Settle after.</em></h1>
+          <p class="hero-copy">Subscriptions, credits and usage for every Olaryn product, in one service.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#api">See the API <span class="ico ico-down" aria-hidden="true"></span></a>
+            <a class="button button-outline" href="#how-it-works">How it works</a>
           </div>
+          <p class="hero-footnote">Internal to Olaryn products. No public signup or pricing.</p>
         </div>
+        <figure class="hero-art">
+          <div class="ledger" role="img" aria-label="Illustrative credit ledger: opening balance 100, a 12-credit hold leaves 88 available, settling 9 and releasing 3 leaves 91 available.">
+            <div class="ledger-head" aria-hidden="true"><strong>Credit ledger</strong><span>Illustrative</span></div>
+            <table aria-hidden="true">
+              <thead><tr><th>Event</th><th>Change</th><th>Available</th></tr></thead>
+              <tbody>
+                <tr><td>Opening balance</td><td></td><td>100</td></tr>
+                <tr><td>Reserve<small>export-report</small></td><td class="neg">−12</td><td>88</td></tr>
+                <tr><td>Settle 9<small>release 3</small></td><td>+3</td><td>91</td></tr>
+              </tbody>
+            </table>
+            <div class="ledger-total" aria-hidden="true"><span>Available credits</span><strong>91</strong></div>
+          </div>
+          <figcaption>A hold, a settlement, and the unused credits returned.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <div class="strip">
-      <div class="shell strip-inner" aria-label="Billing platform pillars">
-        <span>Subscriptions</span><span>Credit grants</span><span>Usage reservations</span><span>Entitlements</span><span>Idempotent API</span>
-      </div>
-    </div>
-
-    <section id="how-it-works" class="shell section section-rule" aria-labelledby="workflow-title">
-      <div class="section-intro">
-        <div><span class="eyebrow">The service boundary</span><h2 id="workflow-title">Move the money logic out of every product.</h2></div>
-        <p>Three systems, three responsibilities. Product teams own what an operation costs. Stripe handles financial transactions. OpenMeter tracks credits and entitlements. Billing coordinates them through one authenticated service.</p>
-      </div>
-      <div class="path-grid">
-        <article class="path-step"><span class="path-number">01 / PRODUCT</span><h3>Determine the cost</h3><p>The application understands the feature, usage unit, and credit amount. It asks Billing to authorize the operation before running it.</p></article>
-        <article class="path-step"><span class="path-number">02 / COMMERCIAL</span><h3>Coordinate financial state</h3><p>Billing orchestrates subscriptions, credit purchases, customer bindings, verified webhooks, and manual commercial arrangements.</p></article>
-        <article class="path-step"><span class="path-number">03 / ACCESS</span><h3>Keep access consistent</h3><p>Credit reservations, settlements, grants, and entitlements are applied through OpenMeter with reconciliation and audit trails.</p></article>
-      </div>
-    </section>
-
-    <section id="capabilities" class="shell section section-rule" aria-labelledby="capabilities-title">
-      <div class="section-intro">
-        <div><span class="eyebrow">Platform capabilities</span><h2 id="capabilities-title">Commercial plumbing, handled once.</h2></div>
-        <p>Instead of building slightly different billing and credit systems in every application, each product integrates with the same commercial API.</p>
-      </div>
-      <div class="card-grid">
-        <article class="feature-card"><span class="feature-index">01 / CATALOG</span><h3>Plans &amp; add-ons</h3><p>Centralize commercial catalogs, recurring allowances, and purchased credit packs for each product.</p></article>
-        <article class="feature-card"><span class="feature-index">02 / MONEY</span><h3>Subscriptions &amp; payments</h3><p>Use Stripe for checkout, invoicing, payment methods, lifecycle changes, refunds, and disputes.</p></article>
-        <article class="feature-card"><span class="feature-index">03 / USAGE</span><h3>Reserve, settle, release</h3><p>Protect available credits with idempotent reservations and account for completed or cancelled operations.</p></article>
-        <article class="feature-card"><span class="feature-index">04 / ACCESS</span><h3>Credits &amp; entitlements</h3><p>Use OpenMeter as the authority for effective access, credit grants, balances, and metered usage.</p></article>
-        <article class="feature-card"><span class="feature-index">05 / OPERATIONS</span><h3>Manual administration</h3><p>Support operator-granted credits, custom contracts, lifecycle changes, and auditable commercial actions.</p></article>
-        <article class="feature-card"><span class="feature-index">06 / SECURITY</span><h3>Product isolation</h3><p>Verify Authward-issued machine credentials and scope access to the correct product and resources.</p></article>
-      </div>
-    </section>
-
-    <section id="usage-flow" class="shell section section-rule" aria-labelledby="flow-title">
-      <div class="architect-panel">
-        <div class="architect-copy">
-          <span class="eyebrow">The API contract</span>
-          <h2 id="flow-title">Reserve before work. Settle after.</h2>
-          <p>Your product calculates the cost and asks Billing to reserve it. When the work finishes you settle the reservation; if it is cancelled you release it. A stable idempotency key makes retries safe, and reservations expire on their own.</p>
-          <p>Calls are authenticated with an Authward-issued machine token and scoped to your product.</p>
+    <section id="how-it-works" class="band band-lift" aria-labelledby="workflow-title">
+      <div class="shell">
+        <h2 id="workflow-title">Stripe holds the money. OpenMeter holds access. Billing keeps them in step.</h2>
+        <div class="trio">
+          <div class="trio-item"><h3>Stripe</h3><span class="role">Money</span><p>Checkout, invoices and payment methods.</p></div>
+          <div class="trio-item"><h3>OpenMeter</h3><span class="role">Access</span><p>Credits, entitlements and usage.</p></div>
+          <div class="trio-item is-core"><h3>Olaryn Billing</h3><span class="role">Coordination</span><p>Holds, retries, plan changes and the audit log.</p></div>
         </div>
-        <div class="architect-visual">
-          <figure class="code-card">
-            <figcaption class="code-card-title"><span>Reserve, then settle or release</span><span>Illustrative</span></figcaption>
-            <pre tabindex="0" aria-label="Reservation request sequence"><code><span class="c"># 1. Reserve the cost before running the work</span>
+        <p class="band-foot">Products decide what an operation costs. Every call is authenticated by Authward and scoped to one product.</p>
+      </div>
+    </section>
+
+    <section id="guarantees" class="shell section" aria-labelledby="guarantees-title">
+      <h2 id="guarantees-title">Four rules the code enforces.</h2>
+      <div class="rules">
+        <div class="rule"><h3>Competing holds are serialized.</h3><p>Two 25-credit holds against 35 credits: exactly one succeeds.</p></div>
+        <div class="rule"><h3>Access follows payment.</h3><p>Plans and allowances change only on a verified paid invoice.</p></div>
+        <div class="rule"><h3>Retries are safe.</h3><p>Every paid action takes an idempotency key.</p></div>
+        <div class="rule"><h3>Refunds reverse credits.</h3><p>Matched grants are clawed back on a refund or dispute.</p></div>
+      </div>
+    </section>
+
+    <section id="credits" class="shell section" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits have lifetimes.</h2>
+      <div class="lifetimes">
+        <div class="life"><h3>Monthly allowance</h3><div class="track" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Expires at the end of each month.</p></div>
+        <div class="life"><h3>Credit pack</h3><div class="track" aria-hidden="true"><i class="long"></i></div><p>Carries its own expiry, set in the catalog.</p></div>
+        <div class="life"><h3>Annual plan</h3><div class="track" aria-hidden="true"><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i></div><p>Released month by month within the paid year.</p></div>
+      </div>
+    </section>
+
+    <section id="api" class="band" aria-labelledby="api-title">
+      <div class="shell band-split">
+        <div>
+          <h2 id="api-title">Reserve. Settle. Release.</h2>
+          <p class="band-lede">Your product works out the cost and asks Billing to hold it. Finish the work and settle; cancel it and release. Calls carry an Authward machine token.</p>
+        </div>
+        <figure class="code-card">
+          <figcaption class="code-card-title"><span>Reserve, then settle or release</span><span>Illustrative</span></figcaption>
+          <pre tabindex="0" aria-label="Reservation request sequence"><code><span class="c"># 1. Reserve the cost before running the work</span>
 POST /v1/{product}/customers/{customer}/reservations
 Authorization: Bearer &lt;Authward machine token&gt;
 {
@@ -167,46 +152,15 @@ POST .../reservations/{id}/settle
 <span class="c"># 2b. Work cancelled: release the reservation</span>
 POST .../reservations/{id}/release
 { <span class="k">"reason"</span>: "cancelled" }</code></pre>
-            <p class="code-card-note">Shape only. Billing is a private service with no public API reference.</p>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="integrations" class="shell section section-rule" aria-labelledby="integration-title">
-      <div class="architect-panel">
-        <div class="architect-copy">
-          <span class="eyebrow">Under the hood</span>
-          <h2 id="integration-title">An explicit source of truth for every concern.</h2>
-          <p><strong>Stripe</strong> owns money. <strong>OpenMeter</strong> owns credit and entitlement state. <strong>Olaryn Billing</strong> owns the coordination, safety, and API boundary. <strong>Authward</strong> verifies the calling product.</p>
-          <ul class="panel-list" aria-label="System ownership">
-            <li><strong>Stripe</strong><span>Payments &amp; invoices</span></li>
-            <li><strong>OpenMeter</strong><span>Credits &amp; access</span></li>
-            <li><strong>Authward</strong><span>Machine identity</span></li>
-          </ul>
-        </div>
-        <div class="architect-visual">
-          <div class="arch-list">
-            <div class="arch-node"><div><strong>Product backend</strong><span>Beseam · Trevra · LemonCrow</span></div><small>Cost decisions</small></div>
-            <div class="arch-arrow">↓ &nbsp; Authward-authenticated API</div>
-            <div class="arch-node main"><div><strong>Olaryn Billing</strong><span>Customer bindings · commercial orchestration · reservations</span></div><small>Coordination</small></div>
-            <div class="arch-arrow">↙ &nbsp; financial + usage operations &nbsp; ↘</div>
-            <div class="arch-pair">
-              <div class="arch-node"><div><strong>Stripe</strong><span>Money truth</span></div></div>
-              <div class="arch-node"><div><strong>OpenMeter</strong><span>Runtime truth</span></div></div>
-            </div>
-          </div>
-        </div>
+        </figure>
       </div>
     </section>
 
     <section class="shell final-cta" aria-labelledby="end-title">
-      <span class="eyebrow">One Olaryn platform</span>
       <h2 id="end-title">One identity layer. One commercial layer.</h2>
-      <p>Authward handles trusted identity across applications. Billing handles their subscriptions and usage. Each product stays focused on what makes it valuable.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="/authward/">Explore Authward <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="button button-outline" href="/">Back to Olaryn <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="/authward/">Explore Authward <span class="ico ico-right" aria-hidden="true"></span></a>
+        <a class="button button-outline" href="/">Back to Olaryn <span class="ico ico-right" aria-hidden="true"></span></a>
       </div>
     </section>
   </main>
@@ -215,7 +169,7 @@ POST .../reservations/{id}/release
     <div class="shell footer-inner">
       <a class="footer-parent" href="/"><img src="/logo-mark.svg" width="22" height="22" alt=""> <span>Part of Olaryn · Zürich, Switzerland</span></a>
       <nav class="foot-links" aria-label="Related destinations">
-        <a href="/">Olaryn</a><a href="/authward/">Authward</a><a href="#integrations">Integrations</a>
+        <a href="/">Olaryn</a><a href="/authward/">Authward</a><a href="#api">API</a>
       </nav>
       <span>© 2026 Olaryn</span>
     </div>
