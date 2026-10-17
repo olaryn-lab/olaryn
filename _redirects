@@ -1,0 +1,8 @@
+/authward /auth/ 301
+/authward/ /auth/ 301
+/zikela /auth/ 301
+/zikela/ /auth/ 301
+/bilyra /billing/ 301
+/bilyra/ /billing/ 301
+/yeleva /analytics/ 301
+/yeleva/ /analytics/ 301

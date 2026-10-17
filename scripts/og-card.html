@@ -26,10 +26,11 @@
 <div class="under"><span id="under"></span><span>olaryn.com</span></div>
 <script>
   const cards = {
-    authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
-    billing: { mark: "/assets/billing-mark.svg", name: "tallyward", sub: "by Olaryn", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
+    auth: { mark: "/assets/zikela-mark.svg", name: "zikela", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
+    analytics: { mark: "/assets/yeleva-mark.svg", name: "yeleva", sub: "by Olaryn", html: "Signals into <em>insight.</em>", under: "<b>Events</b> · journeys · product analytics" },
+    billing: { mark: "/assets/billing-mark.svg", name: "bilyra", sub: "by Olaryn", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
   };
-  const c = cards[new URLSearchParams(location.search).get("p")] || cards.authward;
+  const c = cards[new URLSearchParams(location.search).get("p")] || cards.auth;
   document.getElementById("mark").src = c.mark;
   document.getElementById("name").textContent = c.name;
   document.getElementById("sub").textContent = c.sub;

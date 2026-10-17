@@ -8,6 +8,9 @@
 /assets/*
   Cache-Control: public, max-age=86400
 
+/assets/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.png
   Cache-Control: public, max-age=86400
 

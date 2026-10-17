@@ -9,8 +9,9 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = {
     "/": ROOT / "index.html",
-    "/authward/": ROOT / "authward" / "index.html",
+    "/auth/": ROOT / "auth" / "index.html",
     "/billing/": ROOT / "billing" / "index.html",
+    "/analytics/": ROOT / "analytics" / "index.html",
 }
 
 
@@ -23,6 +24,8 @@ class Page(HTMLParser):
         self.titles = 0
         self.canonical: list[str] = []
         self.og_urls: list[str] = []
+        self.og_images: list[str] = []
+        self.stylesheets: list[str] = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -36,12 +39,16 @@ class Page(HTMLParser):
             if tag == ("a" if kind == "anchor" else "img") and attr in attrs:
                 self.links.append((kind, attrs[attr]))
         if tag == "link":
+            if attrs.get("rel") == "stylesheet":
+                self.stylesheets.append(attrs.get("href", ""))
             if attrs.get("rel") == "canonical":
                 self.canonical.append(attrs.get("href", ""))
             if attrs.get("href", "").startswith("/"):
                 self.links.append(("asset", attrs["href"]))
         if tag == "meta" and attrs.get("property") == "og:url":
             self.og_urls.append(attrs.get("content", ""))
+        if tag == "meta" and attrs.get("property") == "og:image":
+            self.og_images.append(attrs.get("content", ""))
 
 
 def local_target(path: str) -> Path:
@@ -64,6 +71,17 @@ def check_page(route: str, html: Path) -> list[str]:
         errors.append(f"{route}: incorrect canonical: {page.canonical}")
     if page.og_urls != [wanted]:
         errors.append(f"{route}: incorrect og:url: {page.og_urls}")
+    expected_css = {"/assets/base.css"}
+    expected_css.add("/assets/home.css" if route == "/" else "/assets/platform.css")
+    if route == "/analytics/":
+        expected_css.add("/assets/analytics.css")
+    loaded_css = {urlsplit(ref).path for ref in page.stylesheets}
+    if not expected_css.issubset(loaded_css):
+        errors.append(f"{route}: missing required stylesheet(s): {expected_css - loaded_css}")
+    for ref in page.og_images:
+        parsed = urlsplit(ref)
+        if parsed.netloc == "olaryn.com" and not local_target(parsed.path).is_file():
+            errors.append(f"{route}: social image missing: {ref}")
     if len(page.ids) != len(set(page.ids)):
         errors.append(f"{route}: duplicate HTML ids")
     for kind, ref in page.links:
@@ -93,6 +111,19 @@ def main() -> None:
     wanted = {f"https://olaryn.com{route}" for route in PAGES}
     if urls != wanted:
         errors.append(f"sitemap: expected {sorted(wanted)}, got {sorted(urls)}")
+    # Every live homepage product link has a current destination, not a legacy page.
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    for route, name in (("/auth/", "Zikela"), ("/billing/", "Bilyra"), ("/analytics/", "Yeleva")):
+        if f'href="{route}"' not in home or name not in home:
+            errors.append(f"home: missing brand or destination {name} at {route}")
+    for route, html in PAGES.items():
+        content = html.read_text(encoding="utf-8")
+        if route != "/" and any(old in content for old in ("Authward", "Tallyward", "/authward/")):
+            errors.append(f"{route}: stale marketing brand or URL")
+    redirects = (ROOT / "_redirects").read_text(encoding="utf-8")
+    for legacy, current in (("/authward/", "/auth/"), ("/zikela/", "/auth/"), ("/bilyra/", "/billing/"), ("/yeleva/", "/analytics/")):
+        if f"{legacy} {current} 301" not in redirects:
+            errors.append(f"redirects: {legacy} must redirect to {current}")
     if errors:
         print("\n".join(f"FAIL: {e}" for e in errors))
         raise SystemExit(1)

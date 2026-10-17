@@ -7,15 +7,21 @@
     </g>
     <circle cx="83" cy="47" r="3" fill="currentColor"/>
   </symbol>
-  <symbol id="authward" viewBox="0 0 128 128">
+  <symbol id="zikela" viewBox="0 0 128 128">
     <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
     <path d="M64 38 L84 47 V61 C84 76 76 87 64 94 C52 87 44 76 44 61 V47 Z" fill="currentColor"/>
     <path d="M55 64 L62 71 L75 57" fill="none" style="stroke:var(--paper)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol id="billing" viewBox="0 0 128 128">
+  <symbol id="bilyra" viewBox="0 0 128 128">
     <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
     <rect x="46" y="48" width="36" height="8" rx="4" fill="currentColor"/>
     <rect x="46" y="60" width="36" height="8" rx="4" fill="currentColor"/>
     <rect x="46" y="72" width="22" height="8" rx="4" fill="currentColor"/>
+  </symbol>
+  <symbol id="yeleva" viewBox="0 0 128 128">
+    <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+    <rect x="44" y="71" width="11" height="22" rx="3" fill="currentColor"/>
+    <rect x="59" y="59" width="11" height="34" rx="3" fill="currentColor"/>
+    <rect x="74" y="43" width="11" height="50" rx="3" fill="currentColor"/>
   </symbol>
 </svg>
