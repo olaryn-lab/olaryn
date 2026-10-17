@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="billing-mark-title">
+  <title id="billing-mark-title">Olaryn Billing — ledger in the O</title>
+  <style>
+    .stroke { stroke: #6B3F4B; }
+    .bar { fill: #6B3F4B; }
+    @media (prefers-color-scheme: dark) {
+      .stroke { stroke: #DBA6B6; }
+      .bar { fill: #DBA6B6; }
+    }
+  </style>
+  <path class="stroke" d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke-width="11" stroke-linecap="round"/>
+  <rect class="bar" x="46" y="48" width="36" height="8" rx="4"/>
+  <rect class="bar" x="46" y="60" width="36" height="8" rx="4"/>
+  <rect class="bar" x="46" y="72" width="22" height="8" rx="4"/>
+</svg>

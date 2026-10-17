@@ -54,178 +54,10 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    color-scheme:light dark;
-    --ink:#211E1B;
-    --paper:#F5EFE3;
-    --accent:#6B3F4B;
-    --accent-soft:rgba(107,63,75,.12);
-    --muted:#70695E;
-  }
-
-  @media (prefers-color-scheme:dark){
-    :root{
-      --ink:#EDE5D6;
-      --paper:#181511;
-      --accent:#DBA6B6;
-      --accent-soft:rgba(219,166,182,.16);
-      --muted:#9C9280;
-    }
-  }
-
-  *{ box-sizing:border-box; }
-  ::selection{
-    background:var(--accent-soft);
-    color:var(--ink);
-  }
-  html,body{ margin:0; min-height:100%; }
-  body{
-    min-height:100svh;
-    display:flex;
-    flex-direction:column;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Work Sans',-apple-system,sans-serif;
-  }
-
-  main{
-    flex:1 1 auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:56px 24px 40px;
-    text-align:center;
-  }
-
-  .hero{
-    width:min(620px,100%);
-  }
-
-  .mark{
-    display:block;
-    width:68px;
-    height:auto;
-    margin:0 auto 24px;
-  }
-
-  h1{
-    font-family:'Fraunces',serif;
-    font-weight:440;
-    font-size:clamp(38px,6vw,58px);
-    letter-spacing:.005em;
-    margin:0 0 18px;
-  }
-
-  .thesis{
-    color:var(--accent);
-    font-family:'Fraunces',serif;
-    font-weight:440;
-    font-size:clamp(25px,4vw,34px);
-    line-height:1.25;
-    margin:0 0 18px;
-  }
-
-  .lede{
-    max-width:46ch;
-    margin:0 auto;
-    color:var(--muted);
-    font-size:16px;
-    line-height:1.65;
-  }
-
-  footer{
-    flex:0 0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:16px;
-    padding:0 24px 28px;
-    color:var(--muted);
-    font-size:12.5px;
-  }
-
-  .company-links{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-  }
-
-  .company-link{
-    width:38px;
-    height:38px;
-    display:grid;
-    place-items:center;
-    border-radius:6px;
-    opacity:1;
-    transition:transform .15s ease,background-color .15s ease;
-  }
-
-  .company-link:hover,
-  .company-link:focus-visible{
-    background:var(--accent-soft);
-    transform:translateY(-1px);
-  }
-
-  .company-link:active{
-    transform:translateY(0);
-  }
-
-  .company-link:focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:3px;
-  }
-
-  .company-link img{
-    display:block;
-    max-width:28px;
-    max-height:28px;
-    width:auto;
-    height:auto;
-  }
-
-  .company-link.trevra img{
-    width:28px;
-    height:28px;
-  }
-  .platform-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:29px;
-  }
-  .platform-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:var(--accent);
-    border:1px solid var(--accent-soft);
-    background:var(--accent-soft);
-    border-radius:6px;
-    padding:10px 13px;
-    font-size:12px;
-    font-weight:500;
-    transition:background-color .15s ease,transform .15s ease;
-  }
-  .platform-link:hover,.platform-link:focus-visible{
-    background:transparent;
-    transform:translateY(-1px);
-  }
-  .platform-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  @media (max-width:560px){
-    main{ padding:44px 22px 32px; }
-    footer{ padding-bottom:22px; }
-  }
-  @media (prefers-reduced-motion:reduce){
-    .company-link{ transition:none; }
-    .company-link:hover{ transform:none; }
-  }
-</style>
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/base.css?v=1">
+<link rel="stylesheet" href="/assets/home.css?v=1">
 </head>
 <body>
   <main>
@@ -235,22 +67,23 @@
       <h1 id="olaryn-title">Olaryn</h1>
       <p class="thesis">Learning compounds.</p>
       <p class="lede">What we learn, improve, and create should strengthen everything around it.</p>
+      <p class="about">Olaryn is the company behind Beseam, LemonCrow and Trevra, and the shared infrastructure they run on.</p>
       <nav class="platform-links" aria-label="Shared Olaryn infrastructure">
-        <a class="platform-link" href="/authward/">Authward <span aria-hidden="true">↗</span></a>
-        <a class="platform-link" href="/billing/">Billing <span aria-hidden="true">↗</span></a>
+        <a class="platform-link" href="/authward/">Authward: identity <span aria-hidden="true">→</span></a>
+        <a class="platform-link" href="/billing/">Billing: credits &amp; usage <span aria-hidden="true">→</span></a>
       </nav>
     </section>
   </main>
 
   <footer>
     <nav class="company-links" aria-label="Olaryn companies">
-      <a class="company-link beseam" href="https://beseam.com" target="_blank" rel="noopener" aria-label="beseam">
+      <a class="company-link beseam" href="https://beseam.com" target="_blank" rel="noopener" aria-label="Beseam (opens in a new tab)" title="Beseam">
         <img src="/assets/companies/beseam.svg?v=3" alt="">
       </a>
-      <a class="company-link" href="https://lemoncrow.com" target="_blank" rel="noopener" aria-label="lemoncrow">
+      <a class="company-link" href="https://lemoncrow.com" target="_blank" rel="noopener" aria-label="LemonCrow (opens in a new tab)" title="LemonCrow">
         <img src="/assets/companies/lemoncrow.svg" alt="">
       </a>
-      <a class="company-link trevra" href="https://usetrevra.com" target="_blank" rel="noopener" aria-label="usetrevra">
+      <a class="company-link trevra" href="https://usetrevra.com" target="_blank" rel="noopener" aria-label="Trevra (opens in a new tab)" title="Trevra">
         <img src="/assets/companies/trevra.svg?v=2" alt="">
       </a>
     </nav>

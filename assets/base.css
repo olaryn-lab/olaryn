@@ -1,0 +1,64 @@
+/* Olaryn shared foundation: self-hosted fonts and brand tokens (all pages). */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 340 500;
+  font-display: swap;
+  src: url("/assets/fonts/fraunces-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/assets/fonts/worksans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+:root {
+  color-scheme: light dark;
+  --ink: #211e1b;
+  --paper: #f5efe3;
+  --surface: #fffdf8;
+  --surface-quiet: #eee5d8;
+  --muted: #645e58;
+  --accent: #6b3f4b;
+  --accent-strong: #542c38;
+  --accent-wash: #ecdae0;
+  --accent-soft: rgba(107, 63, 75, .12);
+  --line: #dcd0c1;
+  --btn-bg: #6b3f4b;
+  --btn-bg-hover: #54303a;
+  --btn-edge: #6b3f4b;
+  --btn-ink: #fff9fa;
+  --window: #241d21;
+  --window-line: #4d3c45;
+  --window-text: #f5edea;
+  --window-muted: #c5b2b9;
+  --arch-panel: #e4d5ca;
+  --arch-arrow: #674951;
+  --code-bg: #241d21;
+  --code-ink: #f5edea;
+  --code-muted: #bba8b0;
+  --code-key: #e9b9c6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f4eee6;
+    --paper: #181511;
+    --surface: #231e1a;
+    --surface-quiet: #2e2723;
+    --muted: #b5a89a;
+    --accent: #dba6b6;
+    --accent-strong: #efc9d3;
+    --accent-wash: #39252e;
+    --accent-soft: rgba(219, 166, 182, .16);
+    --line: #453b34;
+    --btn-edge: #b98593;
+    --window: #100e0d;
+    --window-line: #47353b;
+    --arch-panel: #362d2b;
+    --arch-arrow: #d9b4bf;
+    --code-bg: #100e0d;
+  }
+}
