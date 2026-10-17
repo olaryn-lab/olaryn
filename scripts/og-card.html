@@ -3,49 +3,38 @@
 <head>
 <meta charset="utf-8">
 <title>OG card template</title>
-<!-- Renders the 1200x630 social cards: assets/og/authward.png, assets/og/billing.png and og-image.png (?p=home). Usage: see README ("Social cards"). -->
+<!-- Renders the 1200x630 social cards in assets/og/. Usage: see README ("Social cards"). -->
 <style>
-  @font-face { font-family: "Archivo"; font-weight: 400 800; font-stretch: 75% 125%; src: url("/assets/fonts/archivo-latin.woff2") format("woff2"); }
-  @font-face { font-family: "JetBrains Mono"; font-weight: 400 700; src: url("/assets/fonts/jetbrainsmono-latin.woff2") format("woff2"); }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #0b0e10; color: #e8ebed; font-family: "Archivo", sans-serif; }
-  .frame { position: absolute; inset: 40px; display: grid; grid-template-rows: 72px 1fr; gap: 1px; background: #262d33; border: 1px solid #262d33; }
-  .top { display: flex; align-items: center; justify-content: space-between; padding: 0 28px; background: #12161a; }
-  .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; font-stretch: 88%; font-size: 30px; letter-spacing: -.005em; }
-  .brand img { width: 36px; height: 36px; }
-  .brand small { font-weight: 500; font-stretch: 100%; font-size: 17px; color: #9aa5ad; padding-left: 14px; border-left: 1px solid #262d33; letter-spacing: 0; }
-  .url { font: 500 20px "JetBrains Mono", monospace; color: #9aa5ad; }
-  .body { display: grid; grid-template-columns: 1fr 440px; gap: 1px; background: #262d33; }
-  .left { background: #12161a; padding: 48px 56px; display: flex; align-items: flex-end; }
-  h1 { margin: 0; font-weight: 700; font-stretch: 80%; font-size: 92px; line-height: .98; letter-spacing: -.02em; max-width: 640px; }
-  .right { background: #181d22; padding: 40px 36px; font: 500 24px/1.9 "JetBrains Mono", monospace; display: flex; flex-direction: column; justify-content: center; }
-  .right div { display: flex; gap: 20px; }
-  .right .k { color: #62b2ff; min-width: 140px; }
-  .right .v { color: #e8ebed; }
-</style>
+  @font-face { font-family: "Fraunces"; font-weight: 340 500; src: url("/assets/fonts/fraunces-latin.woff2") format("woff2"); }
+  @font-face { font-family: "Work Sans"; font-weight: 400 600; src: url("/assets/fonts/worksans-latin.woff2") format("woff2"); }
+  html, body { margin: 0; width: 1200px; height: 630px; background: #251a1a; color: #211e1b; overflow: hidden; }
+  .card { box-sizing: border-box; width: 1200px; height: 470px; padding: 64px 84px 0; display: flex; flex-direction: column; justify-content: space-between; background: #f5efe3; border-radius: 0 0 28px 28px; }
+  .under { height: 160px; padding: 0 84px; display: flex; align-items: center; justify-content: space-between; font: 500 22px "Work Sans", sans-serif; color: #cbbcb0; letter-spacing: .01em; }
+  .under b { color: #e2bf80; font-weight: 600; }
+  .brand { display: flex; align-items: center; gap: 18px; font: 600 30px "Work Sans", sans-serif; letter-spacing: -.03em; }
+  .brand img { width: 56px; height: 56px; }
+  .brand small { display: block; font: 500 16px "Work Sans", sans-serif; color: #645e58; letter-spacing: .02em; margin-top: 4px; }
+  h1 { margin: 0 0 56px; font: 440 82px/1.05 "Fraunces", serif; letter-spacing: -.04em; max-width: 960px; }
+  h1 em { font-style: normal; color: #6b3f4b; }
+  </style>
 </head>
 <body>
-<div class="frame">
-  <div class="top"><div class="brand"><img id="mark" alt=""><span id="name"></span><small id="sub"></small></div><span class="url">olaryn.com</span></div>
-  <div class="body">
-    <div class="left"><h1 id="headline"></h1></div>
-    <div class="right" id="facts"></div>
-  </div>
+<div class="card">
+  <div class="brand"><img id="mark" alt=""><div><span id="name"></span><small id="sub"></small></div></div>
+  <h1 id="headline"></h1>
 </div>
+<div class="under"><span id="under"></span><span>olaryn.com</span></div>
 <script>
   const cards = {
-    home: { mark: "/logo-mark.svg", name: "olaryn", sub: "", headline: "Learning compounds.", facts: [["authward", "identity"], ["tallyward", "credits &amp; usage"]] },
-    authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", headline: "Identity your customers never see.", facts: [["grant", "authorization_code"], ["pkce", "S256"], ["tokens", "EdDSA, 15 min"]] },
-    billing: { mark: "/assets/billing-mark.svg", name: "tallyward", sub: "by Olaryn", headline: "Credits reserved before work, settled after.", facts: [["reserve", "25 held"], ["settle", "19 used"], ["returned", "6"]] }
+    authward: { mark: "/assets/authward-mark.svg", name: "authward", sub: "by Olaryn", html: "Identity your customers <em>never see.</em>", under: "<b>Passkeys</b> · magic links · social sign-in" },
+    billing: { mark: "/assets/billing-mark.svg", name: "tallyward", sub: "by Olaryn", html: "Reserve before work. <em>Settle after.</em>", under: "<b>Stripe</b> money · <b>OpenMeter</b> access · Billing in step" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.authward;
-  const mark = document.getElementById("mark");
-  mark.src = c.mark;
+  document.getElementById("mark").src = c.mark;
   document.getElementById("name").textContent = c.name;
   document.getElementById("sub").textContent = c.sub;
-  if (!c.sub) document.getElementById("sub").remove();
-  document.getElementById("headline").textContent = c.headline;
-  document.getElementById("facts").innerHTML = c.facts.map(f => `<div><span class="k">${f[0]}</span><span class="v">${f[1]}</span></div>`).join("");
+  document.getElementById("headline").innerHTML = c.html;
+  document.getElementById("under").innerHTML = c.under;
 </script>
 </body>
 </html>

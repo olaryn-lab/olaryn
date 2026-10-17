@@ -1,11 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="olaryn-icon-title">
   <title id="olaryn-icon-title">Olaryn</title>
-  <rect width="512" height="512" rx="74" fill="#12161A"/>
+  <style>
+    .tile { fill: #F5EFE3; }
+    .stroke { stroke: #6B3F4B; }
+    .dot { fill: #6B3F4B; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #181511; }
+      .stroke { stroke: #D6AD6A; }
+      .dot { fill: #D6AD6A; }
+    }
+  </style>
+  <rect class="tile" width="512" height="512" rx="74"/>
   <g transform="translate(64 64) scale(3)">
-    <g fill="none" stroke="#E8EBED" stroke-linecap="round" stroke-linejoin="round">
+    <g fill="none" class="stroke" stroke="#6B3F4B" stroke-linecap="round" stroke-linejoin="round">
       <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke-width="11"/>
       <path d="M83 47 A27 27 0 1 1 46 81" fill="none" stroke-width="9"/>
     </g>
-    <circle fill="#62B2FF" cx="83" cy="47" r="3"/>
+    <circle class="dot" fill="#6B3F4B" cx="83" cy="47" r="3"/>
   </g>
 </svg>
