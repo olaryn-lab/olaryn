@@ -1,13 +1,5 @@
-/* Yeleva's illustrative analytics surface. Reuses all Olaryn design tokens. */
-.analytics-hero { padding-bottom: 112px; }
-.analytics-eyebrow { margin: 0 0 24px; color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.analytics-art { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: clamp(22px, 4vw, 46px); border: 1px solid var(--line); border-radius: 15px; background: var(--surface); box-shadow: 0 18px 54px rgba(45,28,21,.06); }
-.analytics-art-label { margin-bottom: 10px; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
-.signal-row { display: flex; align-items: center; gap: 20px; justify-content: space-between; padding: 17px 19px; border-radius: 8px; background: var(--surface-quiet); font-size: 15px; font-weight: 500; }
-.signal-row i { display: block; width: 43%; height: 7px; border-radius: 7px; background: var(--accent-wash); }
-.signal-row:nth-of-type(3) i { width: 32%; }
-.signal-row:nth-of-type(4) i { width: 26%; }
-.signal-result { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; padding: 20px; border-radius: 8px; background: var(--accent); color: var(--btn-ink); font-family: "Fraunces", Georgia, serif; font-size: 25px; }
-.analytics-band { padding-top: 94px; }
-@media (max-width: 860px) { .analytics-hero { padding-bottom: 68px; } .analytics-art { max-width: 580px; } }
-@media (max-width: 500px) { .analytics-art { padding: 18px; } .signal-row { padding: 14px; } .signal-result { font-size: 22px; } }
+/* Yeleva page: example chart layout. Shared components live in base.css and platform.css. */
+.chart-body { padding: 20px 16px 16px; }
+.bars-tall { height: 140px; }
+.days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; margin-top: 8px; font-size: 11px; color: var(--muted); text-align: center; }
+.meter.chart-body { gap: 16px; padding-block: 24px; }

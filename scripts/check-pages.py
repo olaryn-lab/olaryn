@@ -121,16 +121,16 @@ def main() -> None:
     wanted = {f"https://olaryn.com{route}" for route in PAGES}
     if urls != wanted:
         errors.append(f"sitemap: expected {sorted(wanted)}, got {sorted(urls)}")
-    # The homepage keeps its original design, headline and copy. Only product
-    # labels/routes change, and the historic logo asset is rendered directly.
+    # The homepage keeps its original simple layout, headline, copy and product
+    # link labels; the logo mark is drawn in the theme's ink colour.
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     for route, label in (("/auth/", "Zikela: identity"),
                          ("/billing/", "Bilyra: credits &amp; usage"),
                          ("/analytics/", "Yeleva: analytics")):
         if f'href="{route}"' not in home or label not in home:
             errors.append(f"home: missing product link {label} at {route}")
-    if '<img class="mark" src="/logo-mark.svg?v=9"' not in home:
-        errors.append("home: original logo-mark.svg must be used")
+    if '<svg class="mark"' not in home or '/assets/marks.svg#olaryn' not in home:
+        errors.append("home: the Olaryn mark must render from /assets/marks.svg#olaryn (follows the theme)")
     for route, html in PAGES.items():
         content = html.read_text(encoding="utf-8")
         if route != "/" and any(old in content for old in ("Authward", "Tallyward", "/authward/")):

@@ -4,7 +4,7 @@
   var KEY = "olaryn-theme";
   var root = document.documentElement;
   var query = window.matchMedia("(prefers-color-scheme: dark)");
-  var COLORS = { light: "#F5EFE3", dark: "#181511" };
+  var COLORS = { light: "#F9FAFB", dark: "#090909" };
 
   function saved() {
     try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : null; } catch (e) { return null; }

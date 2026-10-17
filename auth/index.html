@@ -4,175 +4,185 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5EFE3">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181511">
-  <title>Zikela — Identity your customers never see | Olaryn</title>
-  <meta name="description" content="Zikela is hosted identity infrastructure: OAuth and OIDC, passkeys, magic links and social sign-in, behind your own login screen.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFB">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090909">
+  <title>Zikela — Sign-in for your app | Olaryn</title>
+  <meta name="description" content="Zikela adds sign-in to your app: passkeys, email links, Google and GitHub, on your own sign-in screen. Your AI assistant can set it up for you.">
   <link rel="canonical" href="https://olaryn.com/auth/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=9">
   <link rel="icon" href="/favicon.ico?v=8">
   <link rel="icon" type="image/png" href="/favicon-32x32.png?v=8" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=8" sizes="180x180">
-  <link rel="manifest" href="/site.webmanifest?v=8">
+  <link rel="manifest" href="/site.webmanifest?v=9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Zikela — Identity your customers never see">
-  <meta property="og:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
+  <meta property="og:title" content="Zikela — Sign-in for your app">
+  <meta property="og:description" content="Passkeys, email links, Google and GitHub, on your own sign-in screen.">
   <meta property="og:url" content="https://olaryn.com/auth/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/zikela.png?v=1">
+  <meta property="og:image" content="https://olaryn.com/assets/og/zikela.png?v=2">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zikela — Identity your customers never see.">
+  <meta property="og:image:alt" content="Zikela — Sign-in for your app.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zikela — Identity your customers never see">
-  <meta name="twitter:description" content="Passkeys, magic links and social sign-in, behind your own login screen.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/zikela.png?v=1">
-  <meta name="twitter:image:alt" content="Zikela — Identity your customers never see.">
+  <meta name="twitter:title" content="Zikela — Sign-in for your app">
+  <meta name="twitter:description" content="Passkeys, email links, Google and GitHub, on your own sign-in screen.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/zikela.png?v=2">
+  <meta name="twitter:image:alt" content="Zikela — Sign-in for your app.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Zikela — Identity your customers never see",
+    "name": "Zikela — Sign-in for your app",
     "url": "https://olaryn.com/auth/",
     "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
     "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
   }
   </script>
-  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="/assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="/assets/base.css?v=5">
-  <link rel="stylesheet" href="/assets/platform.css?v=5">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/theme.js?v=2"></script>
+  <link rel="stylesheet" href="/assets/base.css?v=6">
+  <link rel="stylesheet" href="/assets/platform.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announce gutter"><p>Zikela is invite-only for now. <a href="https://auth.olaryn.com/developer/request-access">Request access →</a></p></div>
+
+  <div class="gutter"><div class="shell">
   <header class="site-header">
-    <div class="shell header-inner">
-      <a class="identity" href="/auth/" aria-label="Zikela home">
-        <svg class="identity-mark" width="37" height="37" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#zikela"></use></svg>
-        <span class="identity-text"><span class="identity-name">zikela</span><span class="identity-parent">by Olaryn</span></span>
-      </a>
-      <nav class="site-nav" aria-label="Zikela sections">
-        <a href="/">Olaryn</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#setup">Setup</a>
-        <a href="#standards">Standards</a>
-        <a href="https://auth.olaryn.com/docs">Docs <span class="ico ico-ne" aria-hidden="true"></span></a>
-      </nav>
-      <a class="button button-primary top-action" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico ico-moon" aria-hidden="true"></span></button>
+    <a class="brand" href="/auth/" aria-label="Zikela home"><svg aria-hidden="true" focusable="false"><use href="/assets/marks.svg#zikela"></use></svg>Zikela</a>
+    <nav class="site-nav" aria-label="Zikela sections">
+      <a href="#features">Features</a>
+      <a href="#setup">Set up</a>
+      <a href="#brand">Your brand</a>
+      <a href="https://auth.olaryn.com/docs">Guide</a>
+    </nav>
+    <div class="header-end">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button>
+      <a class="btn btn-ghost" href="https://auth.olaryn.com/developer">Sign in</a>
+      <a class="btn btn-primary" href="https://auth.olaryn.com/developer/request-access">Request access</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="shell hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title">Identity your customers <em>never see.</em></h1>
-          <p class="hero-copy">Passkeys, magic links and social sign-in, behind your own login screen.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
-            <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
-          </div>
-          <p class="hero-footnote">Developer access is by invitation. <a href="https://auth.olaryn.com/developer/request-access">Request access</a></p>
-        </div>
-        <figure class="hero-art">
-          <div class="login-card" role="img" aria-label="Example product login screen offering passkey, email link, Google and GitHub sign-in.">
-            <div class="login-brand" aria-hidden="true"><span class="login-dot"></span>Northwind</div>
-            <div class="login-title" aria-hidden="true">Sign in to Northwind</div>
-            <div class="login-btn is-primary" aria-hidden="true"><span class="ico ico-key"></span>Continue with passkey</div>
-            <div class="login-btn" aria-hidden="true"><span class="ico ico-mail"></span>Email me a link</div>
-            <div class="login-or" aria-hidden="true">or</div>
-            <div class="login-pair" aria-hidden="true"><div class="login-btn">Google</div><div class="login-btn">GitHub</div></div>
-          </div>
-          <figcaption>Your screen, your brand. Zikela runs everything behind it.</figcaption>
-        </figure>
+    <section class="hero" aria-labelledby="page-title">
+      <h1 class="t1" id="page-title"><span class="ink">Meet Zikela</span><span class="dim">Sign-in for your app</span></h1>
+      <div class="hero-side">
+        <p class="lede">Passkeys, email links, Google and GitHub on your own sign-in screen. We keep it safe so you don’t have to.</p>
+        <div class="actions"><a class="btn btn-primary" href="https://auth.olaryn.com/developer/request-access">Request access</a><a class="btn btn-secondary" href="https://auth.olaryn.com/docs">Read the guide</a></div>
       </div>
     </section>
 
-    <section id="how-it-works" class="band band-lift" aria-labelledby="layers-title">
-      <div class="shell">
-        <h2 id="layers-title">You build the screen. Zikela does the rest.</h2>
-        <div class="layers">
-          <div class="layer layer-yours">
-            <h3>Your application</h3>
-            <ul><li>Login and signup</li><li>Consent and device approval</li><li>Account page</li><li>Roles and permissions</li></ul>
-          </div>
-          <div class="layer layer-core">
-            <h3>Zikela</h3>
-            <ul><li>Credentials and sessions</li><li>Passkeys, magic links, social</li><li>OAuth and OIDC tokens</li><li>Signing keys and revocation</li></ul>
+    <div class="stage hero-stage" role="img" aria-label="Example: an app’s sign-in screen and the three steps behind it">
+      <p class="stage-label" aria-hidden="true"><span class="dot"></span>Example app</p>
+      <div class="hero-stage-grid" aria-hidden="true">
+        <div class="card">
+          <div class="card-head"><div class="app-id"><span class="avatar avatar-northwind">N</span><div><p>Northwind</p><p class="small">northwind.app/sign-in</p></div></div></div>
+          <div class="signin">
+            <h3>Sign in to Northwind</h3>
+            <p class="sub">Welcome back. Choose how to continue.</p>
+            <span class="choice choice-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>Continue with passkey</span>
+            <span class="choice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email me a link</span>
+            <span class="or">or</span>
+            <span class="pair"><span class="choice">Google</span><span class="choice">GitHub</span></span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="setup" class="shell section" aria-labelledby="setup-title">
-      <h2 id="setup-title">Paste one prompt into your coding agent.</h2>
-      <ol class="steps">
-        <li><strong>Copy the prompt</strong><span>From your workspace. It holds a workspace ID and no secrets.</span></li>
-        <li><strong>Approve in your browser</strong><span>Access is scoped to one workspace, lasts 24 hours and can be revoked.</span></li>
-        <li><strong>Your agent sets it up</strong><span>It registers the app, environments and OAuth client, then checks a real login.</span></li>
-      </ol>
-      <p class="section-note">Also available as a CLI and an MCP server.</p>
-    </section>
-
-    <section id="standards" class="band" aria-labelledby="standards-title">
-      <div class="shell band-split">
-        <div>
-          <h2 id="standards-title">Standard OAuth. Any OIDC library.</h2>
-          <p class="band-lede">No proprietary SDK to adopt. Discover the endpoints, redirect, exchange the code.</p>
-          <ul class="facts">
-            <li><strong>Authorization Code + PKCE</strong><span>S256 required</span></li>
-            <li><strong>Device authorization</strong><span>RFC 8628, for CLIs</span></li>
-            <li><strong>Discovery and JWKS</strong><span>Keys rotate every 30 days</span></li>
-            <li><strong>Tokens</strong><span>15-minute JWTs, revocable</span></li>
-            <li><strong>Passkeys</strong><span>User-verification policy per client</span></li>
-            <li><strong>Redirects</strong><span>Exact URIs only</span></li>
-          </ul>
+        <div class="card">
+          <div class="card-head"><span>What happens when someone signs in</span></div>
+          <ol class="flow">
+            <li><div><b>They pick a way to sign in</b><span>On your screen, with your name and colours.</span></div></li>
+            <li><div><b>Zikela checks it’s really them</b><span>Fingerprint or face, a link in their email, or their Google or GitHub account.</span></div></li>
+            <li><div><b>They’re back in your app, signed in</b><span>Your app gets a short sign-in pass that tells it who they are.</span></div></li>
+          </ol>
+          <p class="card-foot"><span class="dot"></span>Sign-in passes last 15 minutes and can be cancelled.</p>
         </div>
-        <figure class="code-card">
-          <figcaption class="code-card-title"><span>Authorization Code + PKCE</span><span>Sequence</span></figcaption>
-          <pre tabindex="0" aria-label="Integration sequence"><code><span class="c"># 1. Discover the endpoints</span>
-curl https://auth.olaryn.com/.well-known/openid-configuration
+      </div>
+    </div>
 
-<span class="c"># 2. Send the user to authorization_endpoint</span>
-<span class="k">response_type</span>=code
-<span class="k">scope</span>=openid
-<span class="k">client_id</span>=&lt;your client&gt;
-<span class="k">redirect_uri</span>=&lt;exact registered URI&gt;
-<span class="k">code_challenge</span>=&lt;S256 challenge&gt;
-<span class="k">code_challenge_method</span>=S256
-<span class="k">state</span>=&lt;random&gt;
+    <div class="tagline">
+      <p><span class="ink">Add sign-in today.</span> <span class="dim">Your screen, your brand, our security.</span></p>
+      <ul class="chips" aria-label="Built in"><li class="label">Built in</li><li class="chip">Passkeys</li><li class="chip">Email links</li><li class="chip">Google</li><li class="chip">GitHub</li></ul>
+    </div>
 
-<span class="c"># 3. On your callback, exchange the code at</span>
-<span class="c">#    token_endpoint with your code_verifier</span>
-
-<span class="c"># 4. Verify issuer, audience and signature</span>
-<span class="c">#    (jwks_uri), then start your own session</span></code></pre>
-        </figure>
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="section-head">
+        <h2 class="t2" id="features-title"><span class="ink">Every way to sign in</span><span class="dim">without building any of it</span></h2>
+        <p class="lede">Pick the ways people can sign in. Zikela checks it’s really them. Passwords and fingerprints never touch your app.</p>
+      </div>
+      <div class="grid-3">
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="prompt"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 11v4M8.5 8.5a5 5 0 0 1 8.5 3.5c0 2 .3 4 1 5.5M7 12c0 2.5-.5 4.5-1.5 6M9.5 13.5c0 2-.4 4-1.3 5.5M14.5 13c0 2.3-.3 4.5-1 6.5M5 9a8 8 0 0 1 14 0"/></svg></span><b>Use your fingerprint</b><span class="muted">to sign in to Northwind</span></div></div></div>
+          <div><h3>Passkeys</h3><p>A fingerprint, face or device PIN. Nothing to remember, nothing to steal.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="mail"><div class="from"><span>Northwind</span><span>now</span></div><b>Your sign-in link</b><span class="muted">Tap the button to sign in to Northwind.</span><span class="go">Sign in</span></div></div></div>
+          <div><h3>Email links</h3><p>People type their email, tap the link, and they’re in. No password at all.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="mini-stack"><b>Continue with</b><span class="pair"><span class="choice">Google</span><span class="choice">GitHub</span></span><span class="muted">One tap with an account they already have.</span></div></div></div>
+          <div><h3>Google and GitHub</h3><p>Let people use an account they already have. No new password to make up.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
       </div>
     </section>
 
-    <section id="get-started" class="shell final-cta" aria-labelledby="start-title">
-      <h2 id="start-title">Ship the screen. Skip the stack.</h2>
-      <div class="hero-actions">
-        <a class="button button-primary" href="https://auth.olaryn.com/developer">Developer console <span class="ico ico-ne" aria-hidden="true"></span></a>
-        <a class="button button-outline" href="https://auth.olaryn.com/docs">Read the docs <span class="ico ico-ne" aria-hidden="true"></span></a>
+    <section class="section" id="setup" aria-labelledby="setup-title">
+      <div class="section-head">
+        <h2 class="t2" id="setup-title"><span class="ink">Set up by your AI assistant</span><span class="dim">paste one message, approve once</span></h2>
+        <p class="lede">Using Claude, Cursor or a similar tool? It does the wiring for you. Prefer the terminal? There’s a command-line tool too.</p>
       </div>
-      <p class="hero-footnote">Developer access is by invitation. <a href="https://auth.olaryn.com/developer/request-access">Request access</a> · <a href="https://auth.olaryn.com/agent/product-integration-guide.md">Agent-readable guide</a></p>
+      <div class="stage" role="img" aria-label="Example conversation: you ask your AI assistant to add Zikela sign-in, and it does.">
+        <p class="stage-label" aria-hidden="true">Example</p>
+        <div class="chat" aria-hidden="true">
+          <p class="bubble bubble-me">Add Zikela sign-in to my app.</p>
+          <div class="bubble bubble-ai">Done. I registered your app, connected sign-in and tried a real sign-in to check it works.<p class="status"><span class="dot"></span>You approved this in your browser</p></div>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">01</span><h3>Copy one message</h3><p>From your workspace. It has no passwords or secrets in it.</p></div>
+        <div class="step"><span class="num">02</span><h3>Approve in your browser</h3><p>One click. It lasts 24 hours and you can cancel it any time.</p></div>
+        <div class="step"><span class="num">03</span><h3>You’re done</h3><p>Your assistant registers the app and connects sign-in.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="brand" aria-labelledby="brand-title">
+      <div class="section-head">
+        <h2 class="t2" id="brand-title"><span class="ink">Your screen, your brand</span><span class="dim">people never see us</span></h2>
+        <p class="lede">The sign-in screen lives in your app, with your name, colours and words. Zikela works behind it, using the same standard as “Sign in with Google”.</p>
+      </div>
+      <div class="stage" role="img" aria-label="Two example apps, each with its own sign-in screen design">
+        <div class="apps" aria-hidden="true">
+          <div class="card"><div class="signin"><div class="app-id"><span class="avatar avatar-northwind">N</span>Northwind</div><h3>Welcome back</h3><span class="choice choice-northwind">Continue with passkey</span><span class="choice">Email me a link</span></div></div>
+          <div class="card"><div class="signin square"><div class="app-id"><span class="avatar avatar-lumen">L</span>Lumen</div><h3>Sign in to Lumen</h3><span class="choice choice-lumen">Use a passkey</span><span class="choice">Continue with GitHub</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developers" aria-labelledby="dev-title">
+      <div class="section-head">
+        <h2 class="t2" id="dev-title"><span class="ink">For developers</span><span class="dim">standard sign-in, nothing special to learn</span></h2>
+        <p class="lede">Zikela speaks OAuth and OpenID Connect, so any library that supports them will work. No special kit to install.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Works with common libraries</b><span>Standard OAuth and OpenID Connect, with PKCE required.</span></li>
+        <li><b>Command-line tools too</b><span>People can sign in to a CLI by approving it on another device.</span></li>
+        <li><b>Safe by default</b><span>Signing keys change every 30 days, and sign-ins only return to addresses you registered.</span></li>
+      </ul>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 class="t1" id="cta-title"><span class="ink">Ready to add sign-in?</span><span class="dim">Zikela is invite-only for now</span></h2>
+      <div class="actions"><a class="btn btn-primary btn-large" href="https://auth.olaryn.com/developer/request-access">Request access</a><a class="btn btn-secondary btn-large" href="https://auth.olaryn.com/docs">Read the guide</a></div>
+      <p class="note">Using an AI assistant? Give it the <a href="https://auth.olaryn.com/agent/product-integration-guide.md">assistant-ready guide</a>.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner">
-      <a class="footer-parent" href="/"><svg class="footer-mark" width="22" height="22" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg> <span>Part of Olaryn · Zürich, Switzerland</span></a>
-      <nav class="foot-links" aria-label="Related destinations">
-        <a href="/">Olaryn</a><a href="/billing/">Bilyra</a><a href="https://auth.olaryn.com/docs">Documentation <span class="ico ico-ne" aria-hidden="true"></span></a>
-      </nav>
-      <span>© 2026 Olaryn</span>
-    </div>
+    <div class="footer-brand"><a class="brand" href="/"><svg aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg>Olaryn</a><p>Part of Olaryn · Zürich, Switzerland<br>© 2026 Olaryn</p></div>
+    <nav aria-labelledby="foot-page"><h2 id="foot-page">Zikela</h2><ul><li><a href="#features">Features</a></li><li><a href="#setup">Set up</a></li><li><a href="https://auth.olaryn.com/docs">Guide</a></li><li><a href="https://auth.olaryn.com/developer">Sign in</a></li></ul></nav>
+    <nav aria-labelledby="foot-olaryn"><h2 id="foot-olaryn">Olaryn</h2><ul><li><a href="/">Home</a></li><li><a href="/auth/">Zikela · sign-in</a></li><li><a href="/billing/">Bilyra · billing</a></li><li><a href="/analytics/">Yeleva · analytics</a></li></ul></nav>
+    <nav aria-labelledby="foot-access"><h2 id="foot-access">Get started</h2><ul><li><a href="https://auth.olaryn.com/developer/request-access">Request access</a></li><li><a href="https://auth.olaryn.com/agent/product-integration-guide.md">Guide for AI assistants</a></li></ul></nav>
   </footer>
+  </div></div>
 </body>
 </html>

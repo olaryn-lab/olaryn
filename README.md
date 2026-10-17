@@ -6,17 +6,17 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Olaryn company homepage; preserves the “Learning compounds.” wording and original layout/logo, with three renamed infrastructure links |
+| `/` | Olaryn company homepage; keeps the original simple centred layout and “Learning compounds.” wording, with the three infrastructure links |
 | `/auth/` | Public Zikela identity developer-focused marketing page |
 | `/billing/` | Public Bilyra billing, credits, and usage marketing page |
 | `/analytics/` | Public Yeleva analytics overview (the internal analytics application remains separate) |
 
-The marketing pages use ordinary directory `index.html` files. All pages share `/assets/base.css` (self-hosted Fraunces/Work Sans `@font-face` rules and every colour token, light and dark); the home page adds `/assets/home.css` and the product pages `/assets/platform.css`. Change a token once in `base.css`, never per page. Bump the `?v=` on the stylesheet links when a shared stylesheet changes. Fonts live in `assets/fonts/` (Latin subset, OFL) so no third-party font request is made and the CSP can stay `default-src 'self'`.
+The marketing pages use ordinary directory `index.html` files. All pages share `/assets/base.css` (self-hosted Inter/Geist Mono `@font-face` rules, every colour token for light and dark, and the shared header, buttons, sections and footer); the home page adds `/assets/home.css` and the product pages `/assets/platform.css`. Change a token once in `base.css`, never per page. Bump the `?v=` on the stylesheet links when a shared stylesheet changes. Fonts live in `assets/fonts/` (Latin subset, OFL) so no third-party font request is made and the CSP can stay `default-src 'self'`.
 
-No framework, JavaScript, backend routes, or dependency installation is needed. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
+No framework, backend routes, or dependency installation is needed; the only script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so all styling stays in the stylesheets. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
 
 Marketing and platform runtime stay separate:
-- Product marketing pages use **Zikela** (identity), **Bilyra** (billing) and **Yeleva** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The original Olaryn homepage copy and visual design remain unchanged apart from renaming the platform links and adding Yeleva in the existing link style. The original `/logo-mark.svg` mark is displayed above the title. The legacy `/authward/` URL redirects to `/auth/`. Backend repositories and service URLs are not renamed as part of this change.
+- Product marketing pages use **Zikela** (identity), **Bilyra** (billing) and **Yeleva** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The Olaryn homepage keeps its original simple layout and copy, in the same theme as the product pages. The Olaryn mark is drawn from `assets/marks.svg#olaryn` in the theme's ink colour. The legacy `/authward/` URL redirects to `/auth/`. Backend repositories and service URLs are not renamed as part of this change.
 - `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts the protected developer portal (`/developer`) and docs (`/docs`). Never proxy, redirect, or rewrite identity protocol endpoints through the marketing pages.
 - `https://billing.olaryn.com` remains the service API. There is no public developer signup or pricing page for Billing. The public description must not advertise the private API as open self-service.
 - `https://analytics.olaryn.com` remains the analytics service hostname, not a public product marketing page. The public `/analytics/` overview is separate from the application and does not expose a public signup.
@@ -24,9 +24,11 @@ Marketing and platform runtime stay separate:
 
 ## Brand identity
 
-The approved light palette is deep burgundy `#6B3F4B` (accent and editorial headline), parchment `#F5EFE3` (page background), and deep ink `#211E1B` (logo/body text). The dark palette keeps charcoal `#181511` and swaps the accent for brass `#D6AD6A` (no pink anywhere); the infrastructure band is oxblood-black (`--band`, light `#251A1A` / dark `#2B1D1B`) with brass highlights. The product pages add an infrastructure band under the parchment hero, so each page shows the product's own screen on top and the service underneath. The Fraunces/Work Sans typography and original monochrome Olaryn mark remain unchanged.
+The site uses one monochrome theme: black, white and greys, with a single green (`--ok`) used only for small status dots. Light pages are `#F9FAFB` with white cards on `#F3F4F6` panels; dark pages are `#090909` with `#111111`/`#181818` panels and cards. Text is Inter (weight 450 body, 400 headings) with Geist Mono for numbers and code. Headings come in two tones: an ink line followed by a grey line at the same size. Buttons are pills: black primary (white in dark mode) and grey secondary. The Olaryn mark is monochrome: black in light mode, white in dark mode (`logo-mark.svg` matches).
 
-Zikela uses a shield-in-O symbol (`assets/zikela-mark.svg`, adapted from the Authward repository for dark-mode contrast), Bilyra a ledger-in-O (`assets/billing-mark.svg`), and Yeleva an analytics-in-O (`assets/yeleva-mark.svg`); they share Olaryn's palette. The product brands Beseam, LemonCrow, and Trevra retain their own accents.
+Zikela uses a shield-in-O symbol, Bilyra a ledger-in-O and Yeleva an analytics-in-O (`assets/marks.svg`); they follow the page theme. The product brands Beseam, LemonCrow, and Trevra retain their own logos.
+
+Copy rule: product names are only names. Everything else is written in plain, non-technical words, and every claim must match the Zikela and Bilyra repository contracts.
 
 ## Light and dark themes
 

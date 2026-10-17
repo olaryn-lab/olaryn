@@ -1,103 +1,21 @@
-/* Olaryn home page. Tokens and fonts come from /assets/base.css. */
-* { box-sizing: border-box; }
-::selection { background: var(--accent-soft); color: var(--ink); }
-html, body { margin: 0; min-height: 100%; }
-body {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Work Sans", -apple-system, sans-serif;
-}
-a { color: inherit; text-decoration: none; }
-.theme-corner { position: absolute; top: 16px; right: 16px; }
-main {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 56px 24px 40px;
-  text-align: center;
-}
+/* Olaryn home: the original simple centred page, in the shared monochrome theme. Tokens and fonts come from base.css. */
+body { display: flex; flex-direction: column; min-height: 100svh; }
+.theme-corner { position: absolute; top: 16px; right: max(16px, env(safe-area-inset-right, 0px)); }
+main { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; padding: 56px max(24px, env(safe-area-inset-right, 0px)) 40px max(24px, env(safe-area-inset-left, 0px)); text-align: center; }
 .hero { width: min(620px, 100%); }
-.mark { display: block; width: 68px; height: 68px; margin: 0 auto 24px; color: var(--accent); }
-h1 {
-  font-family: "Fraunces", serif;
-  font-weight: 440;
-  font-size: clamp(38px, 6vw, 58px);
-  letter-spacing: .005em;
-  margin: 0 0 18px;
-}
-.thesis {
-  color: var(--accent);
-  font-family: "Fraunces", serif;
-  font-weight: 440;
-  font-size: clamp(25px, 4vw, 34px);
-  line-height: 1.25;
-  margin: 0 0 18px;
-}
-.lede {
-  max-width: 46ch;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
-}
-.about {
-  max-width: 46ch;
-  margin: 14px auto 0;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.65;
-}
-footer {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  padding: 0 24px 28px;
-  color: var(--muted);
-  font-size: 13px;
-}
+.mark { display: block; width: 64px; height: 64px; margin: 0 auto 28px; color: var(--ink); }
+h1 { margin-bottom: 8px; font: 400 clamp(36px, 6vw, 52px)/1.15 var(--sans); letter-spacing: 0; color: var(--ink); }
+.thesis { margin-bottom: 24px; font: 400 clamp(24px, 4vw, 32px)/1.25 var(--sans); letter-spacing: 0; color: var(--muted); }
+.lede { max-width: 46ch; margin: 0 auto; font-size: 17px; line-height: 1.6; color: var(--muted); }
+.about { max-width: 46ch; margin: 12px auto 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.platform-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 32px; }
+.platform-link { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 999px; background: var(--btn2); box-shadow: inset 0 0 0 1px var(--line-soft); color: var(--ink); font: 550 14px/1 var(--sans); letter-spacing: .01em; transition: background-color .15s; }
+.platform-link:hover { background: var(--hover); }
+footer { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 0 24px 28px; font-size: 13px; color: var(--muted); }
 .company-links { display: flex; align-items: center; justify-content: center; gap: 14px; }
-.company-link {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 6px;
-  transition: transform .15s ease, background-color .15s ease;
-}
-.company-link:hover, .company-link:focus-visible { background: var(--accent-soft); transform: translateY(-1px); }
-.company-link:active { transform: translateY(0); }
-.company-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.company-link { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; transition: background-color .15s; }
+.company-link:hover { background: var(--hover); }
 .company-link img { display: block; max-width: 28px; max-height: 28px; width: auto; height: auto; }
 .company-link.trevra img { width: 28px; height: 28px; }
-.platform-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 29px; }
-.platform-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent);
-  border: 1px solid var(--accent-soft);
-  background: var(--accent-soft);
-  border-radius: 6px;
-  padding: 12px 16px;
-  min-height: 44px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color .15s ease, transform .15s ease;
-}
-.platform-link:hover, .platform-link:focus-visible { background: transparent; border-color: var(--accent); transform: translateY(-1px); }
-.platform-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-@media (max-width: 560px) {
-  main { padding: 44px 22px 32px; }
-  footer { padding-bottom: 22px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .company-link, .platform-link { transition: none; }
-  .company-link:hover, .platform-link:hover { transform: none; }
-}
+@media (max-width: 560px) { main { padding-top: 64px; padding-bottom: 32px; } footer { padding-bottom: 22px; } }
+@media (prefers-reduced-motion: reduce) { .platform-link, .company-link { transition: none; } }

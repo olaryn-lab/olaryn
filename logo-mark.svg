@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="olaryn-mark-title">
   <title id="olaryn-mark-title">Olaryn — compounding loop</title>
   <style>
-    .stroke { stroke: #6B3F4B; }
-    .dot { fill: #6B3F4B; }
+    .stroke { stroke: #000000; }
+    .dot { fill: #000000; }
     @media (prefers-color-scheme: dark) {
-      .stroke { stroke: #D6AD6A; }
-      .dot { fill: #D6AD6A; }
+      .stroke { stroke: #FFFFFF; }
+      .dot { fill: #FFFFFF; }
     }
   </style>
-  <g fill="none" class="stroke" stroke="#6B3F4B" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" class="stroke" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
     <path d="M88 27 A44 44 0 1 0 105 71" fill="none" stroke-width="11"/>
     <path d="M83 47 A27 27 0 1 1 46 81" fill="none" stroke-width="9"/>
   </g>
-  <circle class="dot" fill="#6B3F4B" cx="83" cy="47" r="3"/>
+  <circle class="dot" fill="#000000" cx="83" cy="47" r="3"/>
 </svg>

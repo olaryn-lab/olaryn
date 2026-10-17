@@ -4,177 +4,187 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5EFE3">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181511">
-  <title>Bilyra — Reserve before work. Settle after. | Olaryn</title>
-  <meta name="description" content="Bilyra is the shared billing service behind subscriptions, credits and metered usage across Olaryn products. Built on Stripe, OpenMeter and Zikela.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFB">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090909">
+  <title>Bilyra — Fair billing for usage and credits | Olaryn</title>
+  <meta name="description" content="Bilyra handles subscriptions, credits and usage for Olaryn products. It holds the cost before work starts, then charges only what was used.">
   <link rel="canonical" href="https://olaryn.com/billing/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=9">
   <link rel="icon" href="/favicon.ico?v=8">
   <link rel="icon" type="image/png" href="/favicon-32x32.png?v=8" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=8" sizes="180x180">
-  <link rel="manifest" href="/site.webmanifest?v=8">
+  <link rel="manifest" href="/site.webmanifest?v=9">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Bilyra — Reserve before work. Settle after.">
-  <meta property="og:description" content="Subscriptions, credits and usage for every Olaryn product, in one service.">
+  <meta property="og:title" content="Bilyra — Fair billing for usage and credits">
+  <meta property="og:description" content="Hold the cost before work starts. Charge only what was used.">
   <meta property="og:url" content="https://olaryn.com/billing/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/bilyra.png?v=1">
+  <meta property="og:image" content="https://olaryn.com/assets/og/bilyra.png?v=2">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Bilyra — Reserve before work. Settle after.">
+  <meta property="og:image:alt" content="Bilyra — Fair billing for usage and credits.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bilyra — Reserve before work. Settle after.">
-  <meta name="twitter:description" content="Subscriptions, credits and usage for every Olaryn product, in one service.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/bilyra.png?v=1">
-  <meta name="twitter:image:alt" content="Bilyra — Reserve before work. Settle after.">
+  <meta name="twitter:title" content="Bilyra — Fair billing for usage and credits">
+  <meta name="twitter:description" content="Hold the cost before work starts. Charge only what was used.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/bilyra.png?v=2">
+  <meta name="twitter:image:alt" content="Bilyra — Fair billing for usage and credits.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Bilyra — Reserve before work. Settle after.",
+    "name": "Bilyra — Fair billing for usage and credits",
     "url": "https://olaryn.com/billing/",
     "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
     "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
   }
   </script>
-  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="/assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="/assets/base.css?v=5">
-  <link rel="stylesheet" href="/assets/platform.css?v=5">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/theme.js?v=2"></script>
+  <link rel="stylesheet" href="/assets/base.css?v=6">
+  <link rel="stylesheet" href="/assets/platform.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announce gutter"><p>Bilyra runs inside Olaryn products. There’s no public sign-up or pricing.</p></div>
+
+  <div class="gutter"><div class="shell">
   <header class="site-header">
-    <div class="shell header-inner">
-      <a class="identity" href="/billing/" aria-label="Bilyra home">
-        <svg class="identity-mark" width="37" height="37" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#billing"></use></svg>
-        <span class="identity-text"><span class="identity-name">bilyra</span><span class="identity-parent">by Olaryn</span></span>
-      </a>
-      <nav class="site-nav" aria-label="Bilyra sections">
-        <a href="/">Olaryn</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#guarantees">Guarantees</a>
-        <a href="#credits">Credits</a>
-        <a href="#api">API</a>
-        <a href="/auth/">Zikela <span class="ico ico-right" aria-hidden="true"></span></a>
-      </nav>
-      <a class="button button-primary top-action" href="#api">See the API <span class="ico ico-down" aria-hidden="true"></span></a>
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico ico-moon" aria-hidden="true"></span></button>
+    <a class="brand" href="/billing/" aria-label="Bilyra home"><svg aria-hidden="true" focusable="false"><use href="/assets/marks.svg#bilyra"></use></svg>Bilyra</a>
+    <nav class="site-nav" aria-label="Bilyra sections">
+      <a href="#how">How it works</a>
+      <a href="#promises">Promises</a>
+      <a href="#credits">Credits</a>
+      <a href="#developers">Developers</a>
+    </nav>
+    <div class="header-end">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button>
+      <a class="btn btn-primary" href="#how">See how it works</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="shell hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title">Reserve before work. <em>Settle after.</em></h1>
-          <p class="hero-copy">Subscriptions, credits and usage for every Olaryn product, in one service.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#api">See the API <span class="ico ico-down" aria-hidden="true"></span></a>
-            <a class="button button-outline" href="#how-it-works">How it works</a>
-          </div>
-          <p class="hero-footnote">Internal to Olaryn products. No public signup or pricing.</p>
+    <section class="hero" aria-labelledby="page-title">
+      <h1 class="t1" id="page-title"><span class="ink">Meet Bilyra</span><span class="dim">Fair billing for usage and credits</span></h1>
+      <div class="hero-side">
+        <p class="lede">Before a job starts, Bilyra puts the cost on hold. When it’s done, people pay only for what was used. The rest goes back.</p>
+        <div class="actions"><a class="btn btn-primary" href="#how">See how it works</a><a class="btn btn-secondary" href="#developers">For developers</a></div>
+      </div>
+    </section>
+
+    <div class="stage hero-stage">
+      <p class="stage-label"><span class="dot"></span>Example account</p>
+      <div class="hero-stage-grid">
+        <div class="card">
+          <div class="card-head"><span>Credits</span><span>Example</span></div>
+          <table class="ledger">
+            <caption class="visually-hidden">Example: credits held for a report, then charged for what was used</caption>
+            <thead><tr><th scope="col">What happened</th><th scope="col" class="n">Change</th><th scope="col" class="n">Left</th></tr></thead>
+            <tbody>
+              <tr><td>Starting balance</td><td class="n minus">—</td><td class="n">100</td></tr>
+              <tr><td>Hold for a report<small>Before the work starts</small></td><td class="n">−12</td><td class="n">88</td></tr>
+              <tr><td>Report finished<small>Used 9, 3 go back</small></td><td class="n">+3</td><td class="n">91</td></tr>
+            </tbody>
+          </table>
+          <div class="balance"><span class="small">Credits left</span><strong>91</strong></div>
         </div>
-        <figure class="hero-art">
-          <div class="ledger" role="img" aria-label="Illustrative credit ledger: opening balance 100, a 12-credit hold leaves 88 available, settling 9 and releasing 3 leaves 91 available.">
-            <div class="ledger-head" aria-hidden="true"><strong>Credit ledger</strong><span>Illustrative</span></div>
-            <table aria-hidden="true">
-              <thead><tr><th>Event</th><th>Change</th><th>Available</th></tr></thead>
-              <tbody>
-                <tr><td>Opening balance</td><td></td><td>100</td></tr>
-                <tr><td>Reserve<small>export-report</small></td><td class="neg">−12</td><td>88</td></tr>
-                <tr><td>Settle 9<small>release 3</small></td><td>+3</td><td>91</td></tr>
-              </tbody>
-            </table>
-            <div class="ledger-total" aria-hidden="true"><span>Available credits</span><strong>91</strong></div>
-          </div>
-          <figcaption>A hold, a settlement, and the unused credits returned.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="band band-lift" aria-labelledby="workflow-title">
-      <div class="shell">
-        <h2 id="workflow-title">Stripe holds the money. OpenMeter holds access. Bilyra keeps them in step.</h2>
-        <div class="trio">
-          <div class="trio-item"><h3>Stripe</h3><span class="role">Money</span><p>Checkout, invoices and payment methods.</p></div>
-          <div class="trio-item"><h3>OpenMeter</h3><span class="role">Access</span><p>Credits, entitlements and usage.</p></div>
-          <div class="trio-item is-core"><h3>Bilyra</h3><span class="role">Coordination</span><p>Holds, retries, plan changes and the audit log.</p></div>
+        <div class="card">
+          <div class="card-head"><span>What happens behind the scenes</span></div>
+          <ol class="flow">
+            <li><div><b>Hold the cost</b><span>The product works out the price and Bilyra sets those credits aside.</span></div></li>
+            <li><div><b>Do the work</b><span>The held credits can’t be spent on anything else in the meantime.</span></div></li>
+            <li><div><b>Charge what was used</b><span>Unused credits go straight back. If the job is cancelled, all of them do.</span></div></li>
+          </ol>
         </div>
-        <p class="band-foot">Products decide what an operation costs. Every call is authenticated by Zikela and scoped to one product.</p>
+      </div>
+    </div>
+
+    <div class="tagline">
+      <p><span class="ink">One place for billing.</span> <span class="dim">Shared by every Olaryn product.</span></p>
+      <ul class="chips" aria-label="Handles"><li class="label">Handles</li><li class="chip">Subscriptions</li><li class="chip">Credits</li><li class="chip">Usage</li><li class="chip">Refunds</li></ul>
+    </div>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="section-head">
+        <h2 class="t2" id="how-title"><span class="ink">Three services, kept in step</span><span class="dim">so money and access always match</span></h2>
+        <p class="lede">Stripe looks after the money. OpenMeter looks after what each customer can use. Bilyra makes sure the two always agree.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">Stripe</span><h3>The money</h3><p>Checkout, invoices and saved payment methods.</p></div>
+        <div class="step"><span class="num">OpenMeter</span><h3>The access</h3><p>Credits, plan features and how much has been used.</p></div>
+        <div class="step"><span class="num">Bilyra</span><h3>The go-between</h3><p>Holds, retries, plan changes and a record of every change.</p></div>
+      </div>
+      <p class="note">Each product decides what its work costs. Every request to Bilyra is checked by Zikela and limited to one product.</p>
+    </section>
+
+    <section class="section" id="promises" aria-labelledby="promises-title">
+      <div class="section-head">
+        <h2 class="t2" id="promises-title"><span class="ink">Four promises</span><span class="dim">built into the code</span></h2>
+        <p class="lede">The things that go wrong with billing, ruled out from the start.</p>
+      </div>
+      <ul class="facts facts-2">
+        <li><b>No double spending</b><span>Two jobs that each need 25 credits, with only 35 left: exactly one goes ahead.</span></li>
+        <li><b>Pay first, then access</b><span>Plans and allowances change only after a payment has really gone through.</span></li>
+        <li><b>Safe to try again</b><span>If a request is sent twice, it still only counts once.</span></li>
+        <li><b>Refunds take credits back</b><span>When a payment is refunded or disputed, the credits it bought are removed.</span></li>
+      </ul>
+    </section>
+
+    <section class="section" id="credits" aria-labelledby="credits-title">
+      <div class="section-head">
+        <h2 class="t2" id="credits-title"><span class="ink">Credits have an end date</span><span class="dim">depending on where they came from</span></h2>
+        <p class="lede">Each kind of credit follows its own simple rule.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">01</span><h3>Monthly allowance</h3><p>Ends at the end of each month.</p></div>
+        <div class="step"><span class="num">02</span><h3>Credit pack</h3><p>Comes with its own end date.</p></div>
+        <div class="step"><span class="num">03</span><h3>Yearly plan</h3><p>Released one month at a time during the paid year.</p></div>
       </div>
     </section>
 
-    <section id="guarantees" class="shell section" aria-labelledby="guarantees-title">
-      <h2 id="guarantees-title">Four rules the code enforces.</h2>
-      <div class="rules">
-        <div class="rule"><h3>Competing holds are serialized.</h3><p>Two 25-credit holds against 35 credits: exactly one succeeds.</p></div>
-        <div class="rule"><h3>Access follows payment.</h3><p>Plans and allowances change only on a verified paid invoice.</p></div>
-        <div class="rule"><h3>Retries are safe.</h3><p>Every paid action takes an idempotency key.</p></div>
-        <div class="rule"><h3>Refunds reverse credits.</h3><p>Matched grants are clawed back on a refund or dispute.</p></div>
+    <section class="section" id="developers" aria-labelledby="dev-title">
+      <div class="section-head">
+        <h2 class="t2" id="dev-title"><span class="ink">For developers</span><span class="dim">hold, then charge or cancel</span></h2>
+        <p class="lede">Your product asks Bilyra to hold the cost, then charges what was used or cancels the hold. Each call carries a Zikela token.</p>
       </div>
-    </section>
-
-    <section id="credits" class="shell section" aria-labelledby="credits-title">
-      <h2 id="credits-title">Credits have lifetimes.</h2>
-      <div class="lifetimes">
-        <div class="life"><h3>Monthly allowance</h3><div class="track" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Expires at the end of each month.</p></div>
-        <div class="life"><h3>Credit pack</h3><div class="track" aria-hidden="true"><i class="long"></i></div><p>Carries its own expiry, set in the catalog.</p></div>
-        <div class="life"><h3>Annual plan</h3><div class="track" aria-hidden="true"><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i></div><p>Released month by month within the paid year.</p></div>
-      </div>
-    </section>
-
-    <section id="api" class="band" aria-labelledby="api-title">
-      <div class="shell band-split">
-        <div>
-          <h2 id="api-title">Reserve. Settle. Release.</h2>
-          <p class="band-lede">Your product works out the cost and asks Bilyra to hold it. Finish the work and settle; cancel it and release. Calls carry a Zikela machine token.</p>
-        </div>
-        <figure class="code-card">
-          <figcaption class="code-card-title"><span>Reserve, then settle or release</span><span>Illustrative</span></figcaption>
-          <pre tabindex="0" aria-label="Reservation request sequence"><code><span class="c"># 1. Reserve the cost before running the work</span>
+      <div class="stage">
+        <p class="stage-label">Example requests</p>
+        <div class="card">
+<pre class="code"><code><span class="c"># 1. Hold the cost before the work starts</span>
 POST /v1/{product}/customers/{customer}/reservations
 Authorization: Bearer &lt;Zikela machine token&gt;
 {
-  <span class="k">"amount"</span>: 12,
-  <span class="k">"operation"</span>: "export-report",
-  <span class="k">"idempotency_key"</span>: "&lt;stable key per operation&gt;",
-  <span class="k">"resource_type"</span>: "report",
-  <span class="k">"resource_id"</span>: "&lt;resource id&gt;"
+  "amount": 12,
+  "operation": "export-report",
+  "idempotency_key": "&lt;same key if you retry&gt;",
+  "resource_type": "report",
+  "resource_id": "&lt;report id&gt;"
 }
 
-<span class="c"># 2a. Work completed: settle the actual usage</span>
+<span class="c"># 2a. Work finished: charge what was used</span>
 POST .../reservations/{id}/settle
-{ <span class="k">"amount"</span>: 9 }
+{ "amount": 9 }
 
-<span class="c"># 2b. Work cancelled: release the reservation</span>
+<span class="c"># 2b. Work cancelled: give the credits back</span>
 POST .../reservations/{id}/release
-{ <span class="k">"reason"</span>: "cancelled" }</code></pre>
-        </figure>
+{ "reason": "cancelled" }</code></pre>
+        </div>
       </div>
     </section>
 
-    <section class="shell final-cta" aria-labelledby="end-title">
-      <h2 id="end-title">One identity layer. One commercial layer.</h2>
-      <div class="hero-actions">
-        <a class="button button-primary" href="/auth/">Explore Zikela <span class="ico ico-right" aria-hidden="true"></span></a>
-        <a class="button button-outline" href="/">Back to Olaryn <span class="ico ico-right" aria-hidden="true"></span></a>
-      </div>
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 class="t1" id="cta-title"><span class="ink">Built for Olaryn products</span><span class="dim">and the people who use them</span></h2>
+      <div class="actions"><a class="btn btn-primary btn-large" href="/auth/">Explore Zikela</a><a class="btn btn-secondary btn-large" href="/">Back to Olaryn</a></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner">
-      <a class="footer-parent" href="/"><svg class="footer-mark" width="22" height="22" aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg> <span>Part of Olaryn · Zürich, Switzerland</span></a>
-      <nav class="foot-links" aria-label="Related destinations">
-        <a href="/">Olaryn</a><a href="/auth/">Zikela</a><a href="#api">API</a>
-      </nav>
-      <span>© 2026 Olaryn</span>
-    </div>
+    <div class="footer-brand"><a class="brand" href="/"><svg aria-hidden="true" focusable="false"><use href="/assets/marks.svg#olaryn"></use></svg>Olaryn</a><p>Part of Olaryn · Zürich, Switzerland<br>© 2026 Olaryn</p></div>
+    <nav aria-labelledby="foot-page"><h2 id="foot-page">Bilyra</h2><ul><li><a href="#how">How it works</a></li><li><a href="#promises">Promises</a></li><li><a href="#credits">Credits</a></li><li><a href="#developers">Developers</a></li></ul></nav>
+    <nav aria-labelledby="foot-olaryn"><h2 id="foot-olaryn">Olaryn</h2><ul><li><a href="/">Home</a></li><li><a href="/auth/">Zikela · sign-in</a></li><li><a href="/billing/">Bilyra · billing</a></li><li><a href="/analytics/">Yeleva · analytics</a></li></ul></nav>
+    <nav aria-labelledby="foot-more"><h2 id="foot-more">Built on</h2><ul><li>Stripe</li><li>OpenMeter</li><li><a href="/auth/">Zikela</a></li></ul></nav>
   </footer>
+  </div></div>
 </body>
 </html>
