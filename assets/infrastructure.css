@@ -1,0 +1,60 @@
+/* Internal infrastructure overviews: factual reference pages, not SaaS marketing. */
+.infra-shell { width: min(1080px, calc(100% - 64px)); margin-inline: auto; }
+.infra-header { display: flex; align-items: center; justify-content: space-between; min-height: 86px; gap: 20px; border-bottom: 1px solid var(--line); }
+.infra-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font: 500 21px/1 var(--sans); letter-spacing: -.04em; }
+.infra-brand svg { width: 32px; height: 32px; }
+.infra-header-right { display: flex; align-items: center; gap: 19px; }
+.infra-header-right > a { color: var(--muted); font-size: 13px; }
+.infra-header-right > a:hover { color: var(--ink); }
+.infra-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 11px; padding: 24px 0 8px; font-size: 12px; color: var(--muted); }
+.infra-breadcrumb a:hover { color: var(--ink); }
+.infra-breadcrumb [aria-current="page"] { color: var(--ink); }
+.infra-layout { display: grid; grid-template-columns: minmax(0, 1fr) 252px; gap: clamp(42px, 7vw, 110px); align-items: start; padding: 52px 0 100px; }
+.infra-layout main { min-width: 0; }
+.infra-intro { padding-bottom: 54px; }
+.infra-kicker, .infra-aside-title { color: var(--muted); font: 500 11px/1.5 var(--mono); letter-spacing: .055em; text-transform: uppercase; }
+.infra-kicker span { margin-inline: 6px; color: var(--faint); }
+.infra-intro h1 { margin: 14px 0 17px; color: var(--ink); font: 400 clamp(39px, 5vw, 58px)/1.12 var(--sans); letter-spacing: -.045em; }
+.infra-lede { max-width: 48ch; font-size: 19px; color: var(--muted); line-height: 1.6; }
+.infra-status { display: inline-block; margin-top: 28px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.infra-section { display: grid; grid-template-columns: 165px minmax(0, 1fr); gap: 20px; padding: 34px 0; border-top: 1px solid var(--line); }
+.infra-section h2 { color: var(--ink); font: 500 14px/1.5 var(--sans); }
+.infra-section p, .infra-definitions { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.infra-section > p + p { grid-column: 2; margin-top: -6px; }
+.infra-section code { font: 400 13px/1.5 var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+.infra-definitions { margin: 0; padding: 0; }
+.infra-definition { margin-bottom: 18px; }
+.infra-definition:last-child { margin-bottom: 0; }
+.infra-definition dt { color: var(--ink); font-weight: 500; }
+.infra-definition dd { margin: 2px 0 0; }
+.infra-reference { margin-top: 4px !important; }
+.infra-reference a, .infra-aside-note a { color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.infra-reference a:hover, .infra-aside-note a:hover { border-color: var(--ink); }
+.infra-aside { position: sticky; top: 32px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.infra-aside-title { padding: 20px 22px 12px; }
+.infra-side-links { display: flex; flex-direction: column; padding: 0 10px 15px; }
+.infra-side-links a { display: flex; justify-content: space-between; padding: 11px 12px; border-radius: 6px; font-size: 14px; color: var(--muted); }
+.infra-side-links a:hover { background: var(--panel); color: var(--ink); }
+.infra-side-links a[aria-current="page"] { background: var(--panel); color: var(--ink); font-weight: 500; }
+.infra-aside-note { border-top: 1px solid var(--line); padding: 19px 22px 23px; }
+.infra-aside-note p { margin-bottom: 17px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.infra-aside-note a { font-size: 12px; }
+.infra-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 29px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.infra-footer a { color: var(--ink); font-weight: 500; }
+@media (max-width: 850px) {
+  .infra-layout { grid-template-columns: minmax(0,1fr); gap: 26px; padding-block: 36px 70px; }
+  .infra-aside { position: static; }
+  .infra-intro { padding-bottom: 44px; }
+}
+@media (max-width: 540px) {
+  .infra-shell { width: calc(100% - 36px); }
+  .infra-header { min-height: 72px; }
+  .infra-brand { font-size: 19px; }
+  .infra-header-right { gap: 8px; }
+  .infra-intro h1 { font-size: 38px; }
+  .infra-lede { font-size: 17px; }
+  .infra-section { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .infra-section > p + p { grid-column: 1; margin-top: 0; }
+  .infra-footer { align-items: start; flex-wrap: wrap; gap: 13px; }
+  .infra-footer span:last-child { width: 100%; }
+}

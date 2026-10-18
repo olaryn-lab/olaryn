@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFB">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090909">
-  <title>Olaryn Billing — Fair billing for usage and credits | Olaryn</title>
-  <meta name="description" content="Olaryn Billing handles subscriptions, credits and usage for Olaryn products. It holds the cost before work starts, then charges only what was used.">
+  <title>Olaryn Billing — Shared infrastructure | Olaryn</title>
+  <meta name="description" content="Subscriptions, credits, and usage accounting for Olaryn products. A shared internal system, not a separate SaaS offering.">
   <link rel="canonical" href="https://olaryn.com/billing/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=11">
@@ -17,174 +17,75 @@
   <link rel="manifest" href="/site.webmanifest?v=10">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Olaryn Billing — Fair billing for usage and credits">
-  <meta property="og:description" content="Hold the cost before work starts. Charge only what was used.">
+  <meta property="og:title" content="Olaryn Billing — Shared infrastructure">
+  <meta property="og:description" content="Subscriptions, credits, and usage accounting for Olaryn products.">
   <meta property="og:url" content="https://olaryn.com/billing/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/billing.png?v=4">
+  <meta property="og:image" content="https://olaryn.com/assets/og/billing.png?v=5">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Olaryn Billing — Fair billing for usage and credits.">
+  <meta property="og:image:alt" content="Olaryn Billing — Shared infrastructure">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Olaryn Billing — Fair billing for usage and credits">
-  <meta name="twitter:description" content="Hold the cost before work starts. Charge only what was used.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/billing.png?v=4">
-  <meta name="twitter:image:alt" content="Olaryn Billing — Fair billing for usage and credits.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Olaryn Billing — Fair billing for usage and credits",
-    "url": "https://olaryn.com/billing/",
-    "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
-    "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
-  }
-  </script>
-  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="twitter:title" content="Olaryn Billing — Shared infrastructure">
+  <meta name="twitter:description" content="Subscriptions, credits, and usage accounting for Olaryn products.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/billing.png?v=5">
   <script src="/assets/theme.js?v=2"></script>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/base.css?v=7">
-  <link rel="stylesheet" href="/assets/platform.css?v=7">
+  <link rel="stylesheet" href="/assets/infrastructure.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announce gutter"><p>Olaryn Billing runs inside Olaryn products. There’s no public sign-up or pricing.</p></div>
+  <div class="infra-shell">
+    <header class="infra-header">
+      <a class="infra-brand" href="/" aria-label="Olaryn home"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/><circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/></svg><span>olaryn</span></a>
+      <div class="infra-header-right"><a href="/#products">Our products</a><button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button></div>
+    </header>
+    <nav class="infra-breadcrumb" aria-label="Breadcrumb"><a href="/">Olaryn</a><span aria-hidden="true">/</span><a href="/#infrastructure">Shared infrastructure</a><span aria-hidden="true">/</span><span aria-current="page">Billing</span></nav>
 
-  <div class="gutter"><div class="shell">
-  <header class="site-header">
-    <a class="brand" href="/billing/" aria-label="Olaryn Billing home"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/> <circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/> <rect x="45" y="47" width="38" height="8" rx="4" fill="currentColor"/> <rect x="45" y="60" width="38" height="8" rx="4" fill="currentColor"/> <rect x="45" y="73" width="22" height="8" rx="4" fill="currentColor"/></svg>Olaryn Billing</a>
-    <nav class="site-nav" aria-label="Olaryn Billing sections">
-      <a href="#how">How it works</a>
-      <a href="#promises">Promises</a>
-      <a href="#credits">Credits</a>
-      <a href="#developers">Developers</a>
-    </nav>
-    <div class="header-end">
-      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button>
-      <a class="btn btn-primary" href="#how">See how it works</a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="page-title">
-      <h1 class="t1" id="page-title"><span class="ink">Olaryn Billing</span><span class="dim">Fair billing for usage and credits</span></h1>
-      <div class="hero-side">
-        <p class="lede">Before a job starts, Olaryn Billing puts the cost on hold. When it’s done, people pay only for what was used. The rest goes back.</p>
-        <div class="actions"><a class="btn btn-primary" href="#how">See how it works</a><a class="btn btn-secondary" href="#developers">For developers</a></div>
-      </div>
-    </section>
-
-    <div class="stage hero-stage">
-      <p class="stage-label"><span class="dot"></span>Example account</p>
-      <div class="hero-stage-grid">
-        <div class="card">
-          <div class="card-head"><span>Credits</span><span>Example</span></div>
-          <table class="ledger">
-            <caption class="visually-hidden">Example: credits held for a report, then charged for what was used</caption>
-            <thead><tr><th scope="col">What happened</th><th scope="col" class="n">Change</th><th scope="col" class="n">Left</th></tr></thead>
-            <tbody>
-              <tr><td>Starting balance</td><td class="n minus">—</td><td class="n">100</td></tr>
-              <tr><td>Hold for a report<small>Before the work starts</small></td><td class="n">−12</td><td class="n">88</td></tr>
-              <tr><td>Report finished<small>Used 9, 3 go back</small></td><td class="n">+3</td><td class="n">91</td></tr>
-            </tbody>
-          </table>
-          <div class="balance"><span class="small">Credits left</span><strong>91</strong></div>
+    <div class="infra-layout">
+      <main id="main">
+        <div class="infra-intro">
+          <p class="infra-kicker">Internal infrastructure <span aria-hidden="true">/</span> 02</p>
+          <h1>Olaryn Billing</h1>
+          <p class="infra-lede">Subscriptions, credits, and usage accounting for Olaryn products.</p>
+          <p class="infra-status">Shared service · Used by Olaryn products · Not a public SaaS product</p>
         </div>
-        <div class="card">
-          <div class="card-head"><span>What happens behind the scenes</span></div>
-          <ol class="flow">
-            <li><div><b>Hold the cost</b><span>The product works out the price and Olaryn Billing sets those credits aside.</span></div></li>
-            <li><div><b>Do the work</b><span>The held credits can’t be spent on anything else in the meantime.</span></div></li>
-            <li><div><b>Charge what was used</b><span>Unused credits go straight back. If the job is cancelled, all of them do.</span></div></li>
-          </ol>
-        </div>
-      </div>
+        <section class="infra-section" aria-labelledby="purpose-title">
+          <h2 id="purpose-title">Purpose</h2>
+          <p>Olaryn Billing centralizes the mechanics of charging for recurring plans and metered work. Product teams define what their work costs; a shared service records usage and keeps balances consistent.</p>
+        </section>
+        <section class="infra-section" aria-labelledby="responsibilities-title">
+          <h2 id="responsibilities-title">Responsibilities</h2>
+          <dl class="infra-definitions">
+              <div class="infra-definition"><dt>Plans and payments</dt><dd>Subscriptions and payment workflows, integrated with Stripe.</dd></div>
+              <div class="infra-definition"><dt>Usage and entitlements</dt><dd>Credit and usage tracking, integrated with OpenMeter.</dd></div>
+              <div class="infra-definition"><dt>Reservation and settlement</dt><dd>Reserve credits before eligible work, settle actual usage, and return unused credits.</dd></div>
+          </dl>
+        </section>
+        <section class="infra-section" aria-labelledby="boundary-title">
+          <h2 id="boundary-title">Service boundary</h2>
+          <p>The billing service operates at <code>billing.olaryn.com</code>. It is an internal API for Olaryn products, not a public checkout, developer signup, or standalone SaaS offer.</p>
+          <p>Billing integrations are controlled within our products. Access and requests are scoped through the shared identity infrastructure.</p>
+
+        </section>
+      </main>
+      <aside class="infra-aside" aria-label="Other Olaryn infrastructure">
+        <p class="infra-aside-title">Shared systems</p>
+        <nav class="infra-side-links" aria-label="Infrastructure pages">
+            <a href="/auth/"><span>Identity</span><span aria-hidden="true">↗</span></a>
+            <a href="/billing/" aria-current="page"><span>Billing</span><span aria-hidden="true">—</span></a>
+            <a href="/analytics/"><span>Analytics</span><span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="infra-aside-note"><p>These services support our independent software products. They are not marketed as separate businesses.</p><a href="/#products">View the product portfolio <span aria-hidden="true">↗</span></a></div>
+      </aside>
     </div>
 
-    <div class="tagline">
-      <p><span class="ink">One place for billing.</span> <span class="dim">Shared by every Olaryn product.</span></p>
-      <ul class="chips" aria-label="Handles"><li class="label">Handles</li><li class="chip">Subscriptions</li><li class="chip">Credits</li><li class="chip">Usage</li><li class="chip">Refunds</li></ul>
-    </div>
-
-    <section class="section" id="how" aria-labelledby="how-title">
-      <div class="section-head">
-        <h2 class="t2" id="how-title"><span class="ink">Three services, kept in step</span><span class="dim">so money and access always match</span></h2>
-        <p class="lede">Stripe looks after the money. OpenMeter looks after what each customer can use. Olaryn Billing makes sure the two always agree.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">Stripe</span><h3>The money</h3><p>Checkout, invoices and saved payment methods.</p></div>
-        <div class="step"><span class="num">OpenMeter</span><h3>The access</h3><p>Credits, plan features and how much has been used.</p></div>
-        <div class="step"><span class="num">Olaryn Billing</span><h3>The go-between</h3><p>Holds, retries, plan changes and a record of every change.</p></div>
-      </div>
-      <p class="note">Each product decides what its work costs. Every request to Olaryn Billing is checked by Olaryn Identity and limited to one product.</p>
-    </section>
-
-    <section class="section" id="promises" aria-labelledby="promises-title">
-      <div class="section-head">
-        <h2 class="t2" id="promises-title"><span class="ink">Four promises</span><span class="dim">built into the code</span></h2>
-        <p class="lede">The things that go wrong with billing, ruled out from the start.</p>
-      </div>
-      <ul class="facts facts-2">
-        <li><b>No double spending</b><span>Two jobs that each need 25 credits, with only 35 left: exactly one goes ahead.</span></li>
-        <li><b>Pay first, then access</b><span>Plans and allowances change only after a payment has really gone through.</span></li>
-        <li><b>Safe to try again</b><span>If a request is sent twice, it still only counts once.</span></li>
-        <li><b>Refunds take credits back</b><span>When a payment is refunded or disputed, the credits it bought are removed.</span></li>
-      </ul>
-    </section>
-
-    <section class="section" id="credits" aria-labelledby="credits-title">
-      <div class="section-head">
-        <h2 class="t2" id="credits-title"><span class="ink">Credits have an end date</span><span class="dim">depending on where they came from</span></h2>
-        <p class="lede">Each kind of credit follows its own simple rule.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">01</span><h3>Monthly allowance</h3><p>Ends at the end of each month.</p></div>
-        <div class="step"><span class="num">02</span><h3>Credit pack</h3><p>Comes with its own end date.</p></div>
-        <div class="step"><span class="num">03</span><h3>Yearly plan</h3><p>Released one month at a time during the paid year.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="developers" aria-labelledby="dev-title">
-      <div class="section-head">
-        <h2 class="t2" id="dev-title"><span class="ink">For developers</span><span class="dim">hold, then charge or cancel</span></h2>
-        <p class="lede">Your product asks Olaryn Billing to hold the cost, then charges what was used or cancels the hold. Each call carries a Olaryn Identity token.</p>
-      </div>
-      <div class="stage">
-        <p class="stage-label">Example requests</p>
-        <div class="card">
-<pre class="code"><code><span class="c"># 1. Hold the cost before the work starts</span>
-POST /v1/{product}/customers/{customer}/reservations
-Authorization: Bearer &lt;Olaryn Identity machine token&gt;
-{
-  "amount": 12,
-  "operation": "export-report",
-  "idempotency_key": "&lt;same key if you retry&gt;",
-  "resource_type": "report",
-  "resource_id": "&lt;report id&gt;"
-}
-
-<span class="c"># 2a. Work finished: charge what was used</span>
-POST .../reservations/{id}/settle
-{ "amount": 9 }
-
-<span class="c"># 2b. Work cancelled: give the credits back</span>
-POST .../reservations/{id}/release
-{ "reason": "cancelled" }</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" aria-labelledby="cta-title">
-      <h2 class="t1" id="cta-title"><span class="ink">Built for Olaryn products</span><span class="dim">and the people who use them</span></h2>
-      <div class="actions"><a class="btn btn-primary btn-large" href="/auth/">Explore Olaryn Identity</a><a class="btn btn-secondary btn-large" href="/">Back to Olaryn</a></div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-brand"><a class="brand" href="/"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/> <circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/></svg>Olaryn</a><p>Part of Olaryn · Zürich, Switzerland<br>© 2026 Olaryn</p></div>
-    <nav aria-labelledby="foot-page"><h2 id="foot-page">Olaryn Billing</h2><ul><li><a href="#how">How it works</a></li><li><a href="#promises">Promises</a></li><li><a href="#credits">Credits</a></li><li><a href="#developers">Developers</a></li></ul></nav>
-    <nav aria-labelledby="foot-olaryn"><h2 id="foot-olaryn">Olaryn</h2><ul><li><a href="/">Home</a></li><li><a href="/auth/">Olaryn Identity · sign-in</a></li><li><a href="/billing/">Olaryn Billing · billing</a></li><li><a href="/analytics/">Olaryn Analytics · analytics</a></li></ul></nav>
-    <nav aria-labelledby="foot-more"><h2 id="foot-more">Built on</h2><ul><li>Stripe</li><li>OpenMeter</li><li><a href="/auth/">Olaryn Identity</a></li></ul></nav>
-  </footer>
-  </div></div>
+    <footer class="infra-footer">
+      <a href="/">Olaryn</a>
+      <span>Building software that compounds.</span>
+      <span>© 2026 Olaryn · Zürich</span>
+    </footer>
+  </div>
 </body>
 </html>

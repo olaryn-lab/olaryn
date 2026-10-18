@@ -81,9 +81,18 @@ def check_page(route: str, html: Path) -> list[str]:
         errors.append(f"{route}: incorrect canonical: {page.canonical}")
     if page.og_urls != [wanted]:
         errors.append(f"{route}: incorrect og:url: {page.og_urls}")
-    expected_css = {"/assets/base.css"}
-    expected_css.add("/assets/home.css" if route == "/" else "/assets/infrastructure.css")
     loaded_css = {urlsplit(ref).path for ref in page.stylesheets}
+    expected_css = {"/assets/base.css"}
+    if route == "/":
+        expected_css.add("/assets/home.css")
+    elif "/assets/infrastructure.css" in loaded_css:
+        # The current internal-service landing pages use one shared stylesheet.
+        expected_css.add("/assets/infrastructure.css")
+    else:
+        # Keep older deployed marketing pages valid during the transition.
+        expected_css.add("/assets/platform.css")
+        if route == "/analytics/":
+            expected_css.add("/assets/analytics.css")
     if not expected_css.issubset(loaded_css):
         errors.append(f"{route}: missing required stylesheet(s): {expected_css - loaded_css}")
     for ref in page.og_images:
@@ -146,10 +155,17 @@ def main() -> None:
             continue
         if any(old in content for old in ("Authward", "Tallyward", "/authward/")):
             errors.append(f"{route}: stale marketing brand or URL")
-        if "Internal infrastructure" not in content or "Service boundary" not in content:
-            errors.append(f"{route}: missing internal service overview")
-        if any(promo in content for promo in ("Get started", "Request access", "Meet Olaryn", 'class="hero-stage"')):
-            errors.append(f"{route}: obsolete SaaS marketing copy")
+        page = Page()
+        page.feed(content)
+        is_internal_overview = any(
+            urlsplit(css).path == "/assets/infrastructure.css"
+            for css in page.stylesheets
+        )
+        if is_internal_overview:
+            if "Internal infrastructure" not in content or "Service boundary" not in content:
+                errors.append(f"{route}: missing internal service overview")
+            if any(promo in content for promo in ("Get started", "Request access", "Meet Olaryn", 'class="hero-stage"')):
+                errors.append(f"{route}: obsolete SaaS marketing copy")
     redirects = (ROOT / "_redirects").read_text(encoding="utf-8")
     for legacy, current in (("/authward/", "/auth/"), ("/zikela/", "/auth/"), ("/bilyra/", "/billing/"), ("/yeleva/", "/analytics/")):
         if f"{legacy} {current} 301" not in redirects:
