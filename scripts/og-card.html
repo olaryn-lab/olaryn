@@ -25,9 +25,9 @@
 <script>
   const cards = {
     home: { mark: "olaryn", name: "Olaryn", l1: "Learning compounds.", l2: "", under: "What we learn, improve, and create should strengthen everything around it." },
-    auth: { mark: "zikela", name: "Zikela", l1: "Meet Zikela", l2: "Sign-in for your app", under: "Passkeys · Email links · Google · GitHub" },
-    billing: { mark: "bilyra", name: "Bilyra", l1: "Meet Bilyra", l2: "Fair billing for usage and credits", under: "Subscriptions · Credits · Usage · Refunds" },
-    analytics: { mark: "yeleva", name: "Yeleva", l1: "Meet Yeleva", l2: "Analytics for Olaryn products", under: "Visits · Actions · Usage" }
+    auth: { mark: "identity", name: "Olaryn Identity", l1: "Meet Olaryn Identity", l2: "Sign-in for your app", under: "Passkeys · Email links · Google · GitHub" },
+    billing: { mark: "billing", name: "Olaryn Billing", l1: "Meet Olaryn Billing", l2: "Fair billing for usage and credits", under: "Subscriptions · Credits · Usage · Refunds" },
+    analytics: { mark: "analytics", name: "Olaryn Analytics", l1: "Meet Olaryn Analytics", l2: "Analytics for Olaryn products", under: "Visits · Actions · Usage" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.home;
   document.getElementById("mark").setAttribute("href", "/assets/marks.svg?v=3#" + c.mark);

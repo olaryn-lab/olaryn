@@ -57,7 +57,7 @@
 <script src="/assets/theme.js?v=2"></script>
 <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/base.css?v=7">
-<link rel="stylesheet" href="/assets/home.css?v=4">
+<link rel="stylesheet" href="/assets/home.css?v=5">
 </head>
 <body>
   <button class="theme-toggle theme-corner" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button>
@@ -69,26 +69,27 @@
       <p class="thesis">Learning compounds.</p>
       <p class="lede">What we learn, improve, and create should strengthen everything around it.</p>
       <p class="about">Olaryn is the company behind Beseam, LemonCrow and Trevra, and the shared infrastructure they run on.</p>
-      <nav class="platform-links" aria-label="Shared Olaryn infrastructure">
-        <a class="platform-link" href="/auth/">Zikela: identity <span aria-hidden="true">→</span></a>
-        <a class="platform-link" href="/billing/">Bilyra: credits &amp; usage <span aria-hidden="true">→</span></a>
-        <a class="platform-link" href="/analytics/">Yeleva: analytics <span aria-hidden="true">→</span></a>
-      </nav>
+      <section class="home-group" aria-labelledby="products-title">
+        <h2 id="products-title">Our products</h2>
+        <nav class="product-links" aria-label="Olaryn products">
+          <a class="product-link" href="https://beseam.com" target="_blank" rel="noopener"><strong>Beseam</strong><span>Commerce</span></a>
+          <a class="product-link" href="https://lemoncrow.com" target="_blank" rel="noopener"><strong>LemonCrow</strong><span>Developer tools</span></a>
+          <a class="product-link" href="https://usetrevra.com" target="_blank" rel="noopener"><strong>Trevra</strong><span>Product</span></a>
+        </nav>
+      </section>
+      <section class="home-group infrastructure" aria-labelledby="platform-title">
+        <h2 id="platform-title">Shared infrastructure</h2>
+        <p>Identity, billing, and analytics behind our products.</p>
+        <nav class="platform-links" aria-label="Olaryn platform">
+          <a class="platform-link" href="/auth/">Identity <span aria-hidden="true">↗</span></a>
+          <a class="platform-link" href="/billing/">Billing <span aria-hidden="true">↗</span></a>
+          <a class="platform-link" href="/analytics/">Analytics <span aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
     </section>
   </main>
 
   <footer>
-    <nav class="company-links" aria-label="Olaryn companies">
-      <a class="company-link beseam" href="https://beseam.com" target="_blank" rel="noopener" aria-label="Beseam (opens in a new tab)" title="Beseam">
-        <img src="/assets/companies/beseam.svg?v=3" alt="">
-      </a>
-      <a class="company-link" href="https://lemoncrow.com" target="_blank" rel="noopener" aria-label="LemonCrow (opens in a new tab)" title="LemonCrow">
-        <img src="/assets/companies/lemoncrow.svg" alt="">
-      </a>
-      <a class="company-link trevra" href="https://usetrevra.com" target="_blank" rel="noopener" aria-label="Trevra (opens in a new tab)" title="Trevra">
-        <img src="/assets/companies/trevra.svg?v=2" alt="">
-      </a>
-    </nav>
     <div>&copy; 2026 Olaryn · Zürich, Switzerland 🇨🇭</div>
   </footer>
 </body>

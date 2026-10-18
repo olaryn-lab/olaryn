@@ -1,5 +1,5 @@
 // Render the 1200x630 social cards from scripts/og-card.html with Chromium.
-// Writes og-image.png (home) and assets/og/{zikela,bilyra,yeleva}.png. Bump the ?v= on the og:image URLs afterwards.
+// Writes og-image.png (home) and assets/og/{identity,billing,analytics}.png. Bump the ?v= on the og:image URLs afterwards.
 // Playwright can be installed here, or point BRAND_PLAYWRIGHT_PATH at another checkout's node_modules/playwright.
 import { createRequire } from 'node:module';
 import { createServer } from 'node:http';
@@ -25,7 +25,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const browser = await playwright.chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1, colorScheme: 'light' });
-  for (const [card, out] of [['home', 'og-image.png'], ['auth', 'assets/og/zikela.png'], ['billing', 'assets/og/bilyra.png'], ['analytics', 'assets/og/yeleva.png']]) {
+  for (const [card, out] of [['home', 'og-image.png'], ['auth', 'assets/og/identity.png'], ['billing', 'assets/og/billing.png'], ['analytics', 'assets/og/analytics.png']]) {
     await page.goto(`${base}/scripts/og-card.html?p=${card}`, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: join(ROOT, out) });

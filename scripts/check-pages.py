@@ -121,14 +121,14 @@ def main() -> None:
     wanted = {f"https://olaryn.com{route}" for route in PAGES}
     if urls != wanted:
         errors.append(f"sitemap: expected {sorted(wanted)}, got {sorted(urls)}")
-    # The homepage keeps its original simple layout, headline, copy and product
-    # link labels; the logo mark is drawn in the theme's ink colour.
+    # The homepage gives first priority to Beseam, LemonCrow and Trevra;
+    # platform links stay grouped below the independent products.
     home = (ROOT / "index.html").read_text(encoding="utf-8")
-    for route, label in (("/auth/", "Zikela: identity"),
-                         ("/billing/", "Bilyra: credits &amp; usage"),
-                         ("/analytics/", "Yeleva: analytics")):
+    for route, label in (("/auth/", "Identity"),
+                         ("/billing/", "Billing"),
+                         ("/analytics/", "Analytics")):
         if f'href="{route}"' not in home or label not in home:
-            errors.append(f"home: missing product link {label} at {route}")
+            errors.append(f"home: missing platform link {label} at {route}")
     if '<svg class="mark"' not in home or 'A40 40 0 1 1' not in home:
         errors.append("home: the inline Olaryn open-O mark is missing")
     for route, html in PAGES.items():

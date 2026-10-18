@@ -1,4 +1,4 @@
-/* Product pages (Zikela, Bilyra, Yeleva): hero, example screens and diagrams. Tokens live in base.css. */
+/* Product pages (Olaryn Identity, Olaryn Billing, Olaryn Analytics): hero, example screens and diagrams. Tokens live in base.css. */
 
 /* Hero: two-tone title left, short explanation and buttons right, example screen underneath */
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; align-items: end; padding-block: 48px 56px; }
@@ -71,7 +71,7 @@
 .facts b { font-weight: 500; color: var(--ink); }
 .facts span { font-size: 14px; color: var(--muted); }
 
-/* Credit ledger (Bilyra) */
+/* Credit ledger (Olaryn Billing) */
 .ledger { width: 100%; border-collapse: collapse; font-size: 14px; }
 .ledger th { padding: 10px 16px; border-bottom: 1px solid var(--line); font-weight: 450; font-size: 12px; color: var(--muted); text-align: left; }
 .ledger td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--ink); vertical-align: top; }
@@ -87,7 +87,7 @@
 .code { overflow-x: auto; padding: 20px; font: 400 13px/1.7 var(--mono); letter-spacing: 0; color: var(--ink); tab-size: 2; }
 .code .c { color: var(--muted); }
 
-/* Simple bar graphic (Yeleva examples, decorative) */
+/* Simple bar graphic (Olaryn Analytics examples, decorative) */
 .bars { display: flex; align-items: flex-end; gap: 5px; height: 72px; }
 .bars i { flex: 1; display: block; border-radius: 3px 3px 0 0; background: var(--line); }
 .bars i.on { background: var(--ink); }

@@ -1,4 +1,4 @@
-/* Yeleva page: example chart layout. Shared components live in base.css and platform.css. */
+/* Olaryn Analytics page: example chart layout. Shared components live in base.css and platform.css. */
 .chart-body { padding: 20px 16px 16px; }
 .bars-tall { height: 140px; }
 .days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; margin-top: 8px; font-size: 11px; color: var(--muted); text-align: center; }
