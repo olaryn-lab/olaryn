@@ -1,0 +1,1 @@
+Follow [AGENTS.md](../AGENTS.md). Do not redesign any Olaryn site page without explicit owner approval. The homepage and the existing layouts of /auth/, /billing/, and /analytics/ are protected by `scripts/check-design-lock.py`; copy-only edits must not change structure or styles.

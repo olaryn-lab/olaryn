@@ -9,6 +9,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 python3 scripts/check-pages.py
+python3 scripts/check-design-lock.py
 if ! git diff --quiet HEAD -- index.html _headers _redirects robots.txt sitemap.xml site.webmanifest assets auth billing analytics *.svg *.png *.ico; then
   echo "Refusing to deploy uncommitted website changes. Commit and validate first." >&2
   exit 1
@@ -37,7 +38,7 @@ while IFS= read -r -d '' path; do
     favicon.svg|favicon.ico|favicon-16x16.png|favicon-32x32.png|\
     apple-touch-icon.png|icon-192.png|icon-512.png|logo-mark.svg|logo-mark.png|og-image.png|\
     auth/index.html|billing/index.html|analytics/index.html|\
-    assets/base.css|assets/home.css|assets/infrastructure.css|assets/theme.js|assets/marks.svg|\
+    assets/base.css|assets/home.css|assets/platform.css|assets/analytics.css|assets/theme.js|assets/marks.svg|\
     assets/fonts/*|assets/og/*|assets/companies/*)
       mkdir -p "$stage/$(dirname "$path")"
       cp -- "$path" "$stage/$path"

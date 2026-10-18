@@ -6,19 +6,19 @@ Static site for [olaryn.com](https://olaryn.com). **Production is deployed to th
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Company homepage: an independent software business with Beseam, LemonCrow, and Trevra as the primary focus |
-| `/auth/` | Reference-style overview of Olaryn Identity (shared sign-in and access) |
-| `/billing/` | Reference-style overview of Olaryn Billing (subscriptions, credits, and metered usage) |
-| `/analytics/` | Reference-style overview of Olaryn Analytics (visits, activity, and usage) |
+| `/` | **Original minimal centered homepage**: “Learning compounds.”, three compact service links, Beseam/LemonCrow/Trevra logos in the footer |
+| `/auth/` | Original illustrated Olaryn Identity page; marketing calls to action removed |
+| `/billing/` | Original illustrated Olaryn Billing page; factual internal-service copy |
+| `/analytics/` | Original illustrated Olaryn Analytics page; factual internal-service copy |
 
-The pages use ordinary directory `index.html` files. Each uses `/assets/base.css` for self-hosted fonts, monochrome light/dark tokens, and shared primitives. The homepage adds `/assets/home.css`; the three infrastructure pages share `/assets/infrastructure.css`. Their restrained, documentation-like presentation replaces former product-sales pages, including demo dashboards, pricing/signup prompts, and repeated promotional sections.
+The pages use ordinary directory `index.html` files and `/assets/base.css`. The homepage uses `/assets/home.css` and the infrastructure pages use their original `/assets/platform.css` (plus `/assets/analytics.css` for analytics). **Do not redesign them:** the homepage is minimal and centered, while the infrastructure pages intentionally keep their illustrative examples. See `AGENTS.md` and the locked design baseline.
 
 There is no frontend framework, backend route, or dependency installation requirement. The only runtime script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so page styling belongs in stylesheets. The Cloudflare Worker serves clean paths; links are root-relative.
 
 ## Company and infrastructure boundaries
 
-- **Olaryn** is an independent software company, not a commercial bundle of infrastructure tools. **Beseam, LemonCrow, and Trevra** are the independent customer-facing products. “We build software that compounds” describes the way we operate.
-- **Identity, Billing, and Analytics** are shared internal foundations. The three pages under `olaryn.com` are short, *publicly accessible descriptions*, not authenticated documentation or private dashboards. They must not present the systems as open commercial SaaS offerings.
+- **Olaryn** is the company behind the independent Beseam, LemonCrow and Trevra products. The small, original homepage uses **“Learning compounds.”**, not a long, text-heavy mission/portfolio presentation.
+- **Identity, Billing, and Analytics** are shared internal foundations. Their public informational pages keep their original design and examples, with promotional sign-up language removed. They are not authenticated internal docs or standalone commercial SaaS signup pages.
 - `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts identity developer documentation at `/docs`. Never proxy, redirect, or rewrite identity protocol endpoints through `olaryn.com/auth/`.
 - `https://billing.olaryn.com` remains an internal service/API. There is no public self-service billing signup or pricing.
 - `https://analytics.olaryn.com` is the analytics service, not a product landing page; `olaryn.com/analytics/` does not expose internal reports.
@@ -31,7 +31,7 @@ The site uses one monochrome theme: black, white and greys, with a single green 
 
 The Olaryn mark is an open O with a seed in the gap. Olaryn Identity adds a keyhole inside it, Olaryn Billing ledger lines and Olaryn Analytics rising bars. The source drawings live in `assets/marks.svg`; pages inline them as `<svg>` so they always load and follow the page theme (copy any change into the pages too). The product brands Beseam, LemonCrow, and Trevra retain their own logos.
 
-Copy rule: the company homepage should foreground real software businesses; infrastructure pages explain their purpose, responsibilities and service boundaries in factual language. No invented pricing, customer metrics, or exposed internal data.
+**Design preservation (mandatory):** read `AGENTS.md` before any change. Never reinterpret a copy/strategy task as permission to redesign. Run `python3 scripts/check-design-lock.py` in addition to the page checks. The committed `design-lock.json` fingerprints all four approved DOM layouts and stylesheets; changing the baseline requires explicit owner approval. No invented pricing, customer metrics, or exposed internal data.
 
 ## Light and dark themes
 
@@ -43,6 +43,7 @@ Run at the repository root:
 
 ```bash
 python3 scripts/check-pages.py
+python3 scripts/check-design-lock.py
 python3 -m http.server 43181 --bind 127.0.0.1
 ```
 

@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9FAFB">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090909">
-  <title>Olaryn Identity — Shared infrastructure | Olaryn</title>
-  <meta name="description" content="Authentication and access shared across Olaryn products. A shared internal system, not a separate SaaS offering.">
+  <title>Olaryn Identity — Shared sign-in for Olaryn products | Olaryn</title>
+  <meta name="description" content="Olaryn Identity adds sign-in to your app: passkeys, email links, Google and GitHub, on your own sign-in screen. Used by Olaryn products.">
   <link rel="canonical" href="https://olaryn.com/auth/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=11">
@@ -17,75 +17,172 @@
   <link rel="manifest" href="/site.webmanifest?v=10">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Olaryn">
-  <meta property="og:title" content="Olaryn Identity — Shared infrastructure">
-  <meta property="og:description" content="Authentication and access shared across Olaryn products.">
+  <meta property="og:title" content="Olaryn Identity — Shared sign-in for Olaryn products">
+  <meta property="og:description" content="Passkeys, email links, Google and GitHub, on your own sign-in screen.">
   <meta property="og:url" content="https://olaryn.com/auth/">
-  <meta property="og:image" content="https://olaryn.com/assets/og/identity.png?v=5">
+  <meta property="og:image" content="https://olaryn.com/assets/og/identity.png?v=4">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Olaryn Identity — Shared infrastructure">
+  <meta property="og:image:alt" content="Olaryn Identity — Shared sign-in for Olaryn products.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Olaryn Identity — Shared infrastructure">
-  <meta name="twitter:description" content="Authentication and access shared across Olaryn products.">
-  <meta name="twitter:image" content="https://olaryn.com/assets/og/identity.png?v=5">
-  <script src="/assets/theme.js?v=2"></script>
+  <meta name="twitter:title" content="Olaryn Identity — Shared sign-in for Olaryn products">
+  <meta name="twitter:description" content="Passkeys, email links, Google and GitHub, on your own sign-in screen.">
+  <meta name="twitter:image" content="https://olaryn.com/assets/og/identity.png?v=4">
+  <meta name="twitter:image:alt" content="Olaryn Identity — Shared sign-in for Olaryn products.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Olaryn Identity — Shared sign-in for Olaryn products",
+    "url": "https://olaryn.com/auth/",
+    "isPartOf": { "@type": "WebSite", "name": "Olaryn", "url": "https://olaryn.com/" },
+    "publisher": { "@type": "Organization", "name": "Olaryn", "url": "https://olaryn.com/" }
+  }
+  </script>
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/theme.js?v=2"></script>
   <link rel="stylesheet" href="/assets/base.css?v=7">
-  <link rel="stylesheet" href="/assets/infrastructure.css?v=1">
+  <link rel="stylesheet" href="/assets/platform.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="infra-shell">
-    <header class="infra-header">
-      <a class="infra-brand" href="/" aria-label="Olaryn home"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/><circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/></svg><span>olaryn</span></a>
-      <div class="infra-header-right"><a href="/#products">Our products</a><button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button></div>
-    </header>
-    <nav class="infra-breadcrumb" aria-label="Breadcrumb"><a href="/">Olaryn</a><span aria-hidden="true">/</span><a href="/#infrastructure">Shared infrastructure</a><span aria-hidden="true">/</span><span aria-current="page">Identity</span></nav>
+  <div class="announce gutter"><p>Olaryn Identity · Shared authentication for Olaryn products.</p></div>
 
-    <div class="infra-layout">
-      <main id="main">
-        <div class="infra-intro">
-          <p class="infra-kicker">Internal infrastructure <span aria-hidden="true">/</span> 01</p>
-          <h1>Olaryn Identity</h1>
-          <p class="infra-lede">Authentication and access shared across Olaryn products.</p>
-          <p class="infra-status">Shared service · Used by Olaryn products · Not a public SaaS product</p>
+  <div class="gutter"><div class="shell">
+  <header class="site-header">
+    <a class="brand" href="/auth/" aria-label="Olaryn Identity home"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/> <circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/> <circle cx="64" cy="57" r="9" fill="currentColor"/> <path d="M59.5 62h9l3 18.5a2 2 0 0 1-2 2.3h-11a2 2 0 0 1-2-2.3z" fill="currentColor"/></svg>Olaryn Identity</a>
+    <nav class="site-nav" aria-label="Olaryn Identity sections">
+      <a href="#features">Features</a>
+      <a href="#setup">Set up</a>
+      <a href="#brand">Your brand</a>
+      <a href="https://auth.olaryn.com/docs">Guide</a>
+    </nav>
+    <div class="header-end">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span class="ico" aria-hidden="true"></span></button>
+      <a class="btn btn-ghost" href="https://auth.olaryn.com/developer">Sign in</a>
+      <a class="btn btn-primary" href="https://auth.olaryn.com/docs">Documentation</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 class="t1" id="page-title"><span class="ink">Olaryn Identity</span><span class="dim">Shared sign-in for Olaryn products</span></h1>
+      <div class="hero-side">
+        <p class="lede">Passkeys, email links, Google and GitHub on your own sign-in screen. The identity service handles authentication for our products.</p>
+        <div class="actions"><a class="btn btn-primary" href="https://auth.olaryn.com/docs">Documentation</a><a class="btn btn-secondary" href="https://auth.olaryn.com/docs">Read the guide</a></div>
+      </div>
+    </section>
+
+    <div class="stage hero-stage" role="img" aria-label="Example: an app’s sign-in screen and the three steps behind it">
+      <p class="stage-label" aria-hidden="true"><span class="dot"></span>Example app</p>
+      <div class="hero-stage-grid" aria-hidden="true">
+        <div class="card">
+          <div class="card-head"><div class="app-id"><span class="avatar avatar-northwind">N</span><div><p>Northwind</p><p class="small">northwind.app/sign-in</p></div></div></div>
+          <div class="signin">
+            <h3>Sign in to Northwind</h3>
+            <p class="sub">Welcome back. Choose how to continue.</p>
+            <span class="choice choice-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>Continue with passkey</span>
+            <span class="choice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email me a link</span>
+            <span class="or">or</span>
+            <span class="pair"><span class="choice">Google</span><span class="choice">GitHub</span></span>
+          </div>
         </div>
-        <section class="infra-section" aria-labelledby="purpose-title">
-          <h2 id="purpose-title">Purpose</h2>
-          <p>Olaryn Identity provides a common account and sign-in foundation for the software we operate. Each product keeps its own experience while relying on shared identity infrastructure.</p>
-        </section>
-        <section class="infra-section" aria-labelledby="responsibilities-title">
-          <h2 id="responsibilities-title">Responsibilities</h2>
-          <dl class="infra-definitions">
-              <div class="infra-definition"><dt>Sign-in</dt><dd>Accounts, sessions, and supported sign-in methods.</dd></div>
-              <div class="infra-definition"><dt>Organizations</dt><dd>Organization membership, invitations, and access management.</dd></div>
-              <div class="infra-definition"><dt>Identity protocols</dt><dd>OAuth/OIDC authentication and authorization for connected products.</dd></div>
-          </dl>
-        </section>
-        <section class="infra-section" aria-labelledby="boundary-title">
-          <h2 id="boundary-title">Service boundary</h2>
-          <p>The identity service and OAuth/OIDC issuer run at <code>auth.olaryn.com</code>. This page is a company overview, not an issuer, sign-in endpoint, or protocol callback.</p>
-          <p>Product teams integrate with the issuer and its documented endpoints, not with this public overview.</p>
-          <p class="infra-reference"><a href="https://auth.olaryn.com/docs" rel="noopener noreferrer">Identity developer documentation <span aria-hidden="true">↗</span></a></p>
-        </section>
-      </main>
-      <aside class="infra-aside" aria-label="Other Olaryn infrastructure">
-        <p class="infra-aside-title">Shared systems</p>
-        <nav class="infra-side-links" aria-label="Infrastructure pages">
-            <a href="/auth/" aria-current="page"><span>Identity</span><span aria-hidden="true">—</span></a>
-            <a href="/billing/"><span>Billing</span><span aria-hidden="true">↗</span></a>
-            <a href="/analytics/"><span>Analytics</span><span aria-hidden="true">↗</span></a>
-        </nav>
-        <div class="infra-aside-note"><p>These services support our independent software products. They are not marketed as separate businesses.</p><a href="/#products">View the product portfolio <span aria-hidden="true">↗</span></a></div>
-      </aside>
+        <div class="card">
+          <div class="card-head"><span>What happens when someone signs in</span></div>
+          <ol class="flow">
+            <li><div><b>They pick a way to sign in</b><span>On your screen, with your name and colours.</span></div></li>
+            <li><div><b>Olaryn Identity checks it’s really them</b><span>Fingerprint or face, a link in their email, or their Google or GitHub account.</span></div></li>
+            <li><div><b>They’re back in your app, signed in</b><span>Your app gets a short sign-in pass that tells it who they are.</span></div></li>
+          </ol>
+          <p class="card-foot"><span class="dot"></span>Sign-in passes last 15 minutes and can be cancelled.</p>
+        </div>
+      </div>
     </div>
 
-    <footer class="infra-footer">
-      <a href="/">Olaryn</a>
-      <span>Building software that compounds.</span>
-      <span>© 2026 Olaryn · Zürich</span>
-    </footer>
-  </div>
+    <div class="tagline">
+      <p><span class="ink">Shared identity service.</span> <span class="dim">Used across Olaryn products.</span></p>
+      <ul class="chips" aria-label="Built in"><li class="label">Built in</li><li class="chip">Passkeys</li><li class="chip">Email links</li><li class="chip">Google</li><li class="chip">GitHub</li></ul>
+    </div>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="section-head">
+        <h2 class="t2" id="features-title"><span class="ink">Supported sign-in methods</span><span class="dim">passkeys, email and OAuth</span></h2>
+        <p class="lede">Pick the ways people can sign in. Olaryn Identity checks it’s really them. Passwords and fingerprints never touch your app.</p>
+      </div>
+      <div class="grid-3">
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="prompt"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 11v4M8.5 8.5a5 5 0 0 1 8.5 3.5c0 2 .3 4 1 5.5M7 12c0 2.5-.5 4.5-1.5 6M9.5 13.5c0 2-.4 4-1.3 5.5M14.5 13c0 2.3-.3 4.5-1 6.5M5 9a8 8 0 0 1 14 0"/></svg></span><b>Use your fingerprint</b><span class="muted">to sign in to Northwind</span></div></div></div>
+          <div><h3>Passkeys</h3><p>A fingerprint, face or device PIN. Nothing to remember, nothing to steal.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="mail"><div class="from"><span>Northwind</span><span>now</span></div><b>Your sign-in link</b><span class="muted">Tap the button to sign in to Northwind.</span><span class="go">Sign in</span></div></div></div>
+          <div><h3>Email links</h3><p>People type their email, tap the link, and they’re in. No password at all.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="feature">
+          <div class="stage" aria-hidden="true"><div class="card mini"><div class="mini-stack"><b>Continue with</b><span class="pair"><span class="choice">Google</span><span class="choice">GitHub</span></span><span class="muted">One tap with an account they already have.</span></div></div></div>
+          <div><h3>Google and GitHub</h3><p>Let people use an account they already have. No new password to make up.</p><a class="more" href="https://auth.olaryn.com/docs">Learn more <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="setup" aria-labelledby="setup-title">
+      <div class="section-head">
+        <h2 class="t2" id="setup-title"><span class="ink">Integration workflow</span><span class="dim">assisted setup and approval</span></h2>
+        <p class="lede">Teams can configure a product integration with the documented developer tools, CLI or an AI assistant. Approval remains required.</p>
+      </div>
+      <div class="stage" role="img" aria-label="Example conversation: you ask your AI assistant to add Olaryn Identity sign-in, and it does.">
+        <p class="stage-label" aria-hidden="true">Example</p>
+        <div class="chat" aria-hidden="true">
+          <p class="bubble bubble-me">Add Olaryn Identity sign-in to my app.</p>
+          <div class="bubble bubble-ai">Done. I registered your app, connected sign-in and tried a real sign-in to check it works.<p class="status"><span class="dot"></span>You approved this in your browser</p></div>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">01</span><h3>Prepare integration</h3><p>From your workspace. It has no passwords or secrets in it.</p></div>
+        <div class="step"><span class="num">02</span><h3>Review approval</h3><p>One click. It lasts 24 hours and you can cancel it any time.</p></div>
+        <div class="step"><span class="num">03</span><h3>Verify sign-in</h3><p>Check registration, redirects and a completed sign-in flow.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="brand" aria-labelledby="brand-title">
+      <div class="section-head">
+        <h2 class="t2" id="brand-title"><span class="ink">Product-owned sign-in screen</span><span class="dim">identity handled by the shared service</span></h2>
+        <p class="lede">The sign-in screen lives in your app, with your name, colours and words. Olaryn Identity works behind it, using the same standard as “Sign in with Google”.</p>
+      </div>
+      <div class="stage" role="img" aria-label="Two example apps, each with its own sign-in screen design">
+        <div class="apps" aria-hidden="true">
+          <div class="card"><div class="signin"><div class="app-id"><span class="avatar avatar-northwind">N</span>Northwind</div><h3>Welcome back</h3><span class="choice choice-northwind">Continue with passkey</span><span class="choice">Email me a link</span></div></div>
+          <div class="card"><div class="signin square"><div class="app-id"><span class="avatar avatar-lumen">L</span>Lumen</div><h3>Sign in to Lumen</h3><span class="choice choice-lumen">Use a passkey</span><span class="choice">Continue with GitHub</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="developers" aria-labelledby="dev-title">
+      <div class="section-head">
+        <h2 class="t2" id="dev-title"><span class="ink">Protocol support</span><span class="dim">OAuth and OpenID Connect</span></h2>
+        <p class="lede">Olaryn Identity speaks OAuth and OpenID Connect, so any library that supports them will work. No special kit to install.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Works with common libraries</b><span>Standard OAuth and OpenID Connect, with PKCE required.</span></li>
+        <li><b>Command-line tools too</b><span>People can sign in to a CLI by approving it on another device.</span></li>
+        <li><b>Safe by default</b><span>Signing keys change every 30 days, and sign-ins only return to addresses you registered.</span></li>
+      </ul>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 class="t1" id="cta-title"><span class="ink">Shared identity for our products</span><span class="dim">Internal service · integration reference</span></h2>
+      <div class="actions"><a class="btn btn-primary btn-large" href="https://auth.olaryn.com/docs">Documentation</a><a class="btn btn-secondary btn-large" href="https://auth.olaryn.com/docs">Read the guide</a></div>
+      <p class="note">Using an AI assistant? Give it the <a href="https://auth.olaryn.com/agent/product-integration-guide.md">assistant-ready guide</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><a class="brand" href="/"><svg aria-hidden="true" focusable="false" viewBox="0 0 128 128"><path d="M102.64 53.65 A40 40 0 1 1 74.35 25.36" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round"/> <circle cx="92.28" cy="35.72" r="7.5" fill="currentColor"/></svg>Olaryn</a><p>Part of Olaryn · Zürich, Switzerland<br>© 2026 Olaryn</p></div>
+    <nav aria-labelledby="foot-page"><h2 id="foot-page">Olaryn Identity</h2><ul><li><a href="#features">Features</a></li><li><a href="#setup">Set up</a></li><li><a href="https://auth.olaryn.com/docs">Guide</a></li><li><a href="https://auth.olaryn.com/developer">Sign in</a></li></ul></nav>
+    <nav aria-labelledby="foot-olaryn"><h2 id="foot-olaryn">Olaryn</h2><ul><li><a href="/">Home</a></li><li><a href="/auth/">Olaryn Identity · sign-in</a></li><li><a href="/billing/">Olaryn Billing · billing</a></li><li><a href="/analytics/">Olaryn Analytics · analytics</a></li></ul></nav>
+    <nav aria-labelledby="foot-access"><h2 id="foot-access">Resources</h2><ul><li><a href="https://auth.olaryn.com/docs">Documentation</a></li><li><a href="https://auth.olaryn.com/agent/product-integration-guide.md">Guide for AI assistants</a></li></ul></nav>
+  </footer>
+  </div></div>
 </body>
 </html>

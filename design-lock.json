@@ -1,0 +1,15 @@
+{
+  "description": "Owner-approved visual layouts. Update only after explicit design approval; see AGENTS.md.",
+  "layouts": {
+    "index.html": "0f80d6a4bc63513531aa2fa85c98e17fd436643d5e370c1df2779839e384bc53",
+    "auth/index.html": "0c39b474c20627dad20dc33fb88b264d21efee869f740d2f4fd4ff4cbe778bf8",
+    "billing/index.html": "5dca9ece6ee216f3fa6c40a041d5b3cd7165b4cd8e1796c4d3d9498e70ee3cf2",
+    "analytics/index.html": "76007d0043f942e9ea296ba354db29f2df1a1b0ad2699797e7ffc6aecdad5f9d"
+  },
+  "styles": {
+    "assets/base.css": "6aaa4bf11c08eaeb386aae3118c63d60ca224c27cb1a87dcb8a576f1d3dcaf6c",
+    "assets/home.css": "fd3433a50d0d5f79cf900b0002701e6e503c6748da6b933d602d67ef1e62e9c3",
+    "assets/platform.css": "540ff2823950e5f0c487beabe5090c2a2a0c2f7d45df542134f6070c1d2eeeaf",
+    "assets/analytics.css": "8c542fab8e8c3c73beb8f0351e538ad2818f65af1d827df914874161db9fdda8"
+  }
+}

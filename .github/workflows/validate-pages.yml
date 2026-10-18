@@ -17,5 +17,7 @@ jobs:
           python-version: "3.12"
       - name: Validate page content, links, SEO and sitemap
         run: python3 scripts/check-pages.py
+      - name: Enforce owner-approved visual designs
+        run: python3 scripts/check-design-lock.py
       - name: Check whitespace
         run: git diff --check HEAD^ HEAD
