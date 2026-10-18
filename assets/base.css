@@ -148,7 +148,7 @@ p, h1, h2, h3, h4, ul, ol, pre, figure { margin: 0; }
 .cta .actions { justify-content: center; }
 
 /* Footer */
-.site-footer { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-block: 48px 64px; border-top: 1px solid var(--line); }
+.site-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; padding-block: 48px 64px; border-top: 1px solid var(--line); }
 .site-footer h2 { margin-bottom: 14px; font: 400 16px/1.5 var(--sans); letter-spacing: 0; color: var(--ink); }
 .site-footer ul { display: flex; flex-direction: column; gap: 10px; padding: 0; list-style: none; }
 .site-footer li, .site-footer a { color: var(--muted); }

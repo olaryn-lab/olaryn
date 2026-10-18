@@ -7,11 +7,11 @@ Static site for [olaryn.com](https://olaryn.com). **Production is deployed to th
 | Route | Purpose |
 | --- | --- |
 | `/` | **Original minimal centered homepage**: “Learning compounds.”, three compact service links, Beseam/LemonCrow/Trevra logos in the footer |
-| `/auth/` | Original illustrated Olaryn Identity page; marketing calls to action removed |
-| `/billing/` | Original illustrated Olaryn Billing page; factual internal-service copy |
-| `/analytics/` | Original illustrated Olaryn Analytics page; factual internal-service copy |
+| `/auth/` | Illustrated Olaryn Identity page; signup prompts and duplicate CTAs removed |
+| `/billing/` | Illustrated Olaryn Billing page with ledger; factual internal-service copy and concise footer |
+| `/analytics/` | Illustrated Olaryn Analytics page with charts; factual copy, no oversized closing CTA |
 
-The pages use ordinary directory `index.html` files and `/assets/base.css`. The homepage uses `/assets/home.css` and the infrastructure pages use their original `/assets/platform.css` (plus `/assets/analytics.css` for analytics). **Do not redesign them:** the homepage is minimal and centered, while the infrastructure pages intentionally keep their illustrative examples. See `AGENTS.md` and the locked design baseline.
+The pages use ordinary directory `index.html` files and `/assets/base.css`. The homepage uses `/assets/home.css` and the infrastructure pages use their original `/assets/platform.css` (plus `/assets/analytics.css` for analytics). **Do not redesign them:** the homepage is minimal and centered, while the infrastructure pages intentionally keep their illustrative examples. The owner-approved 2026-10-18 cleanup removed only redundant announcement banners, duplicate cross-links and sales-style closing CTAs, with the original visual examples preserved. See `AGENTS.md` and the locked design baseline.
 
 There is no frontend framework, backend route, or dependency installation requirement. The only runtime script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so page styling belongs in stylesheets. The Cloudflare Worker serves clean paths; links are root-relative.
 

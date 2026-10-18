@@ -148,6 +148,12 @@ def main() -> None:
             errors.append(f"{route}: original visual layout or demo missing")
         if any(marketing in content for marketing in ("Request access", "Get started", "Meet Olaryn")):
             errors.append(f"{route}: redundant marketing language returned")
+        if '<div class="announce gutter">' in content or '<section class="cta"' in content:
+            errors.append(f"{route}: duplicated announcement or closing CTA returned")
+        if content.count('<nav aria-labelledby="foot-') != 1:
+            errors.append(f"{route}: footer must have just one small related-navigation group")
+        if '<footer class="site-footer">' not in content:
+            errors.append(f"{route}: approved footer missing")
     redirects = (ROOT / "_redirects").read_text(encoding="utf-8")
     for legacy, current in (("/authward/", "/auth/"), ("/zikela/", "/auth/"), ("/bilyra/", "/billing/"), ("/yeleva/", "/analytics/")):
         if f"{legacy} {current} 301" not in redirects:
