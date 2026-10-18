@@ -6,21 +6,24 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Olaryn company homepage; keeps the original simple centred layout and “Learning compounds.” wording, with the three infrastructure links |
-| `/auth/` | Public Olaryn Identity identity developer-focused marketing page |
-| `/billing/` | Public Olaryn Billing billing, credits, and usage marketing page |
-| `/analytics/` | Public Olaryn Analytics analytics overview (the internal analytics application remains separate) |
+| `/` | Company homepage: an independent software business with Beseam, LemonCrow, and Trevra as the primary focus |
+| `/auth/` | Reference-style overview of Olaryn Identity (shared sign-in and access) |
+| `/billing/` | Reference-style overview of Olaryn Billing (subscriptions, credits, and metered usage) |
+| `/analytics/` | Reference-style overview of Olaryn Analytics (visits, activity, and usage) |
 
-The marketing pages use ordinary directory `index.html` files. All pages share `/assets/base.css` (self-hosted Inter/Geist Mono `@font-face` rules, every colour token for light and dark, and the shared header, buttons, sections and footer); the home page adds `/assets/home.css` and the product pages `/assets/platform.css`. Change a token once in `base.css`, never per page. Bump the `?v=` on the stylesheet links when a shared stylesheet changes. Fonts live in `assets/fonts/` (Latin subset, OFL) so no third-party font request is made and the CSP can stay `default-src 'self'`.
+The pages use ordinary directory `index.html` files. Each uses `/assets/base.css` for self-hosted fonts, monochrome light/dark tokens, and shared primitives. The homepage adds `/assets/home.css`; the three infrastructure pages share `/assets/infrastructure.css`. Their restrained, documentation-like presentation replaces former product-sales pages, including demo dashboards, pricing/signup prompts, and repeated promotional sections.
 
-No framework, backend routes, or dependency installation is needed; the only script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so all styling stays in the stylesheets. Cloudflare Pages serves these as clean URLs. The shared site assets use root-relative paths.
+There is no frontend framework, backend route, or dependency installation requirement. The only runtime script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so page styling belongs in stylesheets. Cloudflare Pages serves clean paths; links are root-relative.
 
-Marketing and platform runtime stay separate:
-- Product marketing pages use **Olaryn Identity** (identity), **Olaryn Billing** (billing) and **Olaryn Analytics** (analytics) at `/auth/`, `/billing/` and `/analytics/`. The homepage presents Beseam, LemonCrow and Trevra as distinct products, with a separate, quieter Olaryn platform section for Identity, Billing and Analytics. The Olaryn mark is an inline SVG in the theme's ink colour. The legacy `/authward/` URL redirects to `/auth/`. Backend repositories and service URLs are not renamed as part of this change.
-- `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts the protected developer portal (`/developer`) and docs (`/docs`). Never proxy, redirect, or rewrite identity protocol endpoints through the marketing pages.
-- `https://billing.olaryn.com` remains the service API. There is no public developer signup or pricing page for Billing. The public description must not advertise the private API as open self-service.
-- `https://analytics.olaryn.com` remains the analytics service hostname, not a public product marketing page. The public `/analytics/` overview is separate from the application and does not expose a public signup.
-- Feature copy must match the Authward and Billing repository contracts. Avoid displaying invented commercial prices or live account balances.
+## Company and infrastructure boundaries
+
+- **Olaryn** is an independent software company, not a commercial bundle of infrastructure tools. **Beseam, LemonCrow, and Trevra** are the independent customer-facing products. “We build software that compounds” describes the way we operate.
+- **Identity, Billing, and Analytics** are shared internal foundations. The three pages under `olaryn.com` are short, *publicly accessible descriptions*, not authenticated documentation or private dashboards. They must not present the systems as open commercial SaaS offerings.
+- `https://auth.olaryn.com` remains the OAuth/OIDC issuer and hosts identity developer documentation at `/docs`. Never proxy, redirect, or rewrite identity protocol endpoints through `olaryn.com/auth/`.
+- `https://billing.olaryn.com` remains an internal service/API. There is no public self-service billing signup or pricing.
+- `https://analytics.olaryn.com` is the analytics service, not a product landing page; `olaryn.com/analytics/` does not expose internal reports.
+- Legacy marketing paths redirect to these overviews, but internal repository identifiers and runtime hostnames are not renamed.
+- Keep the documentation high-level and safe for public access. Never expose credentials, private dashboards, account data, deployment secrets, or confidential operations details.
 
 ## Brand identity
 
@@ -28,7 +31,7 @@ The site uses one monochrome theme: black, white and greys, with a single green 
 
 The Olaryn mark is an open O with a seed in the gap. Olaryn Identity adds a keyhole inside it, Olaryn Billing ledger lines and Olaryn Analytics rising bars. The source drawings live in `assets/marks.svg`; pages inline them as `<svg>` so they always load and follow the page theme (copy any change into the pages too). The product brands Beseam, LemonCrow, and Trevra retain their own logos.
 
-Copy rule: product names are only names. Everything else is written in plain, non-technical words, and every claim must match the Olaryn Identity and Olaryn Billing repository contracts.
+Copy rule: the company homepage should foreground real software businesses; infrastructure pages explain their purpose, responsibilities and service boundaries in factual language. No invented pricing, customer metrics, or exposed internal data.
 
 ## Light and dark themes
 

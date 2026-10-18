@@ -82,9 +82,7 @@ def check_page(route: str, html: Path) -> list[str]:
     if page.og_urls != [wanted]:
         errors.append(f"{route}: incorrect og:url: {page.og_urls}")
     expected_css = {"/assets/base.css"}
-    expected_css.add("/assets/home.css" if route == "/" else "/assets/platform.css")
-    if route == "/analytics/":
-        expected_css.add("/assets/analytics.css")
+    expected_css.add("/assets/home.css" if route == "/" else "/assets/infrastructure.css")
     loaded_css = {urlsplit(ref).path for ref in page.stylesheets}
     if not expected_css.issubset(loaded_css):
         errors.append(f"{route}: missing required stylesheet(s): {expected_css - loaded_css}")
@@ -121,20 +119,37 @@ def main() -> None:
     wanted = {f"https://olaryn.com{route}" for route in PAGES}
     if urls != wanted:
         errors.append(f"sitemap: expected {sorted(wanted)}, got {sorted(urls)}")
-    # The homepage gives first priority to Beseam, LemonCrow and Trevra;
-    # platform links stay grouped below the independent products.
+    # Portfolio should be the homepage's primary focus; infrastructure is
+    # internal today, not a separate public SaaS product.
     home = (ROOT / "index.html").read_text(encoding="utf-8")
+    if "Independent software company" not in home or "We build software" not in home or "that compounds." not in home:
+        errors.append("home: missing company positioning")
+    for url, name in (("https://beseam.com", "Beseam"),
+                      ("https://lemoncrow.com", "LemonCrow"),
+                      ("https://usetrevra.com", "Trevra")):
+        if f'href="{url}"' not in home or f"<strong>{name}</strong>" not in home:
+            errors.append(f"home: missing independent product {name}")
     for route, label in (("/auth/", "Identity"),
                          ("/billing/", "Billing"),
                          ("/analytics/", "Analytics")):
-        if f'href="{route}"' not in home or label not in home:
-            errors.append(f"home: missing platform link {label} at {route}")
-    if '<svg class="mark"' not in home or 'A40 40 0 1 1' not in home:
+        if f'href="{route}"' not in home or f"Olaryn {label}" not in home:
+            errors.append(f"home: missing internal platform link {label} at {route}")
+    if not (home.index('id="products"') < home.index('id="approach"') < home.index('class="foundation-section"')):
+        errors.append("home: portfolio and approach must precede infrastructure")
+    if "supports the portfolio internally today" not in home:
+        errors.append("home: internal infrastructure must not be marketed as public SaaS")
+    if '<a class="company-brand"' not in home or 'A40 40 0 1 1' not in home:
         errors.append("home: the inline Olaryn open-O mark is missing")
     for route, html in PAGES.items():
         content = html.read_text(encoding="utf-8")
-        if route != "/" and any(old in content for old in ("Authward", "Tallyward", "/authward/")):
+        if route == "/":
+            continue
+        if any(old in content for old in ("Authward", "Tallyward", "/authward/")):
             errors.append(f"{route}: stale marketing brand or URL")
+        if "Internal infrastructure" not in content or "Service boundary" not in content:
+            errors.append(f"{route}: missing internal service overview")
+        if any(promo in content for promo in ("Get started", "Request access", "Meet Olaryn", 'class="hero-stage"')):
+            errors.append(f"{route}: obsolete SaaS marketing copy")
     redirects = (ROOT / "_redirects").read_text(encoding="utf-8")
     for legacy, current in (("/authward/", "/auth/"), ("/zikela/", "/auth/"), ("/bilyra/", "/billing/"), ("/yeleva/", "/analytics/")):
         if f"{legacy} {current} 301" not in redirects:

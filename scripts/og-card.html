@@ -24,10 +24,10 @@
 </div>
 <script>
   const cards = {
-    home: { mark: "olaryn", name: "Olaryn", l1: "Learning compounds.", l2: "", under: "What we learn, improve, and create should strengthen everything around it." },
-    auth: { mark: "identity", name: "Olaryn Identity", l1: "Meet Olaryn Identity", l2: "Sign-in for your app", under: "Passkeys · Email links · Google · GitHub" },
-    billing: { mark: "billing", name: "Olaryn Billing", l1: "Meet Olaryn Billing", l2: "Fair billing for usage and credits", under: "Subscriptions · Credits · Usage · Refunds" },
-    analytics: { mark: "analytics", name: "Olaryn Analytics", l1: "Meet Olaryn Analytics", l2: "Analytics for Olaryn products", under: "Visits · Actions · Usage" }
+    home: { mark: "olaryn", name: "Olaryn", l1: "We build software", l2: "that compounds.", under: "Independent software company · Beseam · LemonCrow · Trevra" },
+    auth: { mark: "identity", name: "Olaryn Identity", l1: "Shared identity", l2: "and access.", under: "Olaryn infrastructure · Internal system" },
+    billing: { mark: "billing", name: "Olaryn Billing", l1: "Shared billing", l2: "and usage.", under: "Olaryn infrastructure · Internal system" },
+    analytics: { mark: "analytics", name: "Olaryn Analytics", l1: "Shared product", l2: "analytics.", under: "Olaryn infrastructure · Internal system" }
   };
   const c = cards[new URLSearchParams(location.search).get("p")] || cards.home;
   document.getElementById("mark").setAttribute("href", "/assets/marks.svg?v=3#" + c.mark);
