@@ -1,0 +1,12 @@
+{
+  // The live olaryn.com site is a Cloudflare Worker with static assets.
+  // The older olaryn.pages.dev project is a separate direct-upload mirror.
+  "name": "olaryn",
+  "compatibility_date": "2026-10-12",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "olaryn.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

@@ -1,6 +1,6 @@
 # Olaryn
 
-Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
+Static site for [olaryn.com](https://olaryn.com). **Production is deployed to the Cloudflare Worker named `olaryn`**, bound to the apex custom domain. The separate `olaryn.pages.dev` Pages project is a direct-upload mirror and does **not** serve `olaryn.com`.
 
 ## Pages
 
@@ -13,7 +13,7 @@ Static site for [olaryn.com](https://olaryn.com), deployed on Cloudflare Pages.
 
 The pages use ordinary directory `index.html` files. Each uses `/assets/base.css` for self-hosted fonts, monochrome light/dark tokens, and shared primitives. The homepage adds `/assets/home.css`; the three infrastructure pages share `/assets/infrastructure.css`. Their restrained, documentation-like presentation replaces former product-sales pages, including demo dashboards, pricing/signup prompts, and repeated promotional sections.
 
-There is no frontend framework, backend route, or dependency installation requirement. The only runtime script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so page styling belongs in stylesheets. Cloudflare Pages serves clean paths; links are root-relative.
+There is no frontend framework, backend route, or dependency installation requirement. The only runtime script is the theme toggle (`assets/theme.js`). The CSP forbids inline styles and scripts, so page styling belongs in stylesheets. The Cloudflare Worker serves clean paths; links are root-relative.
 
 ## Company and infrastructure boundaries
 
@@ -46,7 +46,22 @@ python3 scripts/check-pages.py
 python3 -m http.server 43181 --bind 127.0.0.1
 ```
 
-Visit `http://127.0.0.1:43181/`, `/auth/`, `/billing/`, and `/analytics/`. Confirm mobile and desktop layouts, both color modes, links, and focus states. No live deployment occurs just by changing this source branch.
+Visit `http://127.0.0.1:43181/`, `/auth/`, `/billing/`, and `/analytics/`. Confirm mobile and desktop layouts, both color modes, links, and focus states. No live deployment occurs just by changing this source branch; GitHub Actions currently runs validation only.
+
+## Deploying the live website
+
+`olaryn.com` is served by the **Workers static-assets deployment** named `olaryn`; `olaryn.pages.dev` is a separate Pages project. **Pushing GitHub `main` does not deploy the apex domain**. Do not confuse the two deployment targets.
+
+After committing and pushing validated changes, use an authenticated Wrangler session:
+
+```bash
+DEPLOY_DRY_RUN=1 bash scripts/deploy-cloudflare.sh
+bash scripts/deploy-cloudflare.sh
+```
+
+The deployment script packages only tracked public files, checks that the website files are committed, uses `wrangler.jsonc` to retain the existing `olaryn.com` custom domain and Worker preview settings, and deploys to the Worker rather than the Pages mirror. If Wrangler isn't on `PATH`, set `WRANGLER_BIN` to an installed CLI path; otherwise the script uses `npx wrangler@4`.
+
+Cloudflare automatic Git deployment is **not** configured. For unattended deploys, provide a scoped Cloudflare API token through GitHub Actions secrets and add a post-validation deployment job. Never commit credentials or put the local Wrangler OAuth refresh token in GitHub secrets.
 
 ## Social cards
 
