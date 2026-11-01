@@ -38,6 +38,7 @@ while IFS= read -r -d '' path; do
     favicon.svg|favicon.ico|favicon-16x16.png|favicon-32x32.png|\
     apple-touch-icon.png|icon-192.png|icon-512.png|logo-mark.svg|logo-mark.png|og-image.png|\
     auth/index.html|billing/index.html|analytics/index.html|\
+    .well-known/microsoft-identity-association.json|\
     assets/base.css|assets/home.css|assets/platform.css|assets/analytics.css|assets/theme.js|assets/marks.svg|\
     assets/fonts/*|assets/og/*|assets/companies/*)
       mkdir -p "$stage/$(dirname "$path")"
