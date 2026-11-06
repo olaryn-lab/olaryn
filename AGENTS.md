@@ -19,3 +19,10 @@
 5. If you cannot complete a requested content edit without changing the visual design, stop and ask first.
 
 The Olaryn production site is the `olaryn` Cloudflare Worker serving `olaryn.com`, NOT the separate Pages project. Deploy via `scripts/deploy-cloudflare.sh` only after verification.
+
+## Testing Policy
+
+- Write only high-value tests that catch meaningful bugs, regressions, or security issues.
+- Prefer real behavior and integration tests over mocked or implementation-detail tests.
+- Avoid trivial, redundant, or coverage-driven tests.
+- Run focused tests during development; preserve existing mandatory CI and release checks.
