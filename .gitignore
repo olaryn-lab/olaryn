@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Agent task worktrees (.githooks/agent-task)
+.worktrees/
